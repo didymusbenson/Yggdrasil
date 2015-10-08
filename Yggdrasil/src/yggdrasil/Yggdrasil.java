@@ -5,13 +5,23 @@
  */
 package yggdrasil;
 
+import byui.cit260.yggdrasil.model.Actor;
+import byui.cit260.yggdrasil.model.Dungon;
+import byui.cit260.yggdrasil.model.Enemy;
+import byui.cit260.yggdrasil.model.Location;
 import byui.cit260.yggdrasil.model.MainCharacter;
+import byui.cit260.yggdrasil.model.Player;
+import byui.cit260.yggdrasil.model.Scene;
 
 /**
  *
  * @author tsunami
  */
 public class Yggdrasil {
+    private static String Tom;
+    private static String fun;
+    private static String yes;
+    private static String a;
 
     /**
      * @param args the command line arguments
@@ -26,7 +36,42 @@ public class Yggdrasil {
         alice.setMainCharacterCurrentLevel(2);
         System.out.println(alice.toString());
         
-        //ETC.
+        //ACTOR
+        Actor sprite = new Actor();
+        sprite.setActorMaxHp(10);
+        sprite.setActorTempHp(5);
+        sprite.setActorAttack(12);
+        sprite.setActorDefense(15);
+        sprite.setActorWeapon(5);
+    
+        
+        //DUNGON
+        Dungon lair = new Dungon();
+        lair.setDungonGoldAvalible(35);
+        lair.setDungonNumberOfFights(12);
+        
+        //ENEMY 
+        Enemy bob = new Enemy();
+        bob.setEnemyEscapeChance(80);
+        bob.setEnemyGoldReward(14);
+        bob.setEnemyXpReward(34);
+        
+        // LOCATION
+        Location terra = new Location();
+        terra.setLocationCoordinates(8.4);
+        terra.setLocationEncounterChance(40);
+        terra.setLocationEncounterType(3);
+        terra.setLocationHostility(1);
+        
+        //PLAYER
+        Player hater = new Player();
+        hater.setPlayerName(Tom);
+        
+        //SCENE
+        Scene scene = new Scene();
+        scene.setSceneDescription(fun);
+        scene.setSceneHasBarrier(yes);
+        scene.setSceneMapSymbol(a);
     }
     
 }
