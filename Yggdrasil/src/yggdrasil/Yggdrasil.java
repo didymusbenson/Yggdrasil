@@ -17,14 +17,16 @@ public class Yggdrasil {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //MAIN CHARACTER
         MainCharacter alice = new MainCharacter();
-        
         alice.setMainCharacterLuck(3);
         alice.setMainCharacterSpeed(5);
         alice.setMainCharacterMoney(9001);
         alice.setMainCharacterTotalXp(12);
         alice.setMainCharacterCurrentLevel(2);
         System.out.println(alice.toString());
+        
+        //ETC.
     }
     
 }
