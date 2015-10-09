@@ -43,18 +43,21 @@ public class Yggdrasil {
         sprite.setActorAttack(12);
         sprite.setActorDefense(15);
         sprite.setActorWeapon(5);
+        System.out.println(sprite.toString());
     
         
         //DUNGON
         Dungon lair = new Dungon();
         lair.setDungonGoldAvalible(35);
         lair.setDungonNumberOfFights(12);
+        System.out.println(lair.toString());
         
         //ENEMY 
         Enemy bob = new Enemy();
         bob.setEnemyEscapeChance(80);
         bob.setEnemyGoldReward(14);
         bob.setEnemyXpReward(34);
+        System.out.println(bob.toString());
         
         // LOCATION
         Location terra = new Location();
@@ -62,16 +65,19 @@ public class Yggdrasil {
         terra.setLocationEncounterChance(40);
         terra.setLocationEncounterType(3);
         terra.setLocationHostility(1);
+        System.out.println(terra.toString());
         
         //PLAYER
         Player hater = new Player();
-        hater.setPlayerName(Tom);
+        hater.setPlayerName("Tom");
+        System.out.println(hater.toString());
         
         //SCENE
         Scene scene = new Scene();
-        scene.setSceneDescription(fun);
-        scene.setSceneHasBarrier(yes);
-        scene.setSceneMapSymbol(a);
+        scene.setSceneDescription("fun");
+        scene.setSceneHasBarrier(true);
+        scene.setSceneMapSymbol("a");
+        System.out.println(scene.toString());
     }
     
 }
