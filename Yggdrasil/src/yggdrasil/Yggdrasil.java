@@ -18,10 +18,6 @@ import byui.cit260.yggdrasil.model.Scene;
  * @author tsunami
  */
 public class Yggdrasil {
-    private static String Tom;
-    private static String fun;
-    private static String yes;
-    private static String a;
 
     /**
      * @param args the command line arguments
