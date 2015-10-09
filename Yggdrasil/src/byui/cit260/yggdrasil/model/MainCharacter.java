@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Program name: Yggdrasil
+ * Program type: Game
+ * Creation date: 3/10/2015 at 10:00
+ * Description: This is a text based game where you assume the role of a hero
+ *              to destroy the dragon Plythu.
  */
 package byui.cit260.yggdrasil.model;
 

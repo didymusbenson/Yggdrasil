@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Program type: Class
+ * Creation: 7/10/2015 at 9:45
+ * Description: This class gives the program the ability to assign stats that
+ *              are common to both players and non-players.
  */
 package byui.cit260.yggdrasil.model;
 
