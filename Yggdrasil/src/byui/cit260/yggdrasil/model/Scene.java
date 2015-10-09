@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Scene implements Serializable {
 
     private String sceneDescription;
-    private String sceneHasBarrier;
+    private Boolean sceneHasBarrier;
     private String sceneMapSymbol;
 
     public String getSceneDescription() {
@@ -26,11 +26,11 @@ public class Scene implements Serializable {
         this.sceneDescription = sceneDescription;
     }
 
-    public String getSceneHasBarrier() {
+    public Boolean getSceneHasBarrier() {
         return sceneHasBarrier;
     }
 
-    public void setSceneHasBarrier(String sceneHasBarrier) {
+    public void setSceneHasBarrier(Boolean sceneHasBarrier) {
         this.sceneHasBarrier = sceneHasBarrier;
     }
 
