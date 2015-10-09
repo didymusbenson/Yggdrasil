@@ -1,7 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Program type: Class
+ * Creation: 7/10/2015 at 9:10
+ * Description: This is the main that allows the game to be played. 
+ *              His actual name is suppose to be Pothoc though.
+ */
+
+/*
+ * Program Map
+ *   key:
+ *       0 single digit indicates class or global intereaction
+ *       00 double digit indecates code within class interaction
+ *
+ *   1 - package
+ *   2 - import
+ *   3 - MainCharacter class call
  */
 package yggdrasil;
 
@@ -31,7 +43,7 @@ public class Yggdrasil {
         alice.setMainCharacterTotalXp(12);
         alice.setMainCharacterCurrentLevel(2);
         System.out.println(alice.toString());
-        
+
         //ACTOR
         Actor sprite = new Actor();
         sprite.setActorMaxHp(10);
@@ -40,21 +52,20 @@ public class Yggdrasil {
         sprite.setActorDefense(15);
         sprite.setActorWeapon(5);
         System.out.println(sprite.toString());
-    
-        
+
         //DUNGON
         Dungon lair = new Dungon();
         lair.setDungonGoldAvalible(35);
         lair.setDungonNumberOfFights(12);
         System.out.println(lair.toString());
-        
+
         //ENEMY 
         Enemy bob = new Enemy();
         bob.setEnemyEscapeChance(80);
         bob.setEnemyGoldReward(14);
         bob.setEnemyXpReward(34);
         System.out.println(bob.toString());
-        
+
         // LOCATION
         Location terra = new Location();
         terra.setLocationCoordinates(8.4);
@@ -62,12 +73,12 @@ public class Yggdrasil {
         terra.setLocationEncounterType(3);
         terra.setLocationHostility(1);
         System.out.println(terra.toString());
-        
+
         //PLAYER
         Player hater = new Player();
         hater.setPlayerName("Tom");
         System.out.println(hater.toString());
-        
+
         //SCENE
         Scene scene = new Scene();
         scene.setSceneDescription("fun");
@@ -75,5 +86,5 @@ public class Yggdrasil {
         scene.setSceneMapSymbol("a");
         System.out.println(scene.toString());
     }
-    
+
 }

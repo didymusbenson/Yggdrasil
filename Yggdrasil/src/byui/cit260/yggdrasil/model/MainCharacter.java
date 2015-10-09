@@ -1,18 +1,32 @@
 /*
- * Program name: Yggdrasil
- * Program type: Game
+ * Program type: Class
  * Creation date: 3/10/2015 at 10:00
  * Description: This is a text based game where you assume the role of a hero
  *              to destroy the dragon Plythu.
  */
+
+/*
+* Program Map
+*   key:
+*       0 single digit indicates class or global intereaction
+*       00 double digit indecates code within class interaction
+*
+*   1 - package
+*   2 - import
+*   3 - MainCharacter class call
+*/
+
+// 1 - this is telling the program where to get the files from
 package byui.cit260.yggdrasil.model;
 
+// 2 - this is telling the program what in needs to bring in to run correctly
 import java.io.Serializable;
 
 /**
- *
  * @author Didymus Benson Brock Hodgson
  */
+
+// 3 - this is the main character class that gives specific stats to a character
 public class MainCharacter implements Serializable {
 
     private int mainCharacterLuck;

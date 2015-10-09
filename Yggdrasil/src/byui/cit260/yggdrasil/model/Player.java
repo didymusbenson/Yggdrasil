@@ -1,6 +1,6 @@
 /*
  * Program type: Class
- * Creation: 7/10/2015 at 9:58
+ * Creation: 7/10/2015 at 9:20
  * Description: This class allows the player to give a custom name to their 
  *              character. (His actual name is suppose to be Pothoc though.)
  */
