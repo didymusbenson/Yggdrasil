@@ -105,4 +105,12 @@ public class Actor implements Serializable {
         return true;
     }
 
+    public void setactormaxhp(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setActormaxhp(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
