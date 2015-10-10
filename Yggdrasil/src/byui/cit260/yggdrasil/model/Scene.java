@@ -19,6 +19,9 @@ public class Scene implements Serializable {
     private Boolean sceneHasBarrier;
     private String sceneMapSymbol;
 
+    public Scene(){
+    }
+    
     public String getSceneDescription() {
         return sceneDescription;
     }
