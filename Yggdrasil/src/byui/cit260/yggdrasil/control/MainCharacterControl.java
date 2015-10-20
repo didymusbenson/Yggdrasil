@@ -5,10 +5,11 @@
  */
 package byui.cit260.yggdrasil.control;
 
+import java.io.Serializable;
 /**
  *
  * @author tsunami
  */
-public class MainCharacterControl {
+public class MainCharacterControl implements Serializable {
     
 }
