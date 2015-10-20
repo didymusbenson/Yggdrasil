@@ -23,6 +23,12 @@
  *      4-06 - LOCATION
  *      4-07 - PLAYER
  *      4-08 - SCENE
+ *      4-09 - Town
+ *      4-10 - Shop
+ *      4-11 - Item
+ *      4-12 - MAP
+ *      4-13 - INVENTORY
+ *      4-14 - GAME
  */
 // 1 - this tells the program what game is to be played.
 package yggdrasil;
@@ -41,6 +47,7 @@ import byui.cit260.yggdrasil.model.Item;
 import byui.cit260.yggdrasil.model.Map;
 import byui.cit260.yggdrasil.model.Inventory;
 import byui.cit260.yggdrasil.model.Game;
+
 /**
  *
  * @author Brock Hodgson & Didymus Benson
@@ -103,7 +110,8 @@ public class Yggdrasil {
         scene.setSceneHasBarrier(true);
         scene.setSceneMapSymbol("a");
         System.out.println(scene.toString());
-        
+
+        // 4-09 - TOWN
         Town gilead = new Town();
         gilead.setTownGossip("hello");
         gilead.setTownInnPrice(25);
@@ -111,27 +119,32 @@ public class Yggdrasil {
         gilead.setTownQuestStory("ahoy");
         gilead.setTownShopStory("welcome");
         System.out.println(gilead.toString());
-        
+
+        // 4-10 - SHOP
         Shop foodAndStuff = new Shop();
         foodAndStuff.setShopItemsHeld(new String[]{"potion", "dagger", "pills"});
         System.out.println(foodAndStuff.toString());
-        
+
+        // 4-11 - IITEM
         Item potion = new Item();
         potion.setItemBuyPrice(9999);
         potion.setItemSellPrice(1);
         potion.setItemModifier(15);
         potion.setItemType(1);
         System.out.println(potion.toString());
-        
+
+        //4-12 - MAP
         Map overworld = new Map();
         overworld.setMapRowCount(2);
         overworld.setMapColumnCount(5);
         System.out.println(overworld.toString());
-        
+
+        // 4-13 - INVENTORY
         Inventory bagOfHolding = new Inventory();
         bagOfHolding.setInventoryItemsHeld(new String[]{"Knife", "Flip Flops"});
         System.out.println(bagOfHolding.toString());
-        
+
+        // 4-14 - GAME
         Game tron = new Game();
         tron.setGameNumberOfDeaths(0);
         System.out.println(tron.toString());
