@@ -35,7 +35,12 @@ import byui.cit260.yggdrasil.model.Location;
 import byui.cit260.yggdrasil.model.MainCharacter;
 import byui.cit260.yggdrasil.model.Player;
 import byui.cit260.yggdrasil.model.Scene;
-
+import byui.cit260.yggdrasil.model.Town;
+import byui.cit260.yggdrasil.model.Shop;
+import byui.cit260.yggdrasil.model.Item;
+import byui.cit260.yggdrasil.model.Map;
+import byui.cit260.yggdrasil.model.Inventory;
+import byui.cit260.yggdrasil.model.Game;
 /**
  *
  * @author Brock Hodgson & Didymus Benson
@@ -98,6 +103,38 @@ public class Yggdrasil {
         scene.setSceneHasBarrier(true);
         scene.setSceneMapSymbol("a");
         System.out.println(scene.toString());
+        
+        Town gilead = new Town();
+        gilead.setTownGossip("hello");
+        gilead.setTownInnPrice(25);
+        gilead.setTownInnStory("derp");
+        gilead.setTownQuestStory("ahoy");
+        gilead.setTownShopStory("welcome");
+        System.out.println(gilead.toString());
+        
+        Shop foodAndStuff = new Shop();
+        foodAndStuff.setShopItemsHeld(new String[]{"potion", "dagger", "pills"});
+        System.out.println(foodAndStuff.toString());
+        
+        Item potion = new Item();
+        potion.setItemBuyPrice(9999);
+        potion.setItemSellPrice(1);
+        potion.setItemModifier(15);
+        potion.setItemType(1);
+        System.out.println(potion.toString());
+        
+        Map overworld = new Map();
+        overworld.setMapRowCount(2);
+        overworld.setMapColumnCount(5);
+        System.out.println(overworld.toString());
+        
+        Inventory bagOfHolding = new Inventory();
+        bagOfHolding.setInventoryItemsHeld(new String[]{"Knife", "Flip Flops"});
+        System.out.println(bagOfHolding.toString());
+        
+        Game tron = new Game();
+        tron.setGameNumberOfDeaths(0);
+        System.out.println(tron.toString());
     }
 
 }
