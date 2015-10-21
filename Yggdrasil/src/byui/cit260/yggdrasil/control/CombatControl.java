@@ -1,14 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Program type: Control Class
+ * Creation: 10/21/2015 at 9:20
+ * Description: This is the main that allows the game to be played. 
+ *              His actual name is suppose to be Pothoc though.
  */
 package byui.cit260.yggdrasil.control;
 
 import java.io.Serializable;
 /**
  *
- * @author tsunami
+ * @author Didymus Benson & Brock Hodgson
  */
 public class CombatControl implements Serializable{
     
