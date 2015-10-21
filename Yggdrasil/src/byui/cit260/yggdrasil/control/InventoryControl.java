@@ -6,11 +6,36 @@
  */
 package byui.cit260.yggdrasil.control;
 
+import byui.cit260.yggdrasil.model.Item;
 import java.io.Serializable;
+
 /**
  *
  * @author Didymus Benson & Brock Hodgson
  */
-public class InventoryControl implements Serializable{
-    
+public class InventoryControl implements Serializable {
+
+    public int sellItem(String itemName, int quantity){
+    Item item = getItem(itemName);
+
+    if (item == null){
+	return -1;
+    }
+    int used  = item.getItemsUsed();
+    int value  = item.getItemSellPrice();
+
+    if (quantity <= 0) {
+            return -1;
+        }
+//STATEMENTS
+        if (quantity > used) {
+            quantity = used;
+        }
+
+        int totalSale;
+        // Rounds up if value of item is odd.
+        totalSale = (int) (.5 * value * quantity);
+        return totalSale;
+}
+
 }

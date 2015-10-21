@@ -17,7 +17,7 @@ public class Item implements Serializable{
     private int itemBuyPrice;
     private int itemSellPrice;
     private int itemModifier;
-
+    private int itemsUsed;
     public Item() {
 
     }
@@ -28,6 +28,14 @@ public class Item implements Serializable{
 
     public void setItemType(int itemType) {
         this.itemType = itemType;
+    }
+
+    public int getItemsUsed() {
+        return itemsUsed;
+    }
+
+    public void setItemsUsed(int itemsUsed) {
+        this.itemsUsed = itemsUsed;
     }
 
     public int getItemBuyPrice() {
@@ -56,8 +64,10 @@ public class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "itemType=" + itemType + ", itemBuyPrice=" + itemBuyPrice + ", itemSellPrice=" + itemSellPrice + ", itemModifier=" + itemModifier + '}';
+        return "Item{" + "itemType=" + itemType + ", itemBuyPrice=" + itemBuyPrice + ", itemSellPrice=" + itemSellPrice + ", itemModifier=" + itemModifier + ", itemsUsed=" + itemsUsed + '}';
     }
+
+    
 
     @Override
     public int hashCode() {
@@ -66,6 +76,7 @@ public class Item implements Serializable{
         hash = 71 * hash + this.itemBuyPrice;
         hash = 71 * hash + this.itemSellPrice;
         hash = 71 * hash + this.itemModifier;
+        hash = 71 * hash + this.itemsUsed;
         return hash;
     }
 
@@ -88,6 +99,9 @@ public class Item implements Serializable{
             return false;
         }
         if (this.itemModifier != other.itemModifier) {
+            return false;
+        }
+        if (this.itemsUsed != other.itemsUsed) {
             return false;
         }
         return true;
