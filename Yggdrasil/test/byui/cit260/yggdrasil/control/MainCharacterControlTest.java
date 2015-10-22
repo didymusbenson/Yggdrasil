@@ -24,16 +24,18 @@ public class MainCharacterControlTest {
     public void testDwarfMoneyQuest() {
         System.out.println("dwarfMoneyQuest");
         /**
-         * ***************
-         * Test Case 1 **************
+         * Test Case 1 
          */
         System.out.println("/tTest case #1");
         //input value for test case
         int amount = 10;
-        MainCharacterControl instance = new MainCharacterControl();
         //expected output for test case
         int expResult = 30;
+        //create instance of class
+         MainCharacterControl instance = new MainCharacterControl();
+         //Call function to run test
         int result = instance.dwarfMoneyQuest(amount);
+        //compaire expected with returned value
         assertEquals(expResult, result);
     }
 
