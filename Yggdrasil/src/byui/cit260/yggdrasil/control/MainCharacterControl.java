@@ -7,10 +7,17 @@
 package byui.cit260.yggdrasil.control;
 
 import java.io.Serializable;
+
 /**
  *
  * @author Brock Hodgson
  */
 public class MainCharacterControl implements Serializable {
-    
+
+    public int dwarfMoneyQuest(int amount) {
+        if (amount > 0) {
+            return amount * 3;
+        }
+        return -1;
+    }
 }
