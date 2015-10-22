@@ -8,6 +8,7 @@ package byui.cit260.yggdrasil.control;
 
 import byui.cit260.yggdrasil.model.Item;
 import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  *
@@ -15,20 +16,15 @@ import java.io.Serializable;
  */
 public class InventoryControl implements Serializable {
 
-    public int sellItem(String itemName, int quantity) {
-        Item item = getItem(itemName);
+    public int sellItem(Item item, int quantity) {
         
         //initialize the totalSale variable
         int totalSale;
-        
-        //invalid item name error
-        if (item == null) {
-            return -1;
-        }
+       
         
         //declare local vars to simplify the rest of the function
         int used = item.getItemsUsed();
-        int value = item.getItemSellPrice();
+        int value = item.getItemBuyPrice();
         
         //invalid quantity error
         if (quantity <= 0) {
