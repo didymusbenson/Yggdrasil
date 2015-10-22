@@ -9,7 +9,7 @@ package byui.cit260.yggdrasil.control;
 import java.io.Serializable;
 /**
  *
- * @author Didymus Benson & Brock Hodgson
+ * @author Brock Hodgson
  */
 public class MainCharacterControl implements Serializable {
     
