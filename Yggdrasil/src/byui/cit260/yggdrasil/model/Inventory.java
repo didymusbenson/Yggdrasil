@@ -7,7 +7,8 @@ package byui.cit260.yggdrasil.model;
 
 import java.io.Serializable;
 import java.util.Arrays;
-
+import java.util.HashMap;
+import java.util.Objects;
 /**
  *
  * @author Didymus
@@ -15,6 +16,15 @@ import java.util.Arrays;
 public class Inventory implements Serializable {
 
     private String[] inventoryItemsHeld;
+    private HashMap<String, Item> items = new HashMap<>(); 
+
+    public HashMap<String, Item> getItems() {
+        return items;
+    }
+
+    public void setItems(HashMap<String, Item> items) {
+        this.items = items;
+    }
 
     public Inventory() {
     }
@@ -29,15 +39,17 @@ public class Inventory implements Serializable {
 
     /* I had to look up an answer on how to get the array of strings to
      print properly here. I eventually found the "Arrays.toString()" method */
+
     @Override
     public String toString() {
-        return "Inventory{" + "inventoryItemsHeld=" + Arrays.toString(inventoryItemsHeld) + '}';
+        return "Inventory{" + "inventoryItemsHeld=" + inventoryItemsHeld + ", items=" + items + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 29 * hash + Arrays.deepHashCode(this.inventoryItemsHeld);
+        int hash = 5;
+        hash = 41 * hash + Arrays.deepHashCode(this.inventoryItemsHeld);
+        hash = 41 * hash + Objects.hashCode(this.items);
         return hash;
     }
 
@@ -53,7 +65,11 @@ public class Inventory implements Serializable {
         if (!Arrays.deepEquals(this.inventoryItemsHeld, other.inventoryItemsHeld)) {
             return false;
         }
+        if (!Objects.equals(this.items, other.items)) {
+            return false;
+        }
         return true;
     }
+  
 
 }
