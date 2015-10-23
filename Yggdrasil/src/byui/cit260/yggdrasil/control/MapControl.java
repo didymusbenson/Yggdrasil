@@ -7,11 +7,20 @@
 package byui.cit260.yggdrasil.control;
 
 import java.io.Serializable;
+import byui.cit260.yggdrasil.model.Location;
+import byui.cit260.yggdrasil.model.Map;
+import java.awt.Point;
 /**
  *
  * @author Brock Hodgson
  */
 public class MapControl implements Serializable {
  
-    
+    public boolean actorLocationCheck(Point coordinates, Map map ){
+        //get location at desired coordiates from the map
+        Location location = map.getLocations()[coordinates.x][coordinates.y];
+
+        return location.isBlocked();
+        
+    }
 }

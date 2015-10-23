@@ -6,7 +6,9 @@
  */
 package byui.cit260.yggdrasil.model;
 
+import java.awt.Point;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -18,6 +20,8 @@ public class Location implements Serializable {
     private double locationEncounterChance;
     private double locationCoordinates;
     private double locationEncounterType;
+    private boolean blocked;
+    private Point coordinates;
 
     public Location() {
     }
@@ -54,18 +58,37 @@ public class Location implements Serializable {
         this.locationEncounterType = locationEncounterType;
     }
 
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+
+
     @Override
     public String toString() {
-        return "Location{" + "locationHostility=" + locationHostility + ", locationEncounterChance=" + locationEncounterChance + ", locationCoordinates=" + locationCoordinates + ", locationEncounterType=" + locationEncounterType + '}';
+        return "Location{" + "locationHostility=" + locationHostility + ", locationEncounterChance=" + locationEncounterChance + ", locationCoordinates=" + locationCoordinates + ", locationEncounterType=" + locationEncounterType + ", blocked=" + blocked + ", coordinates=" + coordinates + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.locationHostility) ^ (Double.doubleToLongBits(this.locationHostility) >>> 32));
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.locationEncounterChance) ^ (Double.doubleToLongBits(this.locationEncounterChance) >>> 32));
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.locationCoordinates) ^ (Double.doubleToLongBits(this.locationCoordinates) >>> 32));
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.locationEncounterType) ^ (Double.doubleToLongBits(this.locationEncounterType) >>> 32));
+        int hash = 3;
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationHostility) ^ (Double.doubleToLongBits(this.locationHostility) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationEncounterChance) ^ (Double.doubleToLongBits(this.locationEncounterChance) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationCoordinates) ^ (Double.doubleToLongBits(this.locationCoordinates) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationEncounterType) ^ (Double.doubleToLongBits(this.locationEncounterType) >>> 32));
+        hash = 97 * hash + (this.blocked ? 1 : 0);
+        hash = 97 * hash + Objects.hashCode(this.coordinates);
         return hash;
     }
 
@@ -87,7 +110,10 @@ public class Location implements Serializable {
         if (Double.doubleToLongBits(this.locationCoordinates) != Double.doubleToLongBits(other.locationCoordinates)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.locationEncounterType) != Double.doubleToLongBits(other.locationEncounterType)) {
+        if (this.blocked != other.blocked) {
+            return false;
+        }
+        if (!Objects.equals(this.coordinates, other.coordinates)) {
             return false;
         }
         return true;

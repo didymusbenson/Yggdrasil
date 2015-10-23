@@ -6,6 +6,7 @@
 package byui.cit260.yggdrasil.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  *
@@ -14,6 +15,8 @@ import java.io.Serializable;
 public class Map implements Serializable {
 private int mapRowCount;
 private int mapColumnCount;
+private Location[][] locations = new Location[mapRowCount][mapColumnCount];
+
     public Map(){}
 
     public int getMapRowCount() {
@@ -32,16 +35,25 @@ private int mapColumnCount;
         this.mapColumnCount = mapColumnCount;
     }
 
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
     @Override
     public String toString() {
-        return "Map{" + "mapRowCount=" + mapRowCount + ", mapColumnCount=" + mapColumnCount + '}';
+        return "Map{" + "mapRowCount=" + mapRowCount + ", mapColumnCount=" + mapColumnCount + ", locations=" + locations + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + this.mapRowCount;
-        hash = 89 * hash + this.mapColumnCount;
+        int hash = 5;
+        hash = 29 * hash + this.mapRowCount;
+        hash = 29 * hash + this.mapColumnCount;
+        hash = 29 * hash + Arrays.deepHashCode(this.locations);
         return hash;
     }
 
@@ -60,7 +72,12 @@ private int mapColumnCount;
         if (this.mapColumnCount != other.mapColumnCount) {
             return false;
         }
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
+            return false;
+        }
         return true;
     }
+
+    
     
 }
