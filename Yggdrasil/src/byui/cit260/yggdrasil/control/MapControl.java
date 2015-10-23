@@ -12,5 +12,6 @@ import java.io.Serializable;
  * @author Brock Hodgson
  */
 public class MapControl implements Serializable {
+ 
     
 }

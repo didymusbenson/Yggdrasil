@@ -69,7 +69,7 @@ public class MainCharacterControlTest {
          */
         System.out.println("/tTest case #4");
         //input value for test case
-        amount = jello;
+        amount = -223;
         //expected output for test case
         expResult = -1;
          //Call function to run test
@@ -82,35 +82,9 @@ public class MainCharacterControlTest {
          */
         System.out.println("/tTest case #5");
         //input value for test case
-        amount = -223;
-        //expected output for test case
-        expResult = -1;
-         //Call function to run test
-        result = instance.dwarfMoneyQuest(amount);
-        //compaire expected with returned value
-        assertEquals(expResult, result);
-        
-        /**
-         * Test Case 6 
-         */
-        System.out.println("/tTest case #6");
-        //input value for test case
-        amount = 1.8;
-        //expected output for test case
-        expResult = -1;
-         //Call function to run test
-        result = instance.dwarfMoneyQuest(amount);
-        //compaire expected with returned value
-        assertEquals(expResult, result);
-        
-        /**
-         * Test Case 7 
-         */
-        System.out.println("/tTest case #7");
-        //input value for test case
         amount = 1;
         //expected output for test case
-        expResult = 5;
+        expResult = 3;
          //Call function to run test
         result = instance.dwarfMoneyQuest(amount);
         //compaire expected with returned value

@@ -6,7 +6,9 @@
  */
 package byui.cit260.yggdrasil.model;
 
+import java.awt.Point;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -19,6 +21,7 @@ public class Actor implements Serializable {
     private double actorAttack;
     private double actorDefense;
     private double actorWeapon;
+    private Point coordinates;
 
     public Actor() {
     }
@@ -63,19 +66,28 @@ public class Actor implements Serializable {
         this.actorWeapon = actorWeapon;
     }
 
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+
     @Override
     public String toString() {
-        return "Actor{" + "actorMaxHp=" + actorMaxHp + ", actorTempHp=" + actorTempHp + ", actorAttack=" + actorAttack + ", actorDefense=" + actorDefense + ", actorWeapon=" + actorWeapon + '}';
+        return "Actor{" + "actorMaxHp=" + actorMaxHp + ", actorTempHp=" + actorTempHp + ", actorAttack=" + actorAttack + ", actorDefense=" + actorDefense + ", actorWeapon=" + actorWeapon + ", coordinates=" + coordinates + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.actorMaxHp) ^ (Double.doubleToLongBits(this.actorMaxHp) >>> 32));
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.actorTempHp) ^ (Double.doubleToLongBits(this.actorTempHp) >>> 32));
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.actorAttack) ^ (Double.doubleToLongBits(this.actorAttack) >>> 32));
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.actorDefense) ^ (Double.doubleToLongBits(this.actorDefense) >>> 32));
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.actorWeapon) ^ (Double.doubleToLongBits(this.actorWeapon) >>> 32));
+        int hash = 7;
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorMaxHp) ^ (Double.doubleToLongBits(this.actorMaxHp) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorTempHp) ^ (Double.doubleToLongBits(this.actorTempHp) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorAttack) ^ (Double.doubleToLongBits(this.actorAttack) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorDefense) ^ (Double.doubleToLongBits(this.actorDefense) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorWeapon) ^ (Double.doubleToLongBits(this.actorWeapon) >>> 32));
+        hash = 83 * hash + Objects.hashCode(this.coordinates);
         return hash;
     }
 
@@ -103,15 +115,10 @@ public class Actor implements Serializable {
         if (Double.doubleToLongBits(this.actorWeapon) != Double.doubleToLongBits(other.actorWeapon)) {
             return false;
         }
+        if (!Objects.equals(this.coordinates, other.coordinates)) {
+            return false;
+        }
         return true;
-    }
-
-    public void setactormaxhp(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setActormaxhp(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
