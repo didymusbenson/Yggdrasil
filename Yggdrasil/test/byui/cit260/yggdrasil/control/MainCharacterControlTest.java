@@ -91,4 +91,48 @@ public class MainCharacterControlTest {
         assertEquals(expResult, result);
     }
 
+    /**
+     * Test of calcMoneySaved method, of class MainCharacterControl.
+     */
+    @Test
+    public void testCalcMoneySaved() {
+        /***
+         * Test case #1 (5 weeks, output 17.5 gold)
+         */
+        System.out.println("calcMoneySaved test case one");
+        int weeks = 5;
+        MainCharacterControl instance = new MainCharacterControl();
+        float expResult = 17.5F;
+        float result = instance.calcMoneySaved(weeks);
+        assertEquals(expResult, result, 0.0);
+        /***
+         * Test case #2 (1 weeks, output 3.5 gold)
+         * Lower Boundary
+         */
+        System.out.println("calcMoneySaved test case two");
+        weeks = 1;
+        expResult = 3.5F;
+        result = instance.calcMoneySaved(weeks);
+        assertEquals(expResult, result, 0.0);
+
+        /***
+         * Test case #3 (0 weeks, output -1 gold)
+         * Invalid input test
+         */
+        System.out.println("calcMoneySaved test case three");
+        weeks = 0;
+        expResult = -1;
+        result = instance.calcMoneySaved(weeks);
+        assertEquals(expResult, result, 0.0);
+        /***
+         * Test case #4 (-10 weeks, output -1 gold)
+         * Another invalid input test
+         */
+        System.out.println("calcMoneySaved test case four");
+        weeks = -10;
+        expResult = -1;
+        result = instance.calcMoneySaved(weeks);
+        assertEquals(expResult, result, 0.0);        
+    }
+
 }
