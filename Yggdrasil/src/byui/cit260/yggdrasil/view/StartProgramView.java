@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author tsunami
  */
-public class MainMenuView implements Serializable {
+public class StartProgramView implements Serializable {
 
     public void StartProgram() {
         //display banner screen

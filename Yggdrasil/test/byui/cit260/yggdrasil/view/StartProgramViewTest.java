@@ -12,18 +12,18 @@ import static org.junit.Assert.*;
  *
  * @author tsunami
  */
-public class MainMenuViewTest {
+public class StartProgramViewTest {
     
-    public MainMenuViewTest() {
+    public StartProgramViewTest() {
     }
 
     /**
-     * Test of StartProgram method, of class MainMenuView.
+     * Test of StartProgram method, of class StartProgramView.
      */
     @Test
     public void testStartProgram() {
         System.out.println("StartProgram");
-        MainMenuView instance = new MainMenuView();
+        StartProgramView instance = new StartProgramView();
         instance.StartProgram();
     }
     
