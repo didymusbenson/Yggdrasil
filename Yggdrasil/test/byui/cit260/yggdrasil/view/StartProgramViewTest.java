@@ -24,7 +24,7 @@ public class StartProgramViewTest {
     public void testStartProgram() {
         System.out.println("StartProgram");
         StartProgramView instance = new StartProgramView();
-        instance.StartProgram();
+        instance.startProgram();
     }
     
 }
