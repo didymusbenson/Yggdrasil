@@ -17,9 +17,11 @@ public class MainMenuView implements Serializable {
         //display banner screen
         this.displayBanner();
         //get player's name
-
+        this.getPlayerName();
         //create new player
+        this.createNewPlayer();
         //welcome message
+        this.displayWelcome();
         //Display Main Menu
         this.displayMainMenu();
 
@@ -37,5 +39,14 @@ public class MainMenuView implements Serializable {
     private void displayMainMenu() {
         System.out.println("Dabba derp de do de dooo!");
     }
+
+    private void getPlayerName() {
+        }
+
+    private void createNewPlayer() {
+        }
+
+    private void displayWelcome() {
+       }
 
 }
