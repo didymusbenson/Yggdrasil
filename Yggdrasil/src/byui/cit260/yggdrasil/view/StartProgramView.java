@@ -6,6 +6,7 @@
 package byui.cit260.yggdrasil.view;
 
 import java.io.Serializable;
+import java.util.Scanner;
 
 /**
  *
@@ -17,7 +18,7 @@ public class StartProgramView implements Serializable {
         //display banner screen
         this.displayBanner();
         //get player's name
-        this.getPlayerName();
+        String playersName = this.getPlayerName();
         //create new player
         this.createNewPlayer();
         //welcome message
@@ -33,11 +34,30 @@ public class StartProgramView implements Serializable {
         + "\n	 \\ V / |  _| |  _| | | | |_) |  / _ \\ \\___ \\| || |    "
         + "\n	  | || |_| | |_| | |_| |  _ <  / ___ \\ ___) | || |___ "
         + "\n	  |_| \\____|\\____|____/|_| \\_\\/_/   \\_\\____/___|_____|"
-        + "\n	     N - New Game , L - Load , H - Help , Q - Quit     ");
+        + "\n	               Your quest begins now.     ");
     }
 
-    private void getPlayerName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private String getPlayerName() {
+        //intialize junk
+        boolean valid = false;
+        String playersName = null;
+        Scanner keyboard = new Scanner(System.in);
+        
+        while(!valid){
+            //get a name
+            System.out.println("Enter player's name below: ");
+            //trim the blank spaces from the player's name
+            playersName = keyboard.nextLine();
+            playersName = playersName.trim();
+            //make sure the user isn't yanking our chain.
+            if (playersName.length() < 2) {
+                System.out.println("Error - Player's name cannot be blank!");
+                continue;
+            }
+            break;
+        }
+        //send that name home!
+        return playersName;
     }
 
     private void createNewPlayer() {
