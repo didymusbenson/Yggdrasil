@@ -27,13 +27,14 @@ import byui.cit260.yggdrasil.view.StartProgramView;
  *
  * @author Brock Hodgson & Didymus Benson
  */
-
 public class Yggdrasil {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+// creat start programView and start the program
+        StartProgramView starProgramView = new StartProgramView();
+        starProgramView.startProgram();
     }
 }

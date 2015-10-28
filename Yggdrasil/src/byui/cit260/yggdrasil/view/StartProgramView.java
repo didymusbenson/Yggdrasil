@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class StartProgramView implements Serializable {
 
-    public void StartProgram() {
+    public void startProgram() {
         //display banner screen
         this.displayBanner();
         //get player's name
