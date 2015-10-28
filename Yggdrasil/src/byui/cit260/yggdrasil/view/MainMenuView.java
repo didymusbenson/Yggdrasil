@@ -36,17 +36,22 @@ public class MainMenuView implements Serializable {
         + "\n	     N - New Game , L - Load , H - Help , Q - Quit     ");
     }
 
-    private void displayMainMenu() {
-        System.out.println("Dabba derp de do de dooo!");
+    private void getPlayerName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void getPlayerName() {
-        }
-
     private void createNewPlayer() {
-        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     private void displayWelcome() {
-       }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displayMainMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 
 }
