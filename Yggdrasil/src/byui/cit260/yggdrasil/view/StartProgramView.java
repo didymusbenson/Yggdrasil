@@ -7,7 +7,8 @@ package byui.cit260.yggdrasil.view;
 
 import java.io.Serializable;
 import java.util.Scanner;
-
+import byui.cit260.yggdrasil.control.ProgramControl;
+import byui.cit260.yggdrasil.model.Player;
 /**
  *
  * @author tsunami
@@ -20,9 +21,9 @@ public class StartProgramView implements Serializable {
         //get player's name
         String playersName = this.getPlayerName();
         //create new player
-        this.createNewPlayer();
+        Player player = ProgramControl.createPlayer(playersName);
         //welcome message
-        this.displayWelcome();
+        this.displayWelcome(player);
         //Display Main Menu
         this.displayMainMenu();
 
@@ -40,32 +41,33 @@ public class StartProgramView implements Serializable {
     private String getPlayerName() {
         //intialize junk
         boolean valid = false;
-        String playersName = null;
+        String playerName = null;
         Scanner keyboard = new Scanner(System.in);
         
         while(!valid){
             //get a name
             System.out.println("Enter player's name below: ");
             //trim the blank spaces from the player's name
-            playersName = keyboard.nextLine();
-            playersName = playersName.trim();
+            playerName = keyboard.nextLine();
+            playerName = playerName.trim();
             //make sure the user isn't yanking our chain.
-            if (playersName.length() < 2) {
+            if (playerName.length() < 2) {
                 System.out.println("Error - Player's name cannot be blank!");
                 continue;
             }
             break;
         }
         //send that name home!
-        return playersName;
+        return playerName;
     }
 
-    private void createNewPlayer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    private void displayWelcome() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void displayWelcome(Player player) {
+        System.out.println("\n =================================================="
+                + "\n Welcome to Yggdrasil, " + player.getPlayerName()
+                + "\n It is a good day not to die."
+                + "\n ==================================================");
+                
     }
 
     private void displayMainMenu() {

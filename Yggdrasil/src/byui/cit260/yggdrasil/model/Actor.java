@@ -10,20 +10,29 @@ import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- *
- * @author Brock
- */
+        /**
+         *
+         * @author Brock
+         */
+
 public class Actor implements Serializable {
 
     private double actorMaxHp;
     private double actorTempHp;
     private double actorAttack;
     private double actorDefense;
-    private double actorWeapon;
+    private Item actorWeapon;
     private Point coordinates;
 
     public Actor() {
+    }
+
+    public Item getActorWeapon() {
+        return actorWeapon;
+    }
+
+    public void setActorWeapon(Item actorWeapon) {
+        this.actorWeapon = actorWeapon;
     }
 
     public double getActorMaxHp() {
@@ -58,14 +67,6 @@ public class Actor implements Serializable {
         this.actorDefense = actorDefense;
     }
 
-    public double getActorWeapon() {
-        return actorWeapon;
-    }
-
-    public void setActorWeapon(double actorWeapon) {
-        this.actorWeapon = actorWeapon;
-    }
-
     public Point getCoordinates() {
         return coordinates;
     }
@@ -86,7 +87,8 @@ public class Actor implements Serializable {
         hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorTempHp) ^ (Double.doubleToLongBits(this.actorTempHp) >>> 32));
         hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorAttack) ^ (Double.doubleToLongBits(this.actorAttack) >>> 32));
         hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorDefense) ^ (Double.doubleToLongBits(this.actorDefense) >>> 32));
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorWeapon) ^ (Double.doubleToLongBits(this.actorWeapon) >>> 32));
+        //hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorWeapon) ^ (Double.doubleToLongBits(this.actorWeapon) >>> 32));
+        //TODO: fix hashCode for item.
         hash = 83 * hash + Objects.hashCode(this.coordinates);
         return hash;
     }
@@ -112,9 +114,11 @@ public class Actor implements Serializable {
         if (Double.doubleToLongBits(this.actorDefense) != Double.doubleToLongBits(other.actorDefense)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.actorWeapon) != Double.doubleToLongBits(other.actorWeapon)) {
+        /*if (Double.doubleToLongBits(this.actorWeapon) != Double.doubleToLongBits(other.actorWeapon)) {
             return false;
         }
+        TODO: REPLACE THE EQUALS CODE
+        */
         if (!Objects.equals(this.coordinates, other.coordinates)) {
             return false;
         }
