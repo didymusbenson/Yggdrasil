@@ -71,7 +71,8 @@ public class StartProgramView implements Serializable {
     }
 
     private void displayMainMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
     }
 
 
