@@ -6,11 +6,17 @@
  */
 package byui.cit260.yggdrasil.control;
 
+import byui.cit260.yggdrasil.model.Player;
 import java.io.Serializable;
+import yggdrasil.Yggdrasil;
 /**
  *
  * @author Didymus Benson 
  */
 public class GameControl implements Serializable {
+    public static void createNewGame(Player player){
+        Yggdrasil.setPlayer(player);
+        System.out.println("createNewGame successful.");
     
+    }
 }

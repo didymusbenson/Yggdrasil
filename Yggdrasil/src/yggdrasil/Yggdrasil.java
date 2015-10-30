@@ -29,6 +29,8 @@ import byui.cit260.yggdrasil.view.StartProgramView;
  */
 public class Yggdrasil {
 
+    private static Player player;
+
     /**
      * @param args the command line arguments
      */
@@ -37,4 +39,13 @@ public class Yggdrasil {
         StartProgramView starProgramView = new StartProgramView();
         starProgramView.startProgram();
     }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Yggdrasil.player = player;
+    }
+
 }

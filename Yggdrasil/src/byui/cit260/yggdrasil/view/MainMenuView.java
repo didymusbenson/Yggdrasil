@@ -5,8 +5,10 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import byui.cit260.yggdrasil.control.GameControl;
 import java.io.Serializable;
 import java.util.Scanner;
+import yggdrasil.Yggdrasil;
 
 /**
  *
@@ -75,7 +77,10 @@ public class MainMenuView implements Serializable {
     }
 
     private void startNewGame() {
-        System.out.println("NEW GAME");
+        GameControl.createNewGame(Yggdrasil.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
 }
