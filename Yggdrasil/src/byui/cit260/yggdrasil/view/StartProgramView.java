@@ -63,10 +63,10 @@ public class StartProgramView implements Serializable {
 
 
     private void displayWelcome(Player player) {
-        System.out.println("\n =================================================="
+        System.out.println("\n ============================================="
                 + "\n Welcome to Yggdrasil, " + player.getPlayerName()
                 + "\n It is a good day not to die."
-                + "\n ==================================================");
+                + "\n =============================================");
                 
     }
 

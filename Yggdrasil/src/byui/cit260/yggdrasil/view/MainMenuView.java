@@ -69,7 +69,8 @@ public class MainMenuView implements Serializable {
     }
 
     private void displayHelpMenu() {
-        System.out.println("DISPLAY HELP MENU");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
     }
 
     private void loadGame() {
