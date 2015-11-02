@@ -50,10 +50,10 @@ public class ShopMenuView implements Serializable {
 
         switch (selection) {
             case 'N': //new game
-                this.startNewGame();
+                //this.startNewGame(); SEE BELOW
                 break;
             case 'L': //load game
-                this.loadGame();
+                //this.loadGame(); SEE BELOW
                 break;
             case 'H': //help screen
                 this.displayHelpMenu();
@@ -70,7 +70,9 @@ public class ShopMenuView implements Serializable {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayMenu();
     }
-
+/* BROCK. YOU will not need these methods. You'll have to change the shop
+    options.
+    
     private void loadGame() {
         System.out.println("LOAD GAME");
     }
@@ -82,3 +84,4 @@ public class ShopMenuView implements Serializable {
         gameMenu.displayMenu();
     }
 }
+*/
