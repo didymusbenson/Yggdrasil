@@ -12,36 +12,36 @@ import java.io.Serializable;
  *
  * @author Brock
  */
-public class Enemy implements Serializable {
+public class Enemy extends Actor implements Serializable {
 
-    private double enemyEscapeChance;
-    private double enemyXpReward;
-    private double enemyGoldReward;
+    private int enemyEscapeChance;
+    private int enemyXpReward;
+    private int enemyGoldReward;
 
     public Enemy() {
     }
 
-    public double getEnemyEscapeChance() {
+    public int getEnemyEscapeChance() {
         return enemyEscapeChance;
     }
 
-    public void setEnemyEscapeChance(double enemyEscapeChance) {
+    public void setEnemyEscapeChance(int enemyEscapeChance) {
         this.enemyEscapeChance = enemyEscapeChance;
     }
 
-    public double getEnemyXpReward() {
+    public int getEnemyXpReward() {
         return enemyXpReward;
     }
 
-    public void setEnemyXpReward(double enemyXpReward) {
+    public void setEnemyXpReward(int enemyXpReward) {
         this.enemyXpReward = enemyXpReward;
     }
 
-    public double getEnemyGoldReward() {
+    public int getEnemyGoldReward() {
         return enemyGoldReward;
     }
 
-    public void setEnemyGoldReward(double enemyGoldReward) {
+    public void setEnemyGoldReward(int enemyGoldReward) {
         this.enemyGoldReward = enemyGoldReward;
     }
 
@@ -52,10 +52,10 @@ public class Enemy implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.enemyEscapeChance) ^ (Double.doubleToLongBits(this.enemyEscapeChance) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.enemyXpReward) ^ (Double.doubleToLongBits(this.enemyXpReward) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.enemyGoldReward) ^ (Double.doubleToLongBits(this.enemyGoldReward) >>> 32));
+        int hash = 7;
+        hash = 61 * hash + this.enemyEscapeChance;
+        hash = 61 * hash + this.enemyXpReward;
+        hash = 61 * hash + this.enemyGoldReward;
         return hash;
     }
 
@@ -68,16 +68,17 @@ public class Enemy implements Serializable {
             return false;
         }
         final Enemy other = (Enemy) obj;
-        if (Double.doubleToLongBits(this.enemyEscapeChance) != Double.doubleToLongBits(other.enemyEscapeChance)) {
+        if (this.enemyEscapeChance != other.enemyEscapeChance) {
             return false;
         }
-        if (Double.doubleToLongBits(this.enemyXpReward) != Double.doubleToLongBits(other.enemyXpReward)) {
+        if (this.enemyXpReward != other.enemyXpReward) {
             return false;
         }
-        if (Double.doubleToLongBits(this.enemyGoldReward) != Double.doubleToLongBits(other.enemyGoldReward)) {
+        if (this.enemyGoldReward != other.enemyGoldReward) {
             return false;
         }
         return true;
     }
 
+    
 }

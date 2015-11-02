@@ -27,7 +27,7 @@ import java.io.Serializable;
  */
 
 // 3 - this is the main character class that gives specific stats to a character
-public class MainCharacter implements Serializable {
+public class MainCharacter extends Actor implements Serializable {
 
     private int mainCharacterLuck;
     private int mainCharacterSpeed;
