@@ -24,7 +24,7 @@ public class CombatMenuView implements Serializable {
                 System.out.println("ATTACK CHOSEN");
                 // Must call a function that rolls successful attack 
                 // and then roll damage of the attack
-                // CombatControl.attack(HeroAttack, HeroItemHeld, EnemyDefense);
+                // CombatControl.playerAttack(MainCharacter, Enemy);
                 // ** attack() then calls rollSuccess() and applyDamage() ** 
                 break;
             case 'I':
