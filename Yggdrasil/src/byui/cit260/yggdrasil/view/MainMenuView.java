@@ -10,7 +10,16 @@ import java.io.Serializable;
 import java.util.Scanner;
 import yggdrasil.Yggdrasil;
 
-/**
+/**public void displayMenu() {
+        char selection = ' ';
+        do {
+            System.out.println(MENU);
+            String input = this.getInput(); // get selection
+            input = input.toUpperCase();
+            selection = input.charAt(0); // grab first letter, no matter what's typed
+            this.doAction(selection);
+        } while (selection != 'Q'); // While player doesn't QUIT
+    }
  *
  * @author tsunami
  */
