@@ -70,6 +70,7 @@ public class ShopMenuView implements Serializable {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayMenu();
     }
+}
 /* BROCK. YOU will not need these methods. You'll have to change the shop
     options.
     
@@ -83,5 +84,5 @@ public class ShopMenuView implements Serializable {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
     }
-}
+
 */
