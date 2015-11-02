@@ -47,12 +47,28 @@ public class CombatControl implements Serializable{
         return compareRolls(runRoll, enemy.getEnemyEscapeChance());
     }
     
-    public void attack(){
+    /* The following two methods could possibly be combined, but I have to 
+        find a way to make them distinguish between the two because MainCharacter
+        and Enemy ARE different objects that can't be interchanged. Until I 
+        get that figured out, I'll just leave these two similar functions. -ADB
+    */
+    public void playerAttack(MainCharacter hero, Enemy enemy){
         // Roll the Hero's attack
         // Compare the Hero's attack to enemy's defense
         // if comparison returned TRUE, calculate damage
         // apply damage
         // return
+    }
+    public void enemyAttack(Enemy enemy, MainCharacter hero){
+        // Roll the Enemy's attack
+        // Compare the Enemy's attack to hero's defense
+        // if comparison returned TRUE, calculate damage
+        // apply damage
+        // return
+    }
+    
+    public void defend(Actor actor){
+        // TODO MAKE FUNCTION.
     }
 }
     
