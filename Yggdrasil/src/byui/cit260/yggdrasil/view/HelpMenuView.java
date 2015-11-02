@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author tsunami
+ * @author Didymus Benson & Brock Hodgson
  */
 public class HelpMenuView implements Serializable {
 
