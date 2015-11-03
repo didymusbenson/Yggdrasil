@@ -78,4 +78,4 @@ public class ShopMenuView implements Serializable {
 
     gameMenu.displayMenu ();
 }
-}
+
