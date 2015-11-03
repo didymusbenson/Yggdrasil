@@ -14,6 +14,14 @@ import java.util.Random;
  * @author Didymus Benson 
  */
 public class CombatControl implements Serializable{
+
+    public static Enemy getEnemy() {
+        Enemy bob = new Enemy();
+        bob.setEnemyName("BOB");
+        bob.setActorMaxHp(30);
+        bob.setActorTempHp(bob.getActorTempHp());
+        return bob;
+    }
     
     public Boolean compareRolls(int roll1, int roll2){
 
@@ -47,27 +55,23 @@ public class CombatControl implements Serializable{
         return compareRolls(runRoll, enemy.getEnemyEscapeChance());
     }
     
-    /* The following two methods could possibly be combined, but I have to 
-        find a way to make them distinguish between the two because MainCharacter
-        and Enemy ARE different objects that can't be interchanged. Until I 
-        get that figured out, I'll just leave these two similar functions. -ADB
+    /* Player attack and enemy attack could be merged by passing ACTOR as a 
+    parameter instead of MainCharacter and Enemy. The issue is that we have
+    to pass the MainCharacter or enemey classes later to the calc damage 
+    functions.-ADB
     */
-    public void playerAttack(MainCharacter hero, Enemy enemy){
+    public void attack(MainCharacter hero, Enemy enemy){
+        System.out.println("CombatControl.playerAttack() called.");
         // Roll the Hero's attack
         // Compare the Hero's attack to enemy's defense
         // if comparison returned TRUE, calculate damage
         // apply damage
         // return
     }
-    public void enemyAttack(Enemy enemy, MainCharacter hero){
-        // Roll the Enemy's attack
-        // Compare the Enemy's attack to hero's defense
-        // if comparison returned TRUE, calculate damage
-        // apply damage
-        // return
-    }
+
     
     public void defend(Actor actor){
+        System.out.println("CombatControl.defend() called.");        
         // TODO MAKE FUNCTION.
     }
 }

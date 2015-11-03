@@ -7,6 +7,7 @@
 package byui.cit260.yggdrasil.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -17,7 +18,8 @@ public class Enemy extends Actor implements Serializable {
     private int enemyEscapeChance;
     private int enemyXpReward;
     private int enemyGoldReward;
-
+    private String enemyName;
+    
     public Enemy() {
     }
 
@@ -45,17 +47,26 @@ public class Enemy extends Actor implements Serializable {
         this.enemyGoldReward = enemyGoldReward;
     }
 
+    public String getEnemyName() {
+        return enemyName;
+    }
+
+    public void setEnemyName(String enemyName) {
+        this.enemyName = enemyName;
+    }
+
     @Override
     public String toString() {
-        return "Enemy{" + "enemyEscapeChance=" + enemyEscapeChance + ", enemyXpReward=" + enemyXpReward + ", enemyGoldReward=" + enemyGoldReward + '}';
+        return "Enemy{" + "enemyEscapeChance=" + enemyEscapeChance + ", enemyXpReward=" + enemyXpReward + ", enemyGoldReward=" + enemyGoldReward + ", enemyName=" + enemyName + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 61 * hash + this.enemyEscapeChance;
-        hash = 61 * hash + this.enemyXpReward;
-        hash = 61 * hash + this.enemyGoldReward;
+        hash = 19 * hash + this.enemyEscapeChance;
+        hash = 19 * hash + this.enemyXpReward;
+        hash = 19 * hash + this.enemyGoldReward;
+        hash = 19 * hash + Objects.hashCode(this.enemyName);
         return hash;
     }
 
@@ -77,8 +88,12 @@ public class Enemy extends Actor implements Serializable {
         if (this.enemyGoldReward != other.enemyGoldReward) {
             return false;
         }
+        if (!Objects.equals(this.enemyName, other.enemyName)) {
+            return false;
+        }
         return true;
     }
+
 
     
 }
