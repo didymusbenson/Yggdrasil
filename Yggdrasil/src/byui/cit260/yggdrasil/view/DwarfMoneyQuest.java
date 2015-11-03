@@ -5,12 +5,15 @@
  */
 package byui.cit260.yggdrasil.view;
 
-import java.io.Serializable;
-
 /**
  *
  * @author Brock
  */
-public class ShopBuySellView implements Serializable {
+public class DwarfMoneyQuest {
+    //give player question
+    //accept the player's response
+    //check player answer
+    //tell player if they are correct
+    //if they are correct give them a potion
     
 }
