@@ -60,19 +60,32 @@ public class CombatControl implements Serializable{
     to pass the MainCharacter or enemey classes later to the calc damage 
     functions.-ADB
     */
-    public void attack(MainCharacter hero, Enemy enemy){
+    public Boolean tryAttack(Actor attacker, Actor defender){
         System.out.println("CombatControl.playerAttack() called.");
-        // Roll the Hero's attack
-        // Compare the Hero's attack to enemy's defense
-        // if comparison returned TRUE, calculate damage
-        // apply damage
-        // return
+        int attackRoll = rollRandRange(1, 20) + attacker.getActorAttack(); 
+        if (attackRoll > defender.getActorDefense())
+            return true;
+        else
+            return false;
     }
 
     
     public void defend(Actor actor){
         System.out.println("CombatControl.defend() called.");        
         // TODO MAKE FUNCTION.
+    }
+
+    private int calcPlayerDamage(MainCharacter hero) {
+        System.out.println("calcDamage() called");
+        // TODO, WRITE FUNCTION
+        int damage = hero.getActorAttack() + 
+                rollRandRange(1, hero.getActorWeapon().getItemModifier());
+        return damage;
+    }
+
+    private void applyDamage(int damage, Actor defender) {
+        System.out.println("applyDamage() called");
+        // TODO, MAKE FUNCTION
     }
 }
     

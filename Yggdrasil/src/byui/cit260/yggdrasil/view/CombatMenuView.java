@@ -7,6 +7,7 @@ package byui.cit260.yggdrasil.view;
 
 import byui.cit260.yggdrasil.control.CombatControl;
 import byui.cit260.yggdrasil.model.Enemy;
+import byui.cit260.yggdrasil.model.MainCharacter;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -33,7 +34,7 @@ public class CombatMenuView implements Serializable {
             String input = this.getInput(); // get selection
             input = input.toUpperCase();
             selection = input.charAt(0); // grab first letter, no matter what's typed
-            this.doAction(selection);
+            this.doAction(selection, null /*main character*/, enemy);
             // ADD Player and Monster temp HPs here.
         } while (enemy.getActorTempHp() > 0); // or until player dies.
         
@@ -58,19 +59,27 @@ public class CombatMenuView implements Serializable {
 
         return input;
     }
-    public void doAction(char selection) {
+    public void doAction(char selection, MainCharacter hero, Enemy enemy) {
 
         switch (selection) {
             case 'R':
                 System.out.println("RUN CHOSEN");
-                //CombatControl.runAway(hero, enemy);
+                //CombatControl.runAway(hero, enemy);               
                 break;
             case 'A':
                 System.out.println("ATTACK CHOSEN");
+                /* if (!CombatControl.tryAttack())
+                       System.out.println("Your attack missed!";
+                else{
+                       int damage = calcPlayerDamage(MainCharacter);
+                       applyDamage(damage, enemy);
+                }
                 // Must call a function that rolls successful attack 
                 // and then roll damage of the attack
                 // CombatControl.playerAttack(MainCharacter, Enemy);
                 // ** attack() then calls rollSuccess() and applyDamage() ** 
+                        
+                        */
                 break;
             case 'I':
                 System.out.println("ITEM CHOSEN");

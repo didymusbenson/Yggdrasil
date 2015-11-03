@@ -17,14 +17,46 @@ import java.util.Objects;
 
 public class Actor implements Serializable {
 
-    private double actorMaxHp;
-    private double actorTempHp;
-    private double actorAttack;
-    private double actorDefense;
+    private int actorMaxHp;
+    private int actorTempHp;
+    private int actorAttack;
+    private int actorDefense;
     private Item actorWeapon;
     private Point coordinates;
 
     public Actor() {
+    }
+
+    public int getActorMaxHp() {
+        return actorMaxHp;
+    }
+
+    public void setActorMaxHp(int actorMaxHp) {
+        this.actorMaxHp = actorMaxHp;
+    }
+
+    public int getActorTempHp() {
+        return actorTempHp;
+    }
+
+    public void setActorTempHp(int actorTempHp) {
+        this.actorTempHp = actorTempHp;
+    }
+
+    public int getActorAttack() {
+        return actorAttack;
+    }
+
+    public void setActorAttack(int actorAttack) {
+        this.actorAttack = actorAttack;
+    }
+
+    public int getActorDefense() {
+        return actorDefense;
+    }
+
+    public void setActorDefense(int actorDefense) {
+        this.actorDefense = actorDefense;
     }
 
     public Item getActorWeapon() {
@@ -33,38 +65,6 @@ public class Actor implements Serializable {
 
     public void setActorWeapon(Item actorWeapon) {
         this.actorWeapon = actorWeapon;
-    }
-
-    public double getActorMaxHp() {
-        return actorMaxHp;
-    }
-
-    public void setActorMaxHp(double actorMaxHp) {
-        this.actorMaxHp = actorMaxHp;
-    }
-
-    public double getActorTempHp() {
-        return actorTempHp;
-    }
-
-    public void setActorTempHp(double actorTempHp) {
-        this.actorTempHp = actorTempHp;
-    }
-
-    public double getActorAttack() {
-        return actorAttack;
-    }
-
-    public void setActorAttack(double actorAttack) {
-        this.actorAttack = actorAttack;
-    }
-
-    public double getActorDefense() {
-        return actorDefense;
-    }
-
-    public void setActorDefense(double actorDefense) {
-        this.actorDefense = actorDefense;
     }
 
     public Point getCoordinates() {
@@ -82,14 +82,13 @@ public class Actor implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorMaxHp) ^ (Double.doubleToLongBits(this.actorMaxHp) >>> 32));
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorTempHp) ^ (Double.doubleToLongBits(this.actorTempHp) >>> 32));
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorAttack) ^ (Double.doubleToLongBits(this.actorAttack) >>> 32));
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorDefense) ^ (Double.doubleToLongBits(this.actorDefense) >>> 32));
-        //hash = 83 * hash + (int) (Double.doubleToLongBits(this.actorWeapon) ^ (Double.doubleToLongBits(this.actorWeapon) >>> 32));
-        //TODO: fix hashCode for item.
-        hash = 83 * hash + Objects.hashCode(this.coordinates);
+        int hash = 3;
+        hash = 97 * hash + this.actorMaxHp;
+        hash = 97 * hash + this.actorTempHp;
+        hash = 97 * hash + this.actorAttack;
+        hash = 97 * hash + this.actorDefense;
+        hash = 97 * hash + Objects.hashCode(this.actorWeapon);
+        hash = 97 * hash + Objects.hashCode(this.coordinates);
         return hash;
     }
 
@@ -102,23 +101,21 @@ public class Actor implements Serializable {
             return false;
         }
         final Actor other = (Actor) obj;
-        if (Double.doubleToLongBits(this.actorMaxHp) != Double.doubleToLongBits(other.actorMaxHp)) {
+        if (this.actorMaxHp != other.actorMaxHp) {
             return false;
         }
-        if (Double.doubleToLongBits(this.actorTempHp) != Double.doubleToLongBits(other.actorTempHp)) {
+        if (this.actorTempHp != other.actorTempHp) {
             return false;
         }
-        if (Double.doubleToLongBits(this.actorAttack) != Double.doubleToLongBits(other.actorAttack)) {
+        if (this.actorAttack != other.actorAttack) {
             return false;
         }
-        if (Double.doubleToLongBits(this.actorDefense) != Double.doubleToLongBits(other.actorDefense)) {
+        if (this.actorDefense != other.actorDefense) {
             return false;
         }
-        /*if (Double.doubleToLongBits(this.actorWeapon) != Double.doubleToLongBits(other.actorWeapon)) {
+        if (!Objects.equals(this.actorWeapon, other.actorWeapon)) {
             return false;
         }
-        TODO: REPLACE THE EQUALS CODE
-        */
         if (!Objects.equals(this.coordinates, other.coordinates)) {
             return false;
         }
