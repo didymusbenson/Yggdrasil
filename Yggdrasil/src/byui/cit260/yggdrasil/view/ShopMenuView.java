@@ -27,17 +27,19 @@ public class ShopMenuView implements Serializable {
             this.doAction(selection);
         } while (selection != 'L');// while the user does not leave the shop
     }
+
     public String getInput() {
         String input = null;
         Boolean valid = false;
         Scanner keyboard = new Scanner(System.in);
 
         while (!valid) {
-            System.out.println("What dost thou do?");
+            System.out.println("/nWhat be you'r business here?"
+                    + "/nWhat be you'r business here? /nB - Buy /nS - Sell /nL - Leave");
             input = keyboard.nextLine();
             input = input.trim();
             if (input.length() < 1) {
-                System.out.println("Error - Type something next time!");
+                System.out.println("Sorry I can't help me if you don't speak english.");
                 continue;
             }
             break;
@@ -49,16 +51,13 @@ public class ShopMenuView implements Serializable {
     public void doAction(char selection) {
 
         switch (selection) {
-            case 'N': //new game
-                this.startNewGame();
+            case 'B': //Buying items
+                this.sellItem();
                 break;
-            case 'L': //load game
-                this.loadGame();
+            case 'S': //Selling items
+                this.buyItem();
                 break;
-            case 'H': //help screen
-                this.displayHelpMenu();
-                break;
-            case 'Q': //Quit game
+            case 'L': //Quit menue
                 return;
             default:
                 System.out.println("Error - Let me give you those options again:");
@@ -66,19 +65,17 @@ public class ShopMenuView implements Serializable {
 
     }
 
-    private void displayHelpMenu() {
+    private void sellItem() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayMenu();
     }
 
-    private void loadGame() {
+    private void buyItem() {
         System.out.println("LOAD GAME");
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(Yggdrasil.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
+    GameMenuView gameMenu = new GameMenuView();
+
+    gameMenu.displayMenu ();
+}
 }
