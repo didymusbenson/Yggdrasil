@@ -53,10 +53,10 @@ public class ShopMenuView implements Serializable {
         switch (selection) {
             case 'B': //Buying items
                 this.sellItem();
-                break;
+
             case 'S': //Selling items
                 this.buyItem();
-                break;
+
             case 'L': //Quit menue
                 return;
             default:
@@ -71,11 +71,6 @@ public class ShopMenuView implements Serializable {
     }
 
     private void buyItem() {
-        System.out.println("LOAD GAME");
-    }
 
-    GameMenuView gameMenu = new GameMenuView();
-
-    gameMenu.displayMenu ();
-}
+        }}
 
