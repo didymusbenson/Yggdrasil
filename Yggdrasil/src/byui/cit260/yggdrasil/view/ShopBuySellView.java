@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class ShopBuySellView implements Serializable {
 
     private final String MENU = "/n /nWelcome traveler to our local shop."
-            + "/nWhat be you'r business here? /nB - Buy /nS - Sell /nL - Leave";
+            + "/nWhat be you'r business here?? /nB - Buy /nS - Sell /nL - Leave";
 
     public void displayMenu() {
         char selection = ' ';
