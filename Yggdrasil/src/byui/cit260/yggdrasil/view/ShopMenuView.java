@@ -34,8 +34,7 @@ public class ShopMenuView implements Serializable {
         Scanner keyboard = new Scanner(System.in);
 
         while (!valid) {
-            System.out.println("/nWhat be you'r business here?"
-                    + "/nWhat be you'r business here? /nB - Buy /nS - Sell /nL - Leave");
+            System.out.println("/nWhat do you do?");
             input = keyboard.nextLine();
             input = input.trim();
             if (input.length() < 1) {
@@ -53,10 +52,10 @@ public class ShopMenuView implements Serializable {
         switch (selection) {
             case 'B': //Buying items
                 this.sellItem();
-
+                break;
             case 'S': //Selling items
                 this.buyItem();
-
+                break;
             case 'L': //Quit menue
                 return;
             default:
