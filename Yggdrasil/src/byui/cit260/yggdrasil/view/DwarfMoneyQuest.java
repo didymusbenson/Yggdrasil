@@ -1,5 +1,5 @@
 /*
- * Program type: Contorl Class
+ * Program type: View Class
  * Creation: 11/3/2015 at 9:40
  * Description: This is how the player interacts with the Dwarf Money Quest.
  */
