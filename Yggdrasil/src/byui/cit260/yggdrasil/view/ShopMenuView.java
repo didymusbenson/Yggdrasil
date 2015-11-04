@@ -71,5 +71,5 @@ public class ShopMenuView implements Serializable {
 
     private void buyItem() {
 
-        }}
-
+    }
+}
