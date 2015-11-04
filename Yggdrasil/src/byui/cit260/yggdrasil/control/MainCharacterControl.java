@@ -15,8 +15,8 @@ import java.io.Serializable;
 public class MainCharacterControl implements Serializable {
 
     public int dwarfMoneyQuest(int amount) {
-        if (amount > 0) {
-            return amount * 3;
+        if (amount == 12) {
+            return 1;
         }
         return -1;
     }
