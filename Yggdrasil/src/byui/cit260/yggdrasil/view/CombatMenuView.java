@@ -16,31 +16,45 @@ import java.util.Scanner;
  * @author tsunami
  */
 public class CombatMenuView implements Serializable {
+
     private final String BANNER = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     private final String NORMAL = "You are attacked by a "; // add monster name
     private final String SNEAK = "You snuck up on a "; // add monster name
     private final String AMBUSH = "A monster gets the jump on you!";
     private final String VICTORY = "You have defeated the "; //add monster name
     private final String OPTIONS = "(R)un - (A)ttack - (I)tem - (D)defend";
-    
+
     public void displayMenu() {
         Enemy enemy = CombatControl.getEnemy();
+        MainCharacter hero = CombatControl.getHero(); //SOMETHING needs to pull the hero from SOMEWHERE
         System.out.println(BANNER);
-        System.out.println(NORMAL + enemy.getEnemyName());
+        System.out.println(NORMAL + enemy.getEnemyName() + "!");
         char selection = ' ';
-        
+
         do {
+            int round = 0; // rounds of combat, increases as the battle goes on.
+            if (round > 0);
+            {
+                System.out.println("Your HP: " + hero.getActorTempHp()
+                        + "\n" + enemy.getEnemyName() + "'s HP: " + enemy.getActorTempHp());
+            }
             System.out.println(OPTIONS);
             String input = this.getInput(); // get selection
             input = input.toUpperCase();
             selection = input.charAt(0); // grab first letter, no matter what's typed
-            this.doAction(selection, null /*main character*/, enemy);
-            // ADD Player and Monster temp HPs here.
+            this.doAction(selection, hero, enemy);
+
+            round++;
         } while (enemy.getActorTempHp() > 0); // or until player dies.
-        
+
         System.out.println(VICTORY + enemy.getEnemyName() + "!");
+        System.out.println("You were awarded " + enemy.getEnemyXpReward() + " XP!");
+        CombatControl.increaseStat(hero, "XP", enemy.getEnemyXpReward());
+        System.out.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
+        CombatControl.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
+        System.out.println(BANNER);
     }
-    
+
     public String getInput() {
         String input = null;
         Boolean valid = false;
@@ -59,27 +73,22 @@ public class CombatMenuView implements Serializable {
 
         return input;
     }
+
     public void doAction(char selection, MainCharacter hero, Enemy enemy) {
 
         switch (selection) {
             case 'R':
                 System.out.println("RUN CHOSEN");
-                //CombatControl.runAway(hero, enemy);               
+                CombatControl.runAway(hero, enemy);               
                 break;
             case 'A':
-                System.out.println("ATTACK CHOSEN");
-                /* if (!CombatControl.tryAttack())
-                       System.out.println("Your attack missed!";
-                else{
-                       int damage = calcPlayerDamage(MainCharacter);
-                       applyDamage(damage, enemy);
+                if (!CombatControl.tryAttack(hero, enemy)) {
+                    System.out.println("Your attack missed!";
+                } else {
+                    int damage = CombatControl.calcPlayerDamage(hero);
+                    System.out.println("You hit the " + enemy.getEnemyName() + " for " + damage + " damge!");
+                    CombatControl.applyDamage(damage, enemy);
                 }
-                // Must call a function that rolls successful attack 
-                // and then roll damage of the attack
-                // CombatControl.playerAttack(MainCharacter, Enemy);
-                // ** attack() then calls rollSuccess() and applyDamage() ** 
-                        
-                        */
                 break;
             case 'I':
                 System.out.println("ITEM CHOSEN");
