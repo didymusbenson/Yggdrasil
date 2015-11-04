@@ -191,11 +191,6 @@ public class CombatControl implements Serializable {
         return compareRolls(runRoll, enemy.getEnemyEscapeChance());
     }
 
-    /* Player attack and enemy attack could be merged by passing ACTOR as a 
-     parameter instead of MainCharacter and Enemy. The issue is that we have
-     to pass the MainCharacter or enemey classes later to the calc damage 
-     functions.-ADB
-     */
     public Boolean tryAttack(Actor attacker, Actor defender) {
         System.out.println("CombatControl.playerAttack() called.");
         int attackRoll = rollRandRange(1, 20) + attacker.getActorAttack();

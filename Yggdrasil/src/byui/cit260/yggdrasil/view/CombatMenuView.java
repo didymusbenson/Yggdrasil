@@ -26,11 +26,12 @@ public class CombatMenuView implements Serializable {
 
     public void displayMenu() {
         Enemy enemy = CombatControl.getEnemy();
-        MainCharacter hero = CombatControl.getHero(); //SOMETHING needs to pull the hero from SOMEWHERE
+        MainCharacter hero = CombatControl.getHero(); //NEEDS TO BE FIXED LATER
+
         System.out.println(BANNER);
         System.out.println(NORMAL + enemy.getEnemyName() + "!");
         char selection = ' ';
-
+        Boolean runaway = false;
         do {
             int round = 0; // rounds of combat, increases as the battle goes on.
             if (round > 0);
@@ -42,17 +43,23 @@ public class CombatMenuView implements Serializable {
             String input = this.getInput(); // get selection
             input = input.toUpperCase();
             selection = input.charAt(0); // grab first letter, no matter what's typed
-            this.doAction(selection, hero, enemy);
+            runaway = this.doAction(selection, hero, enemy);
 
             round++;
-        } while (enemy.getActorTempHp() > 0); // or until player dies.
+        } while (enemy.getActorTempHp() > 0 && runaway == false && hero.getActorTempHp() > 0); // or until player dies.
 
-        System.out.println(VICTORY + enemy.getEnemyName() + "!");
-        System.out.println("You were awarded " + enemy.getEnemyXpReward() + " XP!");
-        CombatControl.increaseStat(hero, "XP", enemy.getEnemyXpReward());
-        System.out.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
-        CombatControl.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
-        System.out.println(BANNER);
+        if (enemy.getActorTempHp() <= 0) {
+            System.out.println(VICTORY + enemy.getEnemyName() + "!");
+            System.out.println("You were awarded " + enemy.getEnemyXpReward() + " XP!");
+            CombatControl.increaseStat(hero, "XP", enemy.getEnemyXpReward());
+            System.out.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
+            CombatControl.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
+            System.out.println(BANNER);
+        }
+        else if (runaway == hero.getActorTempHp() <= 0)
+            System.out.println("You died a horrible death. Congrats.");
+        else    
+            System.out.println(BANNER);
     }
 
     public String getInput() {
@@ -74,20 +81,24 @@ public class CombatMenuView implements Serializable {
         return input;
     }
 
-    public void doAction(char selection, MainCharacter hero, Enemy enemy) {
-
+    public boolean doAction(char selection, MainCharacter hero, Enemy enemy) {
+        CombatControl combat = new CombatControl();
         switch (selection) {
             case 'R':
-                System.out.println("RUN CHOSEN");
-                CombatControl.runAway(hero, enemy);               
+                if (combat.runAway(hero, enemy)) {
+                    System.out.println("Got away safely!");
+                    return true;
+                } else {
+                    System.out.println("Failed to escape!");
+                }
                 break;
             case 'A':
-                if (!CombatControl.tryAttack(hero, enemy)) {
-                    System.out.println("Your attack missed!";
+                if (!combat.tryAttack(hero, enemy)) {
+                    System.out.println("Your attack missed!");
                 } else {
-                    int damage = CombatControl.calcPlayerDamage(hero);
-                    System.out.println("You hit the " + enemy.getEnemyName() + " for " + damage + " damge!");
-                    CombatControl.applyDamage(damage, enemy);
+                    int damage = combat.calcPlayerDamage(hero);
+                    System.out.println("You hit the " + enemy.getEnemyName() + " for " + damage + " damage!");
+                    combat.applyDamage(damage, enemy);
                 }
                 break;
             case 'I':
@@ -111,7 +122,7 @@ public class CombatMenuView implements Serializable {
             default:
                 System.out.println("Error - Let me give you those options again:");
         }
-
+        return false;
     }
 
     private void displayHelpMenu() {
