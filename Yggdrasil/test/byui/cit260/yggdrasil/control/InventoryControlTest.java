@@ -92,7 +92,7 @@ public class InventoryControlTest {
          * TEST CASE #5
          ******************************
          */
-        System.out.println("sellItem test case #4");
+        System.out.println("sellItem test case #5");
 
         dagger.setItemsUsed(99);
 

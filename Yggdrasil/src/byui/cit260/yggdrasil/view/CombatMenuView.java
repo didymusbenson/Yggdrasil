@@ -19,19 +19,26 @@ public class CombatMenuView implements Serializable {
 
     private final String BANNER = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     private final String NORMAL = "You are attacked by a "; // add monster name
-    private final String SNEAK = "You snuck up on a "; // add monster name
-    private final String AMBUSH = "A monster gets the jump on you!";
     private final String VICTORY = "You have defeated the "; //add monster name
     private final String OPTIONS = "(R)un - (A)ttack - (I)tem - (D)defend";
+    // to be implemented later
+    private final String SNEAK = "You snuck up on a "; // add monster name
+    // to be implemented later
+    private final String AMBUSH = "A monster gets the jump on you!";
 
     public void displayMenu() {
+        
+        // Initialize the enemy and the hero.
         Enemy enemy = CombatControl.getEnemy();
         MainCharacter hero = CombatControl.getHero(); //NEEDS TO BE FIXED LATER
 
+        // Display the combat banner and introduction.
         System.out.println(BANNER);
         System.out.println(NORMAL + enemy.getEnemyName() + "!");
         char selection = ' ';
-        Boolean runaway = false;
+        boolean runaway = false;
+        
+        // Combat loop, goes until hero or enemy dies, or hero runs away.
         do {
             int round = 0; // rounds of combat, increases as the battle goes on.
             if (round > 0);
@@ -40,14 +47,14 @@ public class CombatMenuView implements Serializable {
                         + "\n" + enemy.getEnemyName() + "'s HP: " + enemy.getActorTempHp());
             }
             System.out.println(OPTIONS);
-            String input = this.getInput(); // get selection
+            String input = this.getInput(); 
             input = input.toUpperCase();
-            selection = input.charAt(0); // grab first letter, no matter what's typed
+            selection = input.charAt(0); 
             runaway = this.doAction(selection, hero, enemy);
-
             round++;
         } while (enemy.getActorTempHp() > 0 && runaway == false && hero.getActorTempHp() > 0); // or until player dies.
 
+        // If the hero won the fight.
         if (enemy.getActorTempHp() <= 0) {
             System.out.println(VICTORY + enemy.getEnemyName() + "!");
             System.out.println("You were awarded " + enemy.getEnemyXpReward() + " XP!");
@@ -56,12 +63,16 @@ public class CombatMenuView implements Serializable {
             CombatControl.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
             System.out.println(BANNER);
         }
+        // If the hero died.
         else if (runaway == hero.getActorTempHp() <= 0)
             System.out.println("You died a horrible death. Congrats.");
+        // If the hero runs away.
         else    
             System.out.println(BANNER);
     }
 
+    /***************OTHER FUNCTIONS********************************************/
+    
     public String getInput() {
         String input = null;
         Boolean valid = false;
@@ -81,8 +92,10 @@ public class CombatMenuView implements Serializable {
         return input;
     }
 
+    // Do the action selected in the combat loop.
     public boolean doAction(char selection, MainCharacter hero, Enemy enemy) {
         CombatControl combat = new CombatControl();
+        
         switch (selection) {
             case 'R':
                 if (combat.runAway(hero, enemy)) {
@@ -103,18 +116,12 @@ public class CombatMenuView implements Serializable {
                 break;
             case 'I':
                 System.out.println("ITEM CHOSEN");
-                // Must open an inventory display of items for the user
-                // to choose from, then USE the item.
-                // itemMenuView.viewItems();
-                // itemMenuView then works you through the consumption of an
-                // item and 'returns' us to combat.
+                // Must display player inventory menu to use an item
                 break;
             case 'D':
                 System.out.println("DEFEND CHOSEN");
                 // Must call a function that will reduce the chance of being hit.
                 // by the enemy this turn.
-                // CombatControl.defend(HeroDefense); will raise hero defense for 
-                // one turn. THIS SPECIFIC MECHANIC MAY CAUSE TROUBLE.
                 break;
             case 'H':
                 this.displayHelpMenu();
@@ -125,6 +132,7 @@ public class CombatMenuView implements Serializable {
         return false;
     }
 
+    // Show help menu when H is typed.
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayMenu();
