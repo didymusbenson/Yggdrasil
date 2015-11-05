@@ -21,30 +21,31 @@ public class ShopMenuView implements Serializable {
         char selection = ' ';
         do {
             System.out.println(MENU);
-            String input = this.getInput(); // gets user seleciton
+            String input = this.getInput(); // gets user seleciton, see string input
             input = input.toUpperCase(); // makes user answer uppercased
             selection = input.charAt(0);// takes only first letter given
-            this.doAction(selection);
+            this.doAction(selection); //uses switch case. see selection
         } while (selection != 'L');// while the user does not leave the shop
     }
 
     public String getInput() {
-        String input = null;
-        Boolean valid = false;
-        Scanner keyboard = new Scanner(System.in);
+        String input = null; //Sets input to a null, until user input is given.
+        Boolean valid = false; //sets loop to repet until valid answer is given.
+        Scanner keyboard = new Scanner(System.in); //tells program where to get
+        //user input from
 
         while (!valid) {
-            System.out.println("/nWhat do you do?");
-            input = keyboard.nextLine();
-            input = input.trim();
-            if (input.length() < 1) {
+            System.out.println("/nWhat do you do?"); //Asks user for input
+            input = keyboard.nextLine(); //reads in next line from user
+            input = input.trim(); //takes off everything but first letter
+            if (input.length() < 1) { //tells user if their input is invalid
                 System.out.println("Sorry I can't help me if you don't speak english.");
                 continue;
             }
             break;
         }
 
-        return input;
+        return input;// first letter of user input is returned
     }
 
     public void doAction(char selection) {
