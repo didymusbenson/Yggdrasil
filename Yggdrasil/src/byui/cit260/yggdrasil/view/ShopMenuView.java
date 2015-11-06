@@ -21,7 +21,7 @@ public class ShopMenuView implements Serializable {
         char selection = ' ';
         do {
             System.out.println(MENU);
-            String input = this.getInput(); // gets user seleciton, see string input
+            String input = this.getInput(); // gets user seleciton, see string getInput
             input = input.toUpperCase(); // makes user answer uppercased
             selection = input.charAt(0);// takes only first letter given
             this.doAction(selection); //uses switch case. see selection
