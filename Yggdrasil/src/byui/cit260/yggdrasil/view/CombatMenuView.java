@@ -125,12 +125,11 @@ public class CombatMenuView implements Serializable {
                 break;
             case 'I':
                 System.out.println("ITEM CHOSEN");
-                // Must display player inventory menu to use an item
+                // To be developed with the InventoryView class.
                 break;
             case 'D':
                 System.out.println("DEFEND CHOSEN");
-                // Must call a function that will reduce the chance of being hit.
-                // by the enemy this turn.
+                // Trickier than I first suspected to program. Needs work.
                 break;
             case 'H':
                 this.displayHelpMenu();
