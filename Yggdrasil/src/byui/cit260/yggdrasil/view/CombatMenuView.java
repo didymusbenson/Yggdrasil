@@ -27,7 +27,7 @@ public class CombatMenuView implements Serializable {
     private final String AMBUSH = "A monster gets the jump on you!";
 
     public void displayMenu() {
-        
+
         // Initialize the enemy and the hero.
         Enemy enemy = CombatControl.getEnemy();
         MainCharacter hero = CombatControl.getHero(); //NEEDS TO BE FIXED LATER
@@ -37,7 +37,7 @@ public class CombatMenuView implements Serializable {
         System.out.println(NORMAL + enemy.getEnemyName() + "!");
         char selection = ' ';
         boolean runaway = false;
-        
+
         // Combat loop, goes until hero or enemy dies, or hero runs away.
         do {
             int round = 0; // rounds of combat, increases as the battle goes on.
@@ -47,10 +47,18 @@ public class CombatMenuView implements Serializable {
                         + "\n" + enemy.getEnemyName() + "'s HP: " + enemy.getActorTempHp());
             }
             System.out.println(OPTIONS);
-            String input = this.getInput(); 
+            String input = this.getInput();
             input = input.toUpperCase();
-            selection = input.charAt(0); 
+            selection = input.charAt(0);
             runaway = this.doAction(selection, hero, enemy);
+            // If player chooses H loop until it isn't..
+            while (selection == 'H') {
+                input = this.getInput();
+                input = input.toUpperCase();
+                selection = input.charAt(0);
+                runaway = this.doAction(selection, hero, enemy);
+            }
+
             round++;
         } while (enemy.getActorTempHp() > 0 && runaway == false && hero.getActorTempHp() > 0); // or until player dies.
 
@@ -62,17 +70,18 @@ public class CombatMenuView implements Serializable {
             System.out.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
             CombatControl.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
             System.out.println(BANNER);
-        }
-        // If the hero died.
-        else if (runaway == hero.getActorTempHp() <= 0)
+        } // If the hero died.
+        else if (runaway == hero.getActorTempHp() <= 0) {
             System.out.println("You died a horrible death. Congrats.");
-        // If the hero runs away.
-        else    
+        } // If the hero runs away.
+        else {
             System.out.println(BANNER);
+        }
     }
 
-    /***************OTHER FUNCTIONS********************************************/
-    
+    /**
+     * *************OTHER FUNCTIONS*******************************************
+     */
     public String getInput() {
         String input = null;
         Boolean valid = false;
@@ -95,7 +104,7 @@ public class CombatMenuView implements Serializable {
     // Do the action selected in the combat loop.
     public boolean doAction(char selection, MainCharacter hero, Enemy enemy) {
         CombatControl combat = new CombatControl();
-        
+
         switch (selection) {
             case 'R':
                 if (combat.runAway(hero, enemy)) {
@@ -136,5 +145,18 @@ public class CombatMenuView implements Serializable {
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayMenu();
+    }
+
+    private void enemyAttack(Enemy enemy, MainCharacter hero) {
+        System.out.println("CombatMenuView.enemyAttack() called.");
+        CombatControl combat = new CombatControl();
+
+        if (!combat.tryAttack(enemy, hero)) {
+            System.out.println("The" + enemy.getEnemyName() + "missed!");
+        } else {
+            int damage = combat.calcPlayerDamage(hero);
+            System.out.println(enemy.getEnemyName() + " hit you for " + damage + " damage!");
+            combat.applyDamage(damage, hero);
+        }
     }
 }
