@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 public class CombatMenuView implements Serializable {
 
-    private final String BANNER = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+    private final String BANNER = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     private final String NORMAL = "You are attacked by a "; // add monster name
     private final String VICTORY = "You have defeated the "; //add monster name
     private final String OPTIONS = "(R)un - (A)ttack - (I)tem - (D)defend";
@@ -59,10 +59,15 @@ public class CombatMenuView implements Serializable {
                 selection = input.charAt(0);
                 runaway = this.doAction(selection, hero, enemy);
             }
-            
-            if (runaway == false) // If player tried to run, but failed.
-                this.enemyAttack(enemy, hero);
 
+            if (runaway == false) { // If player tried to run, but failed.
+                int originalDefense = hero.getActorDefense(); //take defense action into account
+                if (selection == 'D') {
+                    hero.setActorDefense(originalDefense + 5);
+                }
+                this.enemyAttack(enemy, hero);
+                hero.setActorDefense(originalDefense); // just in case.
+            }
             round++;
         } while (enemy.getActorTempHp() > 0 && runaway == false && hero.getActorTempHp() > 0); // or until player dies.
 
@@ -75,7 +80,7 @@ public class CombatMenuView implements Serializable {
             CombatControl.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
             System.out.println(BANNER);
         } // If the hero died.
-        else if (runaway == hero.getActorTempHp() <= 0) {
+        else if (hero.getActorTempHp() <= 0) {
             System.out.println("You died a horrible death. Congrats.");
         } // If the hero runs away.
         else {
@@ -132,8 +137,8 @@ public class CombatMenuView implements Serializable {
                 // To be developed with the InventoryView class.
                 break;
             case 'D':
-                System.out.println("DEFEND CHOSEN");
-                // Trickier than I first suspected to program. Needs work.
+                // Defense happens when the enemy attacks. This is a placeholder
+                // to say "D is a valid input"
                 break;
             case 'H':
                 this.displayHelpMenu();
