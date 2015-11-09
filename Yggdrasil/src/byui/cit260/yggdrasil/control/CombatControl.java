@@ -202,11 +202,16 @@ public class CombatControl implements Serializable {
         int attackRoll = rollRandRange(1, 20) + attacker.getActorAttack();
         return attackRoll > defender.getActorDefense();
     }
-
+    
+    /*
+    THIS CODE WAS REPLACED IN "COMBAT MENU VIEW". THE COMBAT MENU VIEW 
+    NOW DOES THE DEFENSE ACTION DURING THE ENEMY'S ATTACK PHASE. LEAVE THIS
+    CODE IN CASE IT NEEDS TO CHANGE.
+    
     public void defend(Actor actor) {
         System.out.println("CombatControl.defend() called.");
         // TODO MAKE FUNCTION.
-    }
+    }*/
 
     public int calcDamage(Actor hero) {
         int damage = hero.getActorAttack()

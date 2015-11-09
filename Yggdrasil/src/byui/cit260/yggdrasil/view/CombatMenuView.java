@@ -28,10 +28,11 @@ public class CombatMenuView implements Serializable {
 
     public void displayMenu() {
 
-        // Initialize the enemy and the hero.
-        CombatControl combat = new CombatControl();
+        //Final game builds the enemies based on location hostility and 
+        //a built in bestiary.
         Enemy enemy = CombatControl.getEnemy();
-        MainCharacter hero = CombatControl.getHero(); //NEEDS TO BE FIXED LATER
+        //Final game gets the Hero from the game in progress, not here.
+        MainCharacter hero = CombatControl.getHero();
 
         // Display the combat banner and introduction.
         System.out.println(BANNER);
@@ -88,9 +89,7 @@ public class CombatMenuView implements Serializable {
         }
     }
 
-    /**
-     * *************OTHER FUNCTIONS*******************************************
-     */
+    
     public String getInput() {
         String input = null;
         Boolean valid = false;
@@ -155,6 +154,7 @@ public class CombatMenuView implements Serializable {
         helpMenu.displayMenu();
     }
 
+    // Let's an enemy perform *his* attack.
     private void enemyAttack(Enemy enemy, MainCharacter hero) {
         CombatControl combat = new CombatControl();
 
