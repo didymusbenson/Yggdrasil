@@ -29,6 +29,7 @@ public class CombatMenuView implements Serializable {
     public void displayMenu() {
 
         // Initialize the enemy and the hero.
+        CombatControl combat = new CombatControl();
         Enemy enemy = CombatControl.getEnemy();
         MainCharacter hero = CombatControl.getHero(); //NEEDS TO BE FIXED LATER
 
@@ -58,6 +59,9 @@ public class CombatMenuView implements Serializable {
                 selection = input.charAt(0);
                 runaway = this.doAction(selection, hero, enemy);
             }
+            
+            if (runaway == false) // If player tried to run, but failed.
+                this.enemyAttack(enemy, hero);
 
             round++;
         } while (enemy.getActorTempHp() > 0 && runaway == false && hero.getActorTempHp() > 0); // or until player dies.
@@ -118,7 +122,7 @@ public class CombatMenuView implements Serializable {
                 if (!combat.tryAttack(hero, enemy)) {
                     System.out.println("Your attack missed!");
                 } else {
-                    int damage = combat.calcPlayerDamage(hero);
+                    int damage = combat.calcDamage(hero);
                     System.out.println("You hit the " + enemy.getEnemyName() + " for " + damage + " damage!");
                     combat.applyDamage(damage, enemy);
                 }
@@ -147,13 +151,12 @@ public class CombatMenuView implements Serializable {
     }
 
     private void enemyAttack(Enemy enemy, MainCharacter hero) {
-        System.out.println("CombatMenuView.enemyAttack() called.");
         CombatControl combat = new CombatControl();
 
         if (!combat.tryAttack(enemy, hero)) {
-            System.out.println("The" + enemy.getEnemyName() + "missed!");
+            System.out.println("The " + enemy.getEnemyName() + " missed!");
         } else {
-            int damage = combat.calcPlayerDamage(hero);
+            int damage = combat.calcDamage(enemy);
             System.out.println(enemy.getEnemyName() + " hit you for " + damage + " damage!");
             combat.applyDamage(damage, hero);
         }

@@ -21,6 +21,7 @@ import byui.cit260.yggdrasil.model.Item;
 import byui.cit260.yggdrasil.model.Map;
 import byui.cit260.yggdrasil.model.Inventory;
 import byui.cit260.yggdrasil.model.Game;
+import byui.cit260.yggdrasil.view.CombatMenuView;
 import byui.cit260.yggdrasil.view.StartProgramView;
 
 /**
@@ -38,6 +39,9 @@ public class Yggdrasil {
 // creat start programView and start the program
         StartProgramView starProgramView = new StartProgramView();
         starProgramView.startProgram();
+        CombatMenuView combatTest = new CombatMenuView();
+        combatTest.displayMenu();
+        
     }
 
     public static Player getPlayer() {

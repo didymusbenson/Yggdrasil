@@ -20,20 +20,27 @@ public class CombatControl implements Serializable {
 
     //PLACEHOLDER METHOD, creates a test BOB enemy.
     public static Enemy getEnemy() {
+        // In this test, all enemies must have weapons. 
+        // enemy weapons can be special "enemy only" item objects
+        Item tempweap = new Item();
+        tempweap.setItemModifier(5);
+        
         Enemy bob = new Enemy();
         bob.setEnemyName("BOB");
-        bob.setActorMaxHp(30);
+        bob.setActorMaxHp(100);
         bob.setActorTempHp(bob.getActorMaxHp());
         bob.setActorAttack(5);
         bob.setActorDefense(5);
         bob.setEnemyEscapeChance(10);
         bob.setEnemyGoldReward(50);
         bob.setEnemyXpReward(50);
+        bob.setActorWeapon(tempweap);
         return bob;
     }
 
     //LIKE getEnemy() this is a placeholder for the ACTUAL getHero function
     public static MainCharacter getHero() {
+        
         Item tempweap = new Item();
         tempweap.setItemModifier(5);
         
@@ -192,7 +199,6 @@ public class CombatControl implements Serializable {
     }
 
     public Boolean tryAttack(Actor attacker, Actor defender) {
-        System.out.println("CombatControl.playerAttack() called.");
         int attackRoll = rollRandRange(1, 20) + attacker.getActorAttack();
         return attackRoll > defender.getActorDefense();
     }
@@ -202,16 +208,13 @@ public class CombatControl implements Serializable {
         // TODO MAKE FUNCTION.
     }
 
-    public int calcPlayerDamage(MainCharacter hero) {
-        System.out.println("calcDamage() called");
-        // TODO, WRITE FUNCTION
+    public int calcDamage(Actor hero) {
         int damage = hero.getActorAttack()
                 + rollRandRange(1, hero.getActorWeapon().getItemModifier());
         return damage;
     }
 
     public void applyDamage(int damage, Actor defender) {
-        System.out.println("applyDamage() called");
         int newHp = defender.getActorTempHp() - damage;
         defender.setActorTempHp(newHp);
     }
