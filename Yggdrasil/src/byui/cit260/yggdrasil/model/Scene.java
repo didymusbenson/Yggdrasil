@@ -16,7 +16,6 @@ import java.util.Objects;
 public class Scene implements Serializable {
 
     private String sceneDescription;
-    private Boolean sceneHasBarrier;
     private String sceneMapSymbol;
 
     public Scene(){
@@ -30,14 +29,6 @@ public class Scene implements Serializable {
         this.sceneDescription = sceneDescription;
     }
 
-    public Boolean getSceneHasBarrier() {
-        return sceneHasBarrier;
-    }
-
-    public void setSceneHasBarrier(Boolean sceneHasBarrier) {
-        this.sceneHasBarrier = sceneHasBarrier;
-    }
-
     public String getSceneMapSymbol() {
         return sceneMapSymbol;
     }
@@ -48,14 +39,13 @@ public class Scene implements Serializable {
 
     @Override
     public String toString() {
-        return "Scene{" + "sceneDescription=" + sceneDescription + ", sceneHasBarrier=" + sceneHasBarrier + ", sceneMapSymbol=" + sceneMapSymbol + '}';
+        return "Scene{" + "sceneDescription=" + sceneDescription +  ", sceneMapSymbol=" + sceneMapSymbol + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 37 * hash + Objects.hashCode(this.sceneDescription);
-        hash = 37 * hash + Objects.hashCode(this.sceneHasBarrier);
         hash = 37 * hash + Objects.hashCode(this.sceneMapSymbol);
         return hash;
     }
@@ -70,9 +60,6 @@ public class Scene implements Serializable {
         }
         final Scene other = (Scene) obj;
         if (!Objects.equals(this.sceneDescription, other.sceneDescription)) {
-            return false;
-        }
-        if (!Objects.equals(this.sceneHasBarrier, other.sceneHasBarrier)) {
             return false;
         }
         if (!Objects.equals(this.sceneMapSymbol, other.sceneMapSymbol)) {

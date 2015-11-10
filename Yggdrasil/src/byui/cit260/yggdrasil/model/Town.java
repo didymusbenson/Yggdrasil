@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Didymus
  */
-public class Town implements Serializable{
+public class Town extends Location implements Serializable{
     
     private String townGossip;
     private String townInnStory;
