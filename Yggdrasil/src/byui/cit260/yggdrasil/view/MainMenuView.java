@@ -10,87 +10,105 @@ import java.io.Serializable;
 import java.util.Scanner;
 import yggdrasil.Yggdrasil;
 
-/**public void displayMenu() {
-        char selection = ' ';
-        do {
-            System.out.println(MENU);
-            String input = this.getInput(); // get selection
-            input = input.toUpperCase();
-            selection = input.charAt(0); // grab first letter, no matter what's typed
-            this.doAction(selection);
-        } while (selection != 'Q'); // While player doesn't QUIT
-    }
- *
+/**
  * @author tsunami
  */
-public class MainMenuView implements Serializable {
+public class MainMenuView extends View {
 
-    private final String MENU = "\n N - New Game, L - Load, H - Help, Q - Quit \n";
-
-    public void displayMenu() {
-        char selection = ' ';
-        do {
-            System.out.println(MENU);
-            String input = this.getInput(); // get selection
-            input = input.toUpperCase();
-            selection = input.charAt(0); // grab first letter, no matter what's typed
-            this.doAction(selection);
-        } while (selection != 'Q'); // While player doesn't QUIT
+    public MainMenuView() {
+        super("\n N - New Game, L - Load, H - Help, Q - Quit \n");
     }
 
-    public String getInput() {
-        String input = null;
-        Boolean valid = false;
-        Scanner keyboard = new Scanner(System.in);
-
-        while (!valid) {
-            System.out.println("What dost thou do?");
-            input = keyboard.nextLine();
-            input = input.trim();
-            if (input.length() < 1) {
-                System.out.println("Error - Type something next time!");
-                continue;
-            }
-            break;
-        }
-
-        return input;
-    }
-
-    public void doAction(char selection) {
-
-        switch (selection) {
+    @Override
+    public boolean doAction(Object obj) {
+        char input = (char) obj;
+        switch (input) {
             case 'N': //new game
-                this.startNewGame();
+            //    this.startNewGame();
                 break;
             case 'L': //load game
-                this.loadGame();
+            //    this.loadGame();
                 break;
             case 'H': //help screen
-                this.displayHelpMenu();
+            //    this.displayHelpMenu();
                 break;
             case 'Q': //Quit game
-                return;
+                return true;
             default:
                 System.out.println("Error - Let me give you those options again:");
         }
-
-    }
-
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
-    }
-
-    private void loadGame() {
-        System.out.println("LOAD GAME");
-    }
-
-    private void startNewGame() {
-        GameControl.createNewGame(Yggdrasil.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    return false;
     }
 
 }
+
+/* OLD CODE - 11/10/16
+
+ private final String MENU = "\n N - New Game, L - Load, H - Help, Q - Quit \n";
+
+ public void displayMenu() {
+ char selection = ' ';
+ do {
+ System.out.println(MENU);
+ String input = this.getInput(); // get selection
+ input = input.toUpperCase();
+ selection = input.charAt(0); // grab first letter, no matter what's typed
+ this.doAction(selection);
+ } while (selection != 'Q'); // While player doesn't QUIT
+ }
+
+ public String getInput() {
+ String input = null;
+ Boolean valid = false;
+ Scanner keyboard = new Scanner(System.in);
+
+ while (!valid) {
+ System.out.println("What dost thou do?");
+ input = keyboard.nextLine();
+ input = input.trim();
+ if (input.length() < 1) {
+ System.out.println("Error - Type something next time!");
+ continue;
+ }
+ break;
+ }
+
+ return input;
+ }
+
+ public void doAction(char selection) {
+
+ switch (selection) {
+ case 'N': //new game
+ this.startNewGame();
+ break;
+ case 'L': //load game
+ this.loadGame();
+ break;
+ case 'H': //help screen
+ this.displayHelpMenu();
+ break;
+ case 'Q': //Quit game
+ return;
+ default:
+ System.out.println("Error - Let me give you those options again:");
+ }
+
+ }
+
+ private void displayHelpMenu() {
+ HelpMenuView helpMenu = new HelpMenuView();
+ helpMenu.displayMenu();
+ }
+
+ private void loadGame() {
+ System.out.println("LOAD GAME");
+ }
+
+ private void startNewGame() {
+ GameControl.createNewGame(Yggdrasil.getPlayer());
+        
+ GameMenuView gameMenu = new GameMenuView();
+ gameMenu.displayMenu();
+ }
+ */
