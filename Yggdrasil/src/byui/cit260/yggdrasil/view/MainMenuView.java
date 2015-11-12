@@ -24,20 +24,20 @@ public class MainMenuView extends View {
         char input = (char) obj;
         switch (input) {
             case 'N': //new game
-            //    this.startNewGame();
+                //    this.startNewGame();
                 break;
             case 'L': //load game
-            //    this.loadGame();
+                //    this.loadGame();
                 break;
             case 'H': //help screen
-            //    this.displayHelpMenu();
+                //    this.displayHelpMenu();
                 break;
             case 'Q': //Quit game
                 return true;
             default:
                 System.out.println("Error - Let me give you those options again:");
         }
-    return false;
+        return false;
     }
 
 }

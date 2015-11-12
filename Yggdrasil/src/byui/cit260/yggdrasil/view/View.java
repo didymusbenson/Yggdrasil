@@ -13,7 +13,8 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
 
-    private String promptMessage;
+    Scanner keyboard = new Scanner(System.in);
+    protected String promptMessage;
 
     public View(String promptMessage) {
         this.promptMessage = promptMessage;
@@ -36,7 +37,7 @@ public abstract class View implements ViewInterface {
     public String getInput() {
         String input = null;
         Boolean valid = false;
-        Scanner keyboard = new Scanner(System.in);
+        
 
         while (!valid) {
             System.out.println("What dost thou do?");

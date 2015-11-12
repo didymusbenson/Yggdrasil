@@ -72,7 +72,7 @@ public class StartProgramView implements Serializable {
 
     private void displayMainMenu() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        mainMenu.display();
     }
 
 
