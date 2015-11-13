@@ -29,7 +29,7 @@ public abstract class View implements ViewInterface {
             String input = this.getInput();
             input = input.toUpperCase();
             selection = input.charAt(0);
-            this.doAction(selection);
+            done = this.doAction(selection);
         } while (!done);
     }
 
