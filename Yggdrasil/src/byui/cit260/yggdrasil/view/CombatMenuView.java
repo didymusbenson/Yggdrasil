@@ -12,10 +12,18 @@ import java.io.Serializable;
 import java.util.Scanner;
 
 /**
- *
- * @author tsunami
+ * This view is distinct from any others in the program. It cannot be run the
+ * same way as the other view interfaces. This view requires different actions
+ * to be taken and for different parameters to be passed into the doAction 
+ * function. Should I keep this as linked to the interface with some unused code
+ * or should I revert this back to its original form as an independent class?
+ * @author didymus
  */
-public class CombatMenuView implements Serializable {
+public class CombatMenuView extends View {
+    
+    public CombatMenuView(){
+        super("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    }
 
     private final String BANNER = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     private final String NORMAL = "You are attacked by a "; // add monster name
@@ -26,7 +34,8 @@ public class CombatMenuView implements Serializable {
     // to be implemented later
     private final String AMBUSH = "A monster gets the jump on you!";
 
-    public void displayMenu() {
+    @Override
+    public void display() {
 
         //Final game builds the enemies based on location hostility and 
         //a built in bestiary.
@@ -88,28 +97,7 @@ public class CombatMenuView implements Serializable {
             System.out.println(BANNER);
         }
     }
-
     
-    public String getInput() {
-        String input = null;
-        Boolean valid = false;
-        Scanner keyboard = new Scanner(System.in);
-
-        while (!valid) {
-            System.out.println("What dost thou do?");
-            input = keyboard.nextLine();
-            input = input.trim();
-            if (input.length() < 1) {
-                System.out.println("Error - You didn't type anything!");
-                continue;
-            }
-            break;
-        }
-
-        return input;
-    }
-
-    // Do the action selected in the combat loop.
     public boolean doAction(char selection, MainCharacter hero, Enemy enemy) {
         CombatControl combat = new CombatControl();
 
@@ -166,4 +154,14 @@ public class CombatMenuView implements Serializable {
             combat.applyDamage(damage, hero);
         }
     }
+
+    @Override
+    public boolean doAction(Object obj) {
+        //This is the wrong doAction. Combat is more complicated than 
+        //other view layer calsses. Because of this, I don't know what
+        //to do with this class.
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+  
 }

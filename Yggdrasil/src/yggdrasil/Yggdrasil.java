@@ -37,12 +37,16 @@ public class Yggdrasil {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-// creat start programView and start the program
+        //Create start programView and start the program
         StartProgramView starProgramView = new StartProgramView();
         starProgramView.startProgram();
+        //Simulate a fight between a player and an enemy
+        CombatMenuView combat = new CombatMenuView();
+        combat.display();
+        //Simulate a "clearing view" on the map
         ClearingView clearing = new ClearingView();
         clearing.display();
-        
+
     }
 
     public static Player getPlayer() {
