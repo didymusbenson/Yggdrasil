@@ -5,10 +5,6 @@
  */
 package byui.cit260.yggdrasil.view;
 
-import byui.cit260.yggdrasil.control.GameControl;
-import java.io.Serializable;
-import java.util.Scanner;
-import yggdrasil.Yggdrasil;
 
 /**
  * @author tsunami
