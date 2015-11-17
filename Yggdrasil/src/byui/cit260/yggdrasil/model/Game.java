@@ -15,6 +15,7 @@ public class Game implements Serializable{
     private Actor[] actors;
     private Enemy[] enemies;
     private Player player;
+    private Map map;
     
     private int gameNumberOfDeaths;
     public Game(){};
@@ -84,6 +85,14 @@ public class Game implements Serializable{
 
     public void setInventoryItems(Inventory[] inventoryItems) {
         this.inventoryItems = inventoryItems;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
     
 }

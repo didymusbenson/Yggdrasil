@@ -13,11 +13,15 @@ import java.util.Arrays;
  * @author tsunami
  */
 public class Map implements Serializable {
-private int mapRowCount;
-private int mapColumnCount;
-private Location[][] locations = new Location[mapRowCount][mapColumnCount];
 
-    public Map(){}
+    private Game game;
+    
+    private int mapRowCount;
+    private int mapColumnCount;
+    private Location[][] locations = new Location[mapRowCount][mapColumnCount];
+
+    public Map() {
+    }
 
     public int getMapRowCount() {
         return mapRowCount;
@@ -78,6 +82,4 @@ private Location[][] locations = new Location[mapRowCount][mapColumnCount];
         return true;
     }
 
-    
-    
 }
