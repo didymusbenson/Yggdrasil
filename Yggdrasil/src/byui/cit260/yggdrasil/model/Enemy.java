@@ -15,6 +15,8 @@ import java.util.Objects;
  */
 public class Enemy extends Actor implements Serializable {
 
+    private Game game;
+    
     private int enemyEscapeChance;
     private int enemyXpReward;
     private int enemyGoldReward;

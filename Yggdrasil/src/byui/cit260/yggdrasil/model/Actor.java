@@ -17,6 +17,8 @@ import java.util.Objects;
 
 public class Actor implements Serializable {
 
+    private Game game;
+    
     private int actorMaxHp;
     private int actorTempHp;
     private int actorAttack;

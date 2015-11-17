@@ -11,6 +11,11 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     
+    private Inventory[] inventoryItems;
+    private Actor[] actors;
+    private Enemy[] enemies;
+    private Player player;
+    
     private int gameNumberOfDeaths;
     public Game(){};
 
@@ -47,6 +52,38 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public Actor[] getActors() {
+        return actors;
+    }
+
+    public void setActors(Actor[] actors) {
+        this.actors = actors;
+    }
+
+    public Enemy[] getEnemies() {
+        return enemies;
+    }
+
+    public void setEnemies(Enemy[] enemies) {
+        this.enemies = enemies;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Inventory[] getInventoryItems() {
+        return inventoryItems;
+    }
+
+    public void setInventoryItems(Inventory[] inventoryItems) {
+        this.inventoryItems = inventoryItems;
     }
     
 }

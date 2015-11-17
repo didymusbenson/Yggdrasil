@@ -15,6 +15,8 @@ import java.util.Objects;
  */
 public class Inventory implements Serializable {
 
+    private Game game;
+    
     private String[] inventoryItemsHeld;
     private HashMap<String, Item> items = new HashMap<>(); 
 

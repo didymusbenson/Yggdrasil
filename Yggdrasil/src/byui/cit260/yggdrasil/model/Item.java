@@ -8,7 +8,7 @@ package byui.cit260.yggdrasil.model;
 import java.io.Serializable;
 
 /**
- *
+ * TODO: CONVERT ITEM TO ENUM
  * @author Didymus
  */
 public class Item implements Serializable{
