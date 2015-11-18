@@ -17,6 +17,7 @@ import java.util.Objects;
 public class Location implements Serializable {
 
     private Enemy[] enemies;
+    private Scene scene; 
     
     private double locationHostility;
     private double locationEncounterChance;

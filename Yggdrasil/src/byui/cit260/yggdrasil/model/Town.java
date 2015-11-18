@@ -14,8 +14,6 @@ import java.util.Objects;
  */
 public class Town extends Scene implements Serializable{
     
-    private Inventory inventory;
-    
     private String townName;
     private String townGossip;
     private String townInnStory;
