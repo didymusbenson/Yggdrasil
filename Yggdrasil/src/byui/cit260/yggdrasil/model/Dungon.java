@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author Brock
  */
-public class Dungon extends Location implements Serializable{
+public class Dungon extends Scene implements Serializable{
 
     private int dungonGoldAvalible;
     private int dungonNumberOfFights;

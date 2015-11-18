@@ -16,6 +16,8 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
 
+    private Enemy[] enemies;
+    
     private double locationHostility;
     private double locationEncounterChance;
     private double locationCoordinates;
@@ -74,6 +76,15 @@ public class Location implements Serializable {
         this.coordinates = coordinates;
     }
 
+    public Enemy[] getEnemies() {
+        return enemies;
+    }
+
+    public void setEnemies(Enemy[] enemies) {
+        this.enemies = enemies;
+    }
+
+    
 
     @Override
     public String toString() {

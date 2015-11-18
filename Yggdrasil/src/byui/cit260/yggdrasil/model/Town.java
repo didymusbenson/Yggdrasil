@@ -14,6 +14,8 @@ import java.util.Objects;
  */
 public class Town extends Scene implements Serializable{
     
+    private Inventory inventory;
+    
     private String townName;
     private String townGossip;
     private String townInnStory;
@@ -21,6 +23,7 @@ public class Town extends Scene implements Serializable{
     private String townQuestStory;
     private boolean questCompleted;
     private int townInnPrice;
+    
     
     public Town(){
     }

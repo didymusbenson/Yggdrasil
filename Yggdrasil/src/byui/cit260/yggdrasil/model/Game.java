@@ -13,7 +13,6 @@ public class Game implements Serializable{
     
     private Inventory[] inventoryItems;
     private Actor[] actors;
-    private Enemy[] enemies;
     private Player player;
     private Map map;
     
@@ -63,13 +62,7 @@ public class Game implements Serializable{
         this.actors = actors;
     }
 
-    public Enemy[] getEnemies() {
-        return enemies;
-    }
 
-    public void setEnemies(Enemy[] enemies) {
-        this.enemies = enemies;
-    }
 
     public Player getPlayer() {
         return player;
