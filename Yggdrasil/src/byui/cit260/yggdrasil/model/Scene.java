@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *
+ * Scenes don't change, but towns and dungeons do. Must be array.
  * @author Brock
  */
 public class Scene implements Serializable {

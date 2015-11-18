@@ -13,6 +13,8 @@ import java.io.Serializable;
  */
 public class Item implements Serializable{
 
+    private Inventory inventory;
+    
     private int itemType; // 1 = restorative, 2 = damaging, 3 = weapon
     private int itemBuyPrice;
     private int itemSellPrice;

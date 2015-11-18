@@ -10,53 +10,23 @@ import java.util.Arrays;
 
 
 /**
- *
+ * Nothing in a shop should change. Can make enum?
  * @author Didymus
  */
 public class Shop implements Serializable {
     
     
-    private String[] shopItemsHeld;
+    private Inventory inventory;
     
     public Shop(){
     }
 
-    public String[] getShopItemsHeld() {
-        return shopItemsHeld;
+    public Inventory getInventory() {
+        return inventory;
     }
 
-    public void setShopItemsHeld(String[] shopItemsHeld) {
-        this.shopItemsHeld = shopItemsHeld;
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
-
-    // See comment in "Inventory" class.
-    @Override
-    public String toString() {
-        return "Shop{" + "shopItemsHeld=" + Arrays.toString(shopItemsHeld) + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + Arrays.deepHashCode(this.shopItemsHeld);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Shop other = (Shop) obj;
-        if (!Arrays.deepEquals(this.shopItemsHeld, other.shopItemsHeld)) {
-            return false;
-        }
-        return true;
-    }
-
-
-   
+    
 }

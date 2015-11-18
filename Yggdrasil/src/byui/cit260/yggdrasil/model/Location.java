@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *
+ * Locations shouldn't change. Enums possibly.
  * @author Brock
  */
 public class Location implements Serializable {

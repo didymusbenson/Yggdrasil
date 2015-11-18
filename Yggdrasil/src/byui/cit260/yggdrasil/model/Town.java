@@ -9,20 +9,39 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *
+ * 
  * @author Didymus
  */
-public class Town extends Location implements Serializable{
+public class Town extends Scene implements Serializable{
     
+    private String townName;
     private String townGossip;
     private String townInnStory;
-    private String townShopStory;
+    private String townShopStory; // Move to shop class?
     private String townQuestStory;
+    private boolean questCompleted;
     private int townInnPrice;
     
     public Town(){
     }
 
+    public String getTownName() {
+        return townName;
+    }
+
+    public void setTownName(String townName) {
+        this.townName = townName;
+    }
+
+    
+    public boolean isQuestCompleted() {
+        return questCompleted;
+    }
+
+    public void setQuestCompleted(boolean questCompleted) {
+        this.questCompleted = questCompleted;
+    }
+    
     public String getTownGossip() {
         return townGossip;
     }
