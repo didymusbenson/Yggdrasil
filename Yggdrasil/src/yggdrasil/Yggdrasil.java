@@ -8,19 +8,9 @@
 package yggdrasil;
 
 // 2 - This tells the program what it will need to play the game.
-import byui.cit260.yggdrasil.model.Actor;
-import byui.cit260.yggdrasil.model.Dungon;
-import byui.cit260.yggdrasil.model.Enemy;
-import byui.cit260.yggdrasil.model.Location;
-import byui.cit260.yggdrasil.model.MainCharacter;
+
 import byui.cit260.yggdrasil.model.Player;
-import byui.cit260.yggdrasil.model.Scene;
-import byui.cit260.yggdrasil.model.Town;
-import byui.cit260.yggdrasil.model.Shop;
-import byui.cit260.yggdrasil.model.Item;
-import byui.cit260.yggdrasil.model.Map;
-import byui.cit260.yggdrasil.model.Inventory;
-import byui.cit260.yggdrasil.model.Game;
+
 import byui.cit260.yggdrasil.view.ClearingView;
 import byui.cit260.yggdrasil.view.CombatMenuView;
 import byui.cit260.yggdrasil.view.StartProgramView;
