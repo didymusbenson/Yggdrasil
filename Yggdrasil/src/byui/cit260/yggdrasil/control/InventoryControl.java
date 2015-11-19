@@ -15,6 +15,15 @@ import java.io.Serializable;
  */
 public class InventoryControl implements Serializable {
 
+    public static Item[] createGameInventory() {
+        Item[] items = null;
+        //INITIALIZE THE ARRAY OF ITEMS THAT MAKE UP THE ENTIRE GAME
+        //SET ALL "ITEMSUSED" TO 0. PLAYER STARTS WITH NOTHING.
+        
+        
+        return items;
+    }
+
     public void addToInventory(Item item){
         int itemsHeld = item.getItemsUsed();
         if (itemsHeld == 99)

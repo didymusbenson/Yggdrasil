@@ -15,6 +15,8 @@ import java.util.Objects;
  */
 public class Scene implements Serializable {
 
+
+    
     private String sceneDescription;
     private String sceneMapSymbol;
 

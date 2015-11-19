@@ -9,6 +9,7 @@ package yggdrasil;
 
 // 2 - This tells the program what it will need to play the game.
 
+import byui.cit260.yggdrasil.model.Game;
 import byui.cit260.yggdrasil.model.Player;
 
 import byui.cit260.yggdrasil.view.ClearingView;
@@ -21,7 +22,7 @@ import byui.cit260.yggdrasil.view.StartProgramView;
  */
 public class Yggdrasil {
 
-    private static Player player;
+    private static Game currentGame;
 
     /**
      * @param args the command line arguments
@@ -39,12 +40,14 @@ public class Yggdrasil {
 
     }
 
-    public static Player getPlayer() {
-        return player;
+    public static Game getCurrentGame() {
+        return currentGame;
     }
 
-    public static void setPlayer(Player player) {
-        Yggdrasil.player = player;
+    public static void setCurrentGame(Game currentGame) {
+        Yggdrasil.currentGame = currentGame;
     }
+
+
 
 }
