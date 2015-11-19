@@ -21,14 +21,50 @@ public class Location implements Serializable {
     
     private double locationHostility;
     private double locationEncounterChance;
-    private double locationCoordinates;
     private double locationEncounterType;
     private boolean blocked;
+    private boolean visited;
     private Point coordinates;
+    
+    private int row;
+    private int column;
 
     public Location() {
     }
 
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    
     public double getLocationHostility() {
         return locationHostility;
     }
@@ -45,13 +81,6 @@ public class Location implements Serializable {
         this.locationEncounterChance = locationEncounterChance;
     }
 
-    public double getLocationCoordinates() {
-        return locationCoordinates;
-    }
-
-    public void setLocationCoordinates(double locationCoordinates) {
-        this.locationCoordinates = locationCoordinates;
-    }
 
     public double getLocationEncounterType() {
         return locationEncounterType;
@@ -89,7 +118,7 @@ public class Location implements Serializable {
 
     @Override
     public String toString() {
-        return "Location{" + "locationHostility=" + locationHostility + ", locationEncounterChance=" + locationEncounterChance + ", locationCoordinates=" + locationCoordinates + ", locationEncounterType=" + locationEncounterType + ", blocked=" + blocked + ", coordinates=" + coordinates + '}';
+        return "Location{" + "locationHostility=" + locationHostility + ", locationEncounterChance=" + locationEncounterChance + ", locationEncounterType=" + locationEncounterType + ", blocked=" + blocked + ", coordinates=" + coordinates + '}';
     }
 
     @Override
@@ -97,7 +126,7 @@ public class Location implements Serializable {
         int hash = 3;
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationHostility) ^ (Double.doubleToLongBits(this.locationHostility) >>> 32));
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationEncounterChance) ^ (Double.doubleToLongBits(this.locationEncounterChance) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationCoordinates) ^ (Double.doubleToLongBits(this.locationCoordinates) >>> 32));
+        
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationEncounterType) ^ (Double.doubleToLongBits(this.locationEncounterType) >>> 32));
         hash = 97 * hash + (this.blocked ? 1 : 0);
         hash = 97 * hash + Objects.hashCode(this.coordinates);
@@ -119,9 +148,7 @@ public class Location implements Serializable {
         if (Double.doubleToLongBits(this.locationEncounterChance) != Double.doubleToLongBits(other.locationEncounterChance)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.locationCoordinates) != Double.doubleToLongBits(other.locationCoordinates)) {
-            return false;
-        }
+
         if (this.blocked != other.blocked) {
             return false;
         }
