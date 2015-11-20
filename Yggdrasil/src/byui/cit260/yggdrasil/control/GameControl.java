@@ -7,9 +7,11 @@
 package byui.cit260.yggdrasil.control;
 
 import byui.cit260.yggdrasil.control.MapControl.sceneType;
+import byui.cit260.yggdrasil.model.Enemy;
 import byui.cit260.yggdrasil.model.Game;
 import byui.cit260.yggdrasil.model.Item;
 import byui.cit260.yggdrasil.model.Location;
+import byui.cit260.yggdrasil.model.MainCharacter;
 import byui.cit260.yggdrasil.model.Map;
 import byui.cit260.yggdrasil.model.Player;
 import byui.cit260.yggdrasil.model.Scene;
@@ -30,15 +32,15 @@ public class GameControl implements Serializable {
         game.setPlayer(player);
 
         //CREATE ENEMIES
-        
+        Enemy[] enemies = CombatControl.createEnemies();
         //CREATE THE MAIN P.C.
+        MainCharacter hero = new MainCharacter();
         
         //CREATE GAME INVENTORY INITIALIZE ALL ITEMS AT ZERO
         Item[] inventoryItems = InventoryControl.createGameInventory();
         
         //CREATE MAP, SCENES, TOWNS, DUNGEON SQUARES, FINAL BOSS AREA
         Map map = MapControl.createMap();
-        //CREATE 
 
         System.out.println("createNewGame successful.");
 

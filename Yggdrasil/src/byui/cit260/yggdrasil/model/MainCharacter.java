@@ -36,6 +36,19 @@ public class MainCharacter extends Actor implements Serializable {
     private int mainCharacterCurrentLevel;
 
     public MainCharacter() {
+        // NEW GAME MAIN CHARACTER. There is only one in the game so there
+        // only needs to be one setting for the default constructor.
+        this.mainCharacterCurrentLevel = 1;
+        this.mainCharacterLuck = 1;
+        this.mainCharacterMoney = 50;
+        this.mainCharacterSpeed = 5;
+        this.mainCharacterTotalXp = 0;
+        
+        this.setActorAttack(1);
+        this.setActorDefense(5);
+        this.setActorMaxHp(20);
+        this.setActorTempHp(this.getActorMaxHp());
+        //DOES NOT SET WEAPON OR COORDINATES     
     }
 
     public int getMainCharacterLuck() {
