@@ -16,13 +16,20 @@ public class Item implements Serializable{
     
     private int itemType; // 1 = restorative, 2 = damaging, 3 = weapon
     private int itemBuyPrice;
-    private int itemSellPrice;
     private int itemModifier;
     private int itemsUsed;
+    
     public Item() {
 
     }
 
+    public Item(int type, int price, int modifier){
+        this.itemType = type;
+        this.itemBuyPrice = price;
+        this.itemModifier = modifier;
+        this.itemsUsed = 0;
+    }
+    
     public int getItemType() {
         return itemType;
     }
@@ -47,13 +54,7 @@ public class Item implements Serializable{
         this.itemBuyPrice = itemBuyPrice;
     }
 
-    public int getItemSellPrice() {
-        return itemSellPrice;
-    }
 
-    public void setItemSellPrice(int itemSellPrice) {
-        this.itemSellPrice = itemSellPrice;
-    }
 
     public int getItemModifier() {
         return itemModifier;
@@ -65,7 +66,7 @@ public class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "itemType=" + itemType + ", itemBuyPrice=" + itemBuyPrice + ", itemSellPrice=" + itemSellPrice + ", itemModifier=" + itemModifier + ", itemsUsed=" + itemsUsed + '}';
+        return "Item{" + "itemType=" + itemType + ", itemBuyPrice=" + itemBuyPrice + ", itemModifier=" + itemModifier + ", itemsUsed=" + itemsUsed + '}';
     }
 
     
@@ -75,7 +76,6 @@ public class Item implements Serializable{
         int hash = 5;
         hash = 71 * hash + this.itemType;
         hash = 71 * hash + this.itemBuyPrice;
-        hash = 71 * hash + this.itemSellPrice;
         hash = 71 * hash + this.itemModifier;
         hash = 71 * hash + this.itemsUsed;
         return hash;
@@ -94,9 +94,6 @@ public class Item implements Serializable{
             return false;
         }
         if (this.itemBuyPrice != other.itemBuyPrice) {
-            return false;
-        }
-        if (this.itemSellPrice != other.itemSellPrice) {
             return false;
         }
         if (this.itemModifier != other.itemModifier) {

@@ -18,7 +18,7 @@ import java.util.Random;
  */
 public class CombatControl implements Serializable {
 
-    //PLACEHOLDER METHOD, creates a test BOB enemy.
+    //PLACEHOLDER METHOD delete once battle system is completed
     public static Enemy getEnemy() {
         // In this test, all enemies must have weapons. 
         // enemy weapons can be special "enemy only" item objects
@@ -38,7 +38,7 @@ public class CombatControl implements Serializable {
         return bob;
     }
 
-    //LIKE getEnemy() this is a placeholder for the ACTUAL getHero function
+    //PLACEHOLDER METHOD delete once battle system is completed
     public static MainCharacter getHero() {
         
         Item tempweap = new Item();
