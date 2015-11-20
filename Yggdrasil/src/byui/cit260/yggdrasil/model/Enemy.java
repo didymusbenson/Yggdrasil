@@ -24,6 +24,16 @@ public class Enemy extends Actor implements Serializable {
     
     public Enemy() {
     }
+    
+    public Enemy(int escapeChance, int xpReward, int goldReward, String name, int maxHp, int attack, int defense){
+        this.enemyEscapeChance = escapeChance;
+        this.enemyGoldReward = goldReward;
+        this.enemyName = name;
+        this.setActorMaxHp(maxHp);
+        this.setActorTempHp(this.getActorMaxHp());
+        this.setActorAttack(attack);
+        this.setActorDefense(defense);
+    }
 
     public int getEnemyEscapeChance() {
         return enemyEscapeChance;

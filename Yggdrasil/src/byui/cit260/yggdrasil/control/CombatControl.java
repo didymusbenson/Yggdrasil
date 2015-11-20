@@ -59,6 +59,19 @@ public class CombatControl implements Serializable {
    
         return hero;
     }
+    
+    public static Enemy[] createEnemies(){
+        Enemy[] enemies = new Enemy[33];
+        //Generates enemy with every stat EXCEPT: Weapon, coordinates, and location
+        //public Enemy(int escapeChance, int xpReward, int goldReward, String name, int maxHp, int attack, int defense)
+        
+        //Fill in the enemies according to this example
+        Enemy imp = new Enemy(10, 5, 10, "Imp", 15, 3, 3);
+        //Then set the new enemy object as the next one in the array.
+        enemies[0] = imp;
+        
+        return enemies;
+    }
 
     /*
         INCREASESTAT AND DECREASE STAT may be subject to change
