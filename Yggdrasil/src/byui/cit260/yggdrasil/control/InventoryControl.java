@@ -16,11 +16,34 @@ import java.io.Serializable;
 public class InventoryControl implements Serializable {
 
     public static Item[] createGameInventory() {
-        Item[] items = new Item[10];
         //INITIALIZE THE ARRAY OF ITEMS THAT MAKE UP THE ENTIRE GAME
+        Item[] items = new Item[7];
+
         //constructor format:  public Item(int type, int price, int modifier)
+        Item potion = new Item("Potion", 1, 10, 30);
+        items[0] = potion;
         
+        Item hiPotion = new Item("Hi-Potion", 1, 30, 100);
+        items[1] = hiPotion;
         
+        Item fullPotion = new Item("Full Potion", 1, 100, 9999); // Player health never exceeds 9999
+        items[2] = fullPotion;
+        
+        Item dagger = new Item("Dagger", 3, 20, 5);
+        items[3] = dagger;
+        
+        Item sword = new Item("Sword", 3, 50, 10);
+        items[4] = sword;
+        
+        Item greatSword = new Item("Greatsword", 3, 100, 15);
+        items[5] = greatSword;
+        
+        Item ultimaSword = new Item("Ultima Sword", 3, 500, 25);
+        items[6] = ultimaSword; 
+        
+        Item fork = new Item("Fork", 3, 9999, 50); // Costs 9999 because it can't be bought in the store
+        items[7] = fork;
+
         return items;
     }
 

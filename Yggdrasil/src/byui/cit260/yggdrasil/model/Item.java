@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class Item implements Serializable{
 
-    
+    private String itemName;
     private int itemType; // 1 = restorative, 2 = damaging, 3 = weapon
     private int itemBuyPrice;
     private int itemModifier;
@@ -23,12 +23,22 @@ public class Item implements Serializable{
 
     }
 
-    public Item(int type, int price, int modifier){
+    public Item(String name, int type, int price, int modifier){
+        this.itemName = name;
         this.itemType = type;
         this.itemBuyPrice = price;
         this.itemModifier = modifier;
         this.itemsUsed = 0;
     }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+    
     
     public int getItemType() {
         return itemType;
