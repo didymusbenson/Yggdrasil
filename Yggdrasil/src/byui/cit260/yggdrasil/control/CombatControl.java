@@ -78,6 +78,12 @@ public class CombatControl implements Serializable {
         
         Enemy wolf = new Enemy(20,7,0,"Wolf",10,2,4);
         enemies[3] = wolf;
+        
+        Enemy wyrm = new Enemy(10,10,15,"Wyrm",20,4,3);
+        enemies[4] = wyrm;
+        
+        Enemy zombie = new Enemy(12,12,10,"Zombie",24,5,3);
+        enemies[5] = zombie;
         return enemies;
     }
 
