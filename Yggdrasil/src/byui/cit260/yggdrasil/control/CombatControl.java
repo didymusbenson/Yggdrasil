@@ -75,6 +75,9 @@ public class CombatControl implements Serializable {
         
         Enemy hobGoblin = new Enemy(15,10,20,"Hobgoblin",20,4,5);
         enemies[2] = hobGoblin;
+        
+        Enemy wolf = new Enemy(20,7,0,"Wolf",10,2,4);
+        enemies[3] = wolf;
         return enemies;
     }
 
