@@ -70,6 +70,11 @@ public class CombatControl implements Serializable {
         //Then set the new enemy object as the next one in the array.
         enemies[0] = imp;
         
+        Enemy goblin = new Enemy(12,7,10,"goblin",15,3,3);
+        enemies[1] = goblin;
+        
+        Enemy hobGoblin = new Enemy(15,10,20,"Hobgoblin",20,4,5);
+        enemies[2] = hobGoblin;
         return enemies;
     }
 
