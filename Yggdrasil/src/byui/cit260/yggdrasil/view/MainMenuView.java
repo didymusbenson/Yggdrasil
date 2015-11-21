@@ -20,13 +20,13 @@ public class MainMenuView extends View {
         char input = (char) obj;
         switch (input) {
             case 'N': //new game
-                //    this.startNewGame();
+                System.out.println("New Game Called");
                 break;
             case 'L': //load game
-                //    this.loadGame();
+                System.out.println("Load Game Called");
                 break;
             case 'H': //help screen
-                //    this.displayHelpMenu();
+                   this.displayHelp();
                 break;
             case 'Q': //Quit game
                 return true;
@@ -34,6 +34,11 @@ public class MainMenuView extends View {
                 System.out.println("Error - Let me give you those options again:");
         }
         return false;
+    }
+
+    private void displayHelp() {
+        HelpMenuView help = new HelpMenuView();
+        help.displayMenu();
     }
 
 }
