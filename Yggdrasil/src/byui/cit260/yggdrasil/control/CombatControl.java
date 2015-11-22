@@ -84,6 +84,42 @@ public class CombatControl implements Serializable {
         
         Enemy zombie = new Enemy(12,12,10,"Zombie",24,5,3);
         enemies[5] = zombie;
+        
+        Enemy skeleton = new Enemy(20,15,20,"Skeleton",30,5,7);
+        enemies[6] = skeleton;
+        
+        Enemy nightMare = new Enemy(50,20,50,"NightMare",30,7,4);
+        enemies[7] = nightMare;
+        
+        Enemy ghoul = new Enemy(35,20,45,"Ghoul",25,6,5);
+        enemies[8] = ghoul;
+        
+        Enemy ghoulFriend = new Enemy(35,25,50,"GoulFriend",27,7,6);
+        enemies[9] = ghoulFriend;
+        
+        Enemy cobra = new Enemy(20,30,20,"Cobra",20,10,4);
+        enemies[10] = cobra;
+        
+        Enemy ogre = new Enemy(35,25,50,"Ogre",25,8,10);
+        enemies[11] = ogre;
+        
+        Enemy lizard = new Enemy(40,30,50,"Lizard",50,10,10);
+        enemies[12] = lizard;
+        
+        Enemy blackWidow = new Enemy(45,35,55,"Black Widow",55,10,12);
+        enemies[13] = blackWidow;
+        
+        Enemy warg = new Enemy(50,40,60,"Warg",60,11,12);
+        enemies[14] = warg;
+        
+        Enemy pirate = new Enemy(55,45,60,"Pirate",65,13,12);
+        enemies[15] = pirate;
+        
+        Enemy ninja = new Enemy(60,50,80,"Ninja",70,15,10);
+        enemies[16] = ninja;
+        
+        Enemy buccaneer = new Enemy(55,45,50,"Buccaneer",60,12,12);
+        enemies[17] = buccaneer;
         return enemies;
     }
 
