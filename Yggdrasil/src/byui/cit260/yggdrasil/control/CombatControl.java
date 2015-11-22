@@ -138,6 +138,36 @@ public class CombatControl implements Serializable {
         
         Enemy vashnendarada = new Enemy(80,80,100,"Shadow",90,25,25);
         enemies[23] = vashnendarada;
+        
+        Enemy greenSlime = new Enemy(60,80,100,"Green Slime", 60,20,20);
+        enemies[24] = greenSlime;
+        
+        Enemy crawler = new Enemy(70,70,80,"Crawler",80,20,16);
+        enemies[25] = crawler;
+        
+        Enemy gargoyle = new Enemy(90,85,110,"Gargoyle",95,28,30);
+        enemies[26] = gargoyle;
+        
+        Enemy bloodBones = new Enemy(90,90,110,"Blood Bones",100,30,30);
+        enemies[27] = bloodBones;
+        
+        Enemy psyco = new Enemy(90,90,110,"Psyco",100,30,30);
+        enemies[28] = psyco;
+        
+        Enemy wizard = new Enemy(60,100,150,"Wizard",60,40,25);
+        enemies[29] = wizard;
+        
+        Enemy bandet = new Enemy(80,100,150,"Bandet",100,35,30);
+        enemies[30] = bandet;
+        
+        Enemy formian = new Enemy(90,90,110,"Formian",100,30,30);
+        enemies[31] = formian;
+        
+        Enemy blinkDog = new Enemy(80,100,50,"Blink Dog",105,34,36);
+        enemies[32] = blinkDog;
+        
+        Enemy Plythu = new Enemy(100,1000,1000,"Plythu",300,55,50);
+        enemies[33] = Plythu;
         return enemies;
     }
 
