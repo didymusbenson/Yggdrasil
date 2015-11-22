@@ -120,6 +120,24 @@ public class CombatControl implements Serializable {
         
         Enemy buccaneer = new Enemy(55,45,50,"Buccaneer",60,12,12);
         enemies[17] = buccaneer;
+        
+        Enemy landShark = new Enemy(60,60,60,"Land Shark",80,14,10);
+        enemies[18] = landShark;
+        
+        Enemy disembodiedEyes = new Enemy(70,65,80,"Disembodied Eyes",50,20,15);
+        enemies[19] = disembodiedEyes;
+        
+        Enemy tarantula = new Enemy(70,70,80,"Tarantula",80,20,16);
+        enemies[20] = tarantula;
+        
+        Enemy ghost = new Enemy(60,80,100,"Ghost",60,20,20);
+        enemies[21] = ghost;
+        
+        Enemy scorpian = new Enemy(80,75,85,"Scorpian",85,25,20);
+        enemies[22] = scorpian;
+        
+        Enemy vashnendarada = new Enemy(80,80,100,"Shadow",90,25,25);
+        enemies[23] = vashnendarada;
         return enemies;
     }
 
