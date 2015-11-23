@@ -44,7 +44,7 @@ public class MapControl implements Serializable {
         return map;
     }
 
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         //CREATE SCENES
         Game game = Yggdrasil.getCurrentGame(); // Do we need this line?
         
@@ -72,7 +72,7 @@ public class MapControl implements Serializable {
         scenes[sceneType.forest.ordinal()] = forest;
         
         Scene beach = new Scene();
-        beach.setSceneDescription("BECAH SCENE");
+        beach.setSceneDescription("BEACH SCENE");
         beach.setSceneMapSymbol("!");
         scenes[sceneType.beach.ordinal()] = beach;
         
