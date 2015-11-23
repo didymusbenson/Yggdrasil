@@ -70,6 +70,104 @@ public class CombatControl implements Serializable {
         //Then set the new enemy object as the next one in the array.
         enemies[0] = imp;
         
+        Enemy goblin = new Enemy(12,7,10,"goblin",15,3,3);
+        enemies[1] = goblin;
+        
+        Enemy hobGoblin = new Enemy(15,10,20,"Hobgoblin",20,4,5);
+        enemies[2] = hobGoblin;
+        
+        Enemy wolf = new Enemy(20,7,0,"Wolf",10,2,4);
+        enemies[3] = wolf;
+        
+        Enemy wyrm = new Enemy(10,10,15,"Wyrm",20,4,3);
+        enemies[4] = wyrm;
+        
+        Enemy zombie = new Enemy(12,12,10,"Zombie",24,5,3);
+        enemies[5] = zombie;
+        
+        Enemy skeleton = new Enemy(20,15,20,"Skeleton",30,5,7);
+        enemies[6] = skeleton;
+        
+        Enemy nightMare = new Enemy(50,20,50,"NightMare",30,7,4);
+        enemies[7] = nightMare;
+        
+        Enemy ghoul = new Enemy(35,20,45,"Ghoul",25,6,5);
+        enemies[8] = ghoul;
+        
+        Enemy ghoulFriend = new Enemy(35,25,50,"GoulFriend",27,7,6);
+        enemies[9] = ghoulFriend;
+        
+        Enemy cobra = new Enemy(20,30,20,"Cobra",20,10,4);
+        enemies[10] = cobra;
+        
+        Enemy ogre = new Enemy(35,25,50,"Ogre",25,8,10);
+        enemies[11] = ogre;
+        
+        Enemy lizard = new Enemy(40,30,50,"Lizard",50,10,10);
+        enemies[12] = lizard;
+        
+        Enemy blackWidow = new Enemy(45,35,55,"Black Widow",55,10,12);
+        enemies[13] = blackWidow;
+        
+        Enemy warg = new Enemy(50,40,60,"Warg",60,11,12);
+        enemies[14] = warg;
+        
+        Enemy pirate = new Enemy(55,45,60,"Pirate",65,13,12);
+        enemies[15] = pirate;
+        
+        Enemy ninja = new Enemy(60,50,80,"Ninja",70,15,10);
+        enemies[16] = ninja;
+        
+        Enemy buccaneer = new Enemy(55,45,50,"Buccaneer",60,12,12);
+        enemies[17] = buccaneer;
+        
+        Enemy landShark = new Enemy(60,60,60,"Land Shark",80,14,10);
+        enemies[18] = landShark;
+        
+        Enemy disembodiedEyes = new Enemy(70,65,80,"Disembodied Eyes",50,20,15);
+        enemies[19] = disembodiedEyes;
+        
+        Enemy tarantula = new Enemy(70,70,80,"Tarantula",80,20,16);
+        enemies[20] = tarantula;
+        
+        Enemy ghost = new Enemy(60,80,100,"Ghost",60,20,20);
+        enemies[21] = ghost;
+        
+        Enemy scorpian = new Enemy(80,75,85,"Scorpian",85,25,20);
+        enemies[22] = scorpian;
+        
+        Enemy vashnendarada = new Enemy(80,80,100,"Shadow",90,25,25);
+        enemies[23] = vashnendarada;
+        
+        Enemy greenSlime = new Enemy(60,80,100,"Green Slime", 60,20,20);
+        enemies[24] = greenSlime;
+        
+        Enemy crawler = new Enemy(70,70,80,"Crawler",80,20,16);
+        enemies[25] = crawler;
+        
+        Enemy gargoyle = new Enemy(90,85,110,"Gargoyle",95,28,30);
+        enemies[26] = gargoyle;
+        
+        Enemy bloodBones = new Enemy(90,90,110,"Blood Bones",100,30,30);
+        enemies[27] = bloodBones;
+        
+        Enemy psyco = new Enemy(90,90,110,"Psyco",100,30,30);
+        enemies[28] = psyco;
+        
+        Enemy wizard = new Enemy(60,100,150,"Wizard",60,40,25);
+        enemies[29] = wizard;
+        
+        Enemy bandet = new Enemy(80,100,150,"Bandet",100,35,30);
+        enemies[30] = bandet;
+        
+        Enemy formian = new Enemy(90,90,110,"Formian",100,30,30);
+        enemies[31] = formian;
+        
+        Enemy blinkDog = new Enemy(80,100,50,"Blink Dog",105,34,36);
+        enemies[32] = blinkDog;
+        
+        Enemy Plythu = new Enemy(100,1000,1000,"Plythu",300,55,50);
+        enemies[33] = Plythu;
         return enemies;
     }
 
