@@ -20,7 +20,7 @@ import yggdrasil.Yggdrasil;
 public class MapControl implements Serializable {
     
     public enum sceneType{
-        example, //TODO: DELETE
+        example, //TODO: DELETE EXAMPLE
         start,
         clearing,
         forest,
@@ -46,7 +46,8 @@ public class MapControl implements Serializable {
 
     private static Scene[] createScenes() {
         //CREATE SCENES
-        Game game = Yggdrasil.getCurrentGame();
+        Game game = Yggdrasil.getCurrentGame(); // Do we need this line?
+        
         Scene[] scenes = new Scene[sceneType.values().length];
         
         //CREATE THE INDIVIDUAL SCENES
