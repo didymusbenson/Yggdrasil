@@ -56,62 +56,62 @@ public class MapControl implements Serializable {
         scenes[sceneType.example.ordinal()] = example;
         
         Scene start = new Scene();
-        start.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        start.setSceneDescription("START GAME SCENE");
         start.setSceneMapSymbol("!");
         scenes[sceneType.start.ordinal()] = start;
         
         Scene clearing = new Scene();
-        clearing.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        clearing.setSceneDescription("CLEARING SCENE");
         clearing.setSceneMapSymbol("!");
         scenes[sceneType.clearing.ordinal()] = clearing;
         
         Scene forest = new Scene();
-        forest.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        forest.setSceneDescription("FOREST SCENE");
         forest.setSceneMapSymbol("!");
         scenes[sceneType.forest.ordinal()] = forest;
         
         Scene beach = new Scene();
-        beach.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        beach.setSceneDescription("BECAH SCENE");
         beach.setSceneMapSymbol("!");
         scenes[sceneType.beach.ordinal()] = beach;
         
         Scene town1 = new Scene();
-        town1.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        town1.setSceneDescription("TOWN 1 SCENE");
         town1.setSceneMapSymbol("!");
         scenes[sceneType.town1.ordinal()] = town1;
         
         Scene town2 = new Scene();
-        town2.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        town2.setSceneDescription("TOWN 2 SCENE");
         town2.setSceneMapSymbol("!");
         scenes[sceneType.town2.ordinal()] = town2;        
         
         Scene town3 = new Scene();
-        town3.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        town3.setSceneDescription("TOWN 3 SCENE");
         town3.setSceneMapSymbol("!");
         scenes[sceneType.town3.ordinal()] = town3;        
         
         Scene dungeon1 = new Scene();
-        dungeon1.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        dungeon1.setSceneDescription("DUNGEON 1 SCENE");
         dungeon1.setSceneMapSymbol("!");
         scenes[sceneType.dungeon1.ordinal()] = dungeon1;
         
         Scene dungeon2 = new Scene();
-        dungeon2.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        dungeon2.setSceneDescription("DUNGEON 2 SCENE");
         dungeon2.setSceneMapSymbol("!");
         scenes[sceneType.dungeon2.ordinal()] = dungeon2;        
         
         Scene dungeon3 = new Scene();
-        dungeon3.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        dungeon3.setSceneDescription("DUNGEON 3 SCENE");
         dungeon3.setSceneMapSymbol("!");
         scenes[sceneType.dungeon3.ordinal()] = dungeon3;   
         
         Scene plythu = new Scene();
-        plythu.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        plythu.setSceneDescription("PLYTHU SCENE");
         plythu.setSceneMapSymbol("!");
         scenes[sceneType.plythu.ordinal()] = plythu; 
         
         Scene endgame = new Scene();
-        endgame.setSceneDescription("THIS IS AN EXAMPLE SCENE");
+        endgame.setSceneDescription("ENDGAME SCENE");
         endgame.setSceneMapSymbol("!");
         scenes[sceneType.endgame.ordinal()] = endgame;        
         
