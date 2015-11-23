@@ -61,8 +61,8 @@ public class GameControl implements Serializable {
     public static void assignScenesLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
 
-        //Assign scene types to each of the coordinates.
-        locations[0][0].setScene(scenes[sceneType.clearing.ordinal()]); // AN EXAMPLE
+        //TODO: Draw out map, decide what belongs where
+        locations[0][0].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[0][1].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[0][2].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[0][3].setScene(scenes[sceneType.clearing.ordinal()]);
