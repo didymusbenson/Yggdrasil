@@ -21,18 +21,19 @@ public class MapControl implements Serializable {
     
     public enum sceneType{
         example, //TODO: DELETE EXAMPLE
-        start,
-        clearing,
-        forest,
-        beach,
-        town1,
-        town2,
-        town3,
-        dungeon1,
-        dungeon2,
-        dungeon3,
-        plythu,
-        endgame,
+        start, //Where player starts the game.
+        blocked, //Blocked off areas that can't be accessed - empty locations
+        clearing, //Scene for a clearing
+        forest, //Scene for a forest
+        beach, //Scene for the beach
+        town1, //Town 1 scene
+        town2, //Town 2 scene
+        town3, //Town 3 scene
+        dungeon1, //etc
+        dungeon2, //etc
+        dungeon3, //etc
+        plythu, //Scene where you fight Plythu
+        endgame, // End of the game scene.
     }
     
     public static Map createMap() {
@@ -60,6 +61,11 @@ public class MapControl implements Serializable {
         start.setSceneDescription("START GAME SCENE");
         start.setSceneMapSymbol("!");
         scenes[sceneType.start.ordinal()] = start;
+        
+        Scene blocked = new Scene();
+        blocked.setSceneDescription("BLOCKED OFF AREA");
+        blocked.setSceneMapSymbol("!");
+        scenes[sceneType.blocked.ordinal()] = blocked;
         
         Scene clearing = new Scene();
         clearing.setSceneDescription("CLEARING SCENE");
