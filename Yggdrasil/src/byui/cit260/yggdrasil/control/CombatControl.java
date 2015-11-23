@@ -70,7 +70,7 @@ public class CombatControl implements Serializable {
         //Then set the new enemy object as the next one in the array.
         enemies[0] = imp;
         
-        Enemy goblin = new Enemy(12,7,10,"goblin",15,3,3);
+        Enemy goblin = new Enemy(12,7,10,"Goblin",15,3,3);
         enemies[1] = goblin;
         
         Enemy hobGoblin = new Enemy(15,10,20,"Hobgoblin",20,4,5);
@@ -94,7 +94,7 @@ public class CombatControl implements Serializable {
         Enemy ghoul = new Enemy(35,20,45,"Ghoul",25,6,5);
         enemies[8] = ghoul;
         
-        Enemy ghoulFriend = new Enemy(35,25,50,"GoulFriend",27,7,6);
+        Enemy ghoulFriend = new Enemy(35,25,50,"Ex Girlfriend",27,7,6);
         enemies[9] = ghoulFriend;
         
         Enemy cobra = new Enemy(20,30,20,"Cobra",20,10,4);
@@ -133,7 +133,7 @@ public class CombatControl implements Serializable {
         Enemy ghost = new Enemy(60,80,100,"Ghost",60,20,20);
         enemies[21] = ghost;
         
-        Enemy scorpian = new Enemy(80,75,85,"Scorpian",85,25,20);
+        Enemy scorpian = new Enemy(80,75,85,"Scorpion",85,25,20);
         enemies[22] = scorpian;
         
         Enemy vashnendarada = new Enemy(80,80,100,"Shadow",90,25,25);
