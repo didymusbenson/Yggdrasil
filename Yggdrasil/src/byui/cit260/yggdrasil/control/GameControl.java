@@ -33,15 +33,26 @@ public class GameControl implements Serializable {
 
         //CREATE ENEMIES
         Enemy[] enemies = CombatControl.createEnemies();
+        game.setEnemies(enemies);
+        
         //CREATE THE MAIN P.C.
         MainCharacter hero = new MainCharacter();
+        game.setHero(hero);
         
         //CREATE GAME INVENTORY INITIALIZE ALL ITEMS AT ZERO
         Item[] inventoryItems = InventoryControl.createGameInventory();
+        game.setGameInventory(inventoryItems);
         
         //CREATE MAP, SCENES, TOWNS, DUNGEON SQUARES, FINAL BOSS AREA
+        //MAP
         Map map = MapControl.createMap();
-
+        //SCENES
+        
+        //AssignSceneLocations
+        
+        //SET GAME MAP
+        game.setMap(map);
+        
         System.out.println("createNewGame successful.");
 
     }

@@ -11,6 +11,9 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     
+    private Item[] gameInventory;
+    private MainCharacter hero;
+    private Enemy[] enemies;
     private Actor[] actors;
     private Player player;
     private Map map;
@@ -77,6 +80,30 @@ public class Game implements Serializable{
 
     public void setMap(Map map) {
         this.map = map;
+    }
+
+    public Enemy[] getEnemies() {
+        return enemies;
+    }
+
+    public void setEnemies(Enemy[] enemies) {
+        this.enemies = enemies;
+    }
+
+    public MainCharacter getHero() {
+        return hero;
+    }
+
+    public void setHero(MainCharacter hero) {
+        this.hero = hero;
+    }
+
+    public Item[] getGameInventory() {
+        return gameInventory;
+    }
+
+    public void setGameInventory(Item[] gameInventory) {
+        this.gameInventory = gameInventory;
     }
     
 }
