@@ -16,16 +16,16 @@ import java.util.Objects;
 public class Enemy extends Actor implements Serializable {
 
     private Location location;
-    
+
     private int enemyEscapeChance;
     private int enemyXpReward;
     private int enemyGoldReward;
     private String enemyName;
-    
+
     public Enemy() {
     }
-    
-    public Enemy(int escapeChance, int xpReward, int goldReward, String name, int maxHp, int attack, int defense){
+
+    public Enemy(int escapeChance, int xpReward, int goldReward, String name, int maxHp, int attack, int defense) {
         this.enemyEscapeChance = escapeChance;
         this.enemyGoldReward = goldReward;
         this.enemyName = name;
@@ -106,6 +106,4 @@ public class Enemy extends Actor implements Serializable {
         return true;
     }
 
-
-    
 }

@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class Map implements Serializable {
 
     private Game game;
-    
+
     private int mapRowCount;
     private int mapColumnCount;
     private Location[][] locations = new Location[mapRowCount][mapColumnCount];
@@ -23,26 +23,26 @@ public class Map implements Serializable {
     public Map() {
     }
 
-    public Map(int numRow, int numCol){
-        if (numRow <1 || numCol < 1){
+    public Map(int numRow, int numCol) {
+        if (numRow < 1 || numCol < 1) {
             System.out.println("ERROR: Row and Column must be greater than 0");
         }
-        
+
         this.mapRowCount = numRow;
         this.mapColumnCount = numCol;
-        
-        for (int row = 0; row < mapRowCount; row++ ){
-            for (int col = 0; col < mapColumnCount; col++){
+
+        for (int row = 0; row < mapRowCount; row++) {
+            for (int col = 0; col < mapColumnCount; col++) {
                 Location location = new Location();
                 location.setColumn(col);
                 location.setRow(row);
                 location.setVisited(false);
-                
+
                 locations[row][col] = location;
             }
         }
     }
-    
+
     public int getMapRowCount() {
         return mapRowCount;
     }

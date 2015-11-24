@@ -9,11 +9,11 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * 
+ *
  * @author Didymus
  */
-public class Town extends Scene implements Serializable{
-    
+public class Town extends Scene implements Serializable {
+
     private String townName;
     private String townGossip;
     private String townInnStory;
@@ -21,9 +21,8 @@ public class Town extends Scene implements Serializable{
     private String townQuestStory;
     private boolean questCompleted;
     private int townInnPrice;
-    
-    
-    public Town(){
+
+    public Town() {
     }
 
     public String getTownName() {
@@ -34,7 +33,6 @@ public class Town extends Scene implements Serializable{
         this.townName = townName;
     }
 
-    
     public boolean isQuestCompleted() {
         return questCompleted;
     }
@@ -42,7 +40,7 @@ public class Town extends Scene implements Serializable{
     public void setQuestCompleted(boolean questCompleted) {
         this.questCompleted = questCompleted;
     }
-    
+
     public String getTownGossip() {
         return townGossip;
     }
@@ -125,5 +123,5 @@ public class Town extends Scene implements Serializable{
         }
         return true;
     }
-    
+
 }

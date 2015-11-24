@@ -4,22 +4,28 @@
  * and open the template in the editor.
  */
 package byui.cit260.yggdrasil.model;
+
 import java.io.Serializable;
+
 /**
  *
  * @author Didymus
  */
-public class Game implements Serializable{
-    
+public class Game implements Serializable {
+
     private Item[] gameInventory;
     private MainCharacter hero;
     private Enemy[] enemies;
     private Actor[] actors;
     private Player player;
     private Map map;
-    
+
     private int gameNumberOfDeaths;
-    public Game(){};
+
+    public Game() {
+    }
+
+    ;
 
     public int getGameNumberOfDeaths() {
         return gameNumberOfDeaths;
@@ -64,8 +70,6 @@ public class Game implements Serializable{
         this.actors = actors;
     }
 
-
-
     public Player getPlayer() {
         return player;
     }
@@ -105,5 +109,5 @@ public class Game implements Serializable{
     public void setGameInventory(Item[] gameInventory) {
         this.gameInventory = gameInventory;
     }
-    
+
 }

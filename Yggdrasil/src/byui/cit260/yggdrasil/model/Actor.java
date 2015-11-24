@@ -10,15 +10,14 @@ import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
-        /**
-         *
-         * @author Brock
-         */
-
+/**
+ *
+ * @author Brock
+ */
 public class Actor implements Serializable {
 
     private Game game;
-    
+
     private int actorMaxHp;
     private int actorTempHp;
     private int actorAttack;

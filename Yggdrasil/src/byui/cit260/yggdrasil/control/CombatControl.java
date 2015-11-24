@@ -277,7 +277,7 @@ public class CombatControl implements Serializable {
         }
     }
 
-    public Boolean compareRolls(int roll1, int roll2) {
+    public boolean compareRolls(int roll1, int roll2) {
 
         if (roll1 > roll2) {
             return true;

@@ -11,18 +11,17 @@ import java.util.Objects;
 
 /**
  * Scenes don't change, but towns and dungeons do. Must be array.
+ *
  * @author Brock
  */
 public class Scene implements Serializable {
 
-
-    
     private String sceneDescription;
     private String sceneMapSymbol;
 
-    public Scene(){
+    public Scene() {
     }
-    
+
     public String getSceneDescription() {
         return sceneDescription;
     }
@@ -41,7 +40,7 @@ public class Scene implements Serializable {
 
     @Override
     public String toString() {
-        return "Scene{" + "sceneDescription=" + sceneDescription +  ", sceneMapSymbol=" + sceneMapSymbol + '}';
+        return "Scene{" + "sceneDescription=" + sceneDescription + ", sceneMapSymbol=" + sceneMapSymbol + '}';
     }
 
     @Override

@@ -8,22 +8,22 @@ package byui.cit260.yggdrasil.model;
 import java.io.Serializable;
 
 /**
- * 
+ *
  * @author Didymus
  */
-public class Item implements Serializable{
+public class Item implements Serializable {
 
     private String itemName;
     private int itemType; // 1 = restorative, 2 = damaging, 3 = weapon
     private int itemBuyPrice;
     private int itemModifier;
     private int itemsUsed;
-    
+
     public Item() {
 
     }
 
-    public Item(String name, int type, int price, int modifier){
+    public Item(String name, int type, int price, int modifier) {
         this.itemName = name;
         this.itemType = type;
         this.itemBuyPrice = price;
@@ -38,8 +38,7 @@ public class Item implements Serializable{
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
-    
-    
+
     public int getItemType() {
         return itemType;
     }
@@ -64,8 +63,6 @@ public class Item implements Serializable{
         this.itemBuyPrice = itemBuyPrice;
     }
 
-
-
     public int getItemModifier() {
         return itemModifier;
     }
@@ -78,8 +75,6 @@ public class Item implements Serializable{
     public String toString() {
         return "Item{" + "itemType=" + itemType + ", itemBuyPrice=" + itemBuyPrice + ", itemModifier=" + itemModifier + ", itemsUsed=" + itemsUsed + '}';
     }
-
-    
 
     @Override
     public int hashCode() {
@@ -114,5 +109,5 @@ public class Item implements Serializable{
         }
         return true;
     }
-    
+
 }

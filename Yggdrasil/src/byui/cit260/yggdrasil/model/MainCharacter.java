@@ -6,16 +6,15 @@
  */
 
 /*
-* Program Map
-*   key:
-*       0 single digit indicates class or global intereaction
-*       00 double digit indecates code within class interaction
-*
-*   1 - package
-*   2 - import
-*   3 - MainCharacter class call
-*/
-
+ * Program Map
+ *   key:
+ *       0 single digit indicates class or global intereaction
+ *       00 double digit indecates code within class interaction
+ *
+ *   1 - package
+ *   2 - import
+ *   3 - MainCharacter class call
+ */
 // 1 - this is telling the program where to get the files from
 package byui.cit260.yggdrasil.model;
 
@@ -25,7 +24,6 @@ import java.io.Serializable;
 /**
  * @author Didymus Benson Brock Hodgson
  */
-
 // 3 - this is the main character class that gives specific stats to a character
 public class MainCharacter extends Actor implements Serializable {
 
@@ -43,7 +41,7 @@ public class MainCharacter extends Actor implements Serializable {
         this.mainCharacterMoney = 50;
         this.mainCharacterSpeed = 5;
         this.mainCharacterTotalXp = 0;
-        
+
         this.setActorAttack(1);
         this.setActorDefense(5);
         this.setActorMaxHp(20);

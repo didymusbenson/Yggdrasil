@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author Brock
  */
-public class Dungon extends Scene implements Serializable{
+public class Dungon extends Scene implements Serializable {
 
     private int dungonGoldAvalible;
     private int dungonNumberOfFights;
@@ -79,7 +79,5 @@ public class Dungon extends Scene implements Serializable{
     public String toString() {
         return "Dungon{" + "dungonGoldAvalible=" + dungonGoldAvalible + ", dungonNumberOfFights=" + dungonNumberOfFights + ", dungeonFightsFought=" + dungeonFightsFought + '}';
     }
-
-
 
 }

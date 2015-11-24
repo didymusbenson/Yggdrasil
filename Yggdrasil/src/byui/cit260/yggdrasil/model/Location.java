@@ -11,21 +11,21 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * 
+ *
  * @author Brock
  */
 public class Location implements Serializable {
 
     private Enemy[] enemies;
     private Scene scene;
-    
+
     private double locationHostility;
     private double locationEncounterChance;
     private double locationEncounterType;
     private boolean blocked;
     private boolean visited;
     private Point coordinates;
-    
+
     private int row;
     private int column;
 
@@ -64,7 +64,6 @@ public class Location implements Serializable {
         this.column = column;
     }
 
-    
     public double getLocationHostility() {
         return locationHostility;
     }
@@ -80,7 +79,6 @@ public class Location implements Serializable {
     public void setLocationEncounterChance(double locationEncounterChance) {
         this.locationEncounterChance = locationEncounterChance;
     }
-
 
     public double getLocationEncounterType() {
         return locationEncounterType;
@@ -114,8 +112,6 @@ public class Location implements Serializable {
         this.enemies = enemies;
     }
 
-    
-
     @Override
     public String toString() {
         return "Location{" + "locationHostility=" + locationHostility + ", locationEncounterChance=" + locationEncounterChance + ", locationEncounterType=" + locationEncounterType + ", blocked=" + blocked + ", coordinates=" + coordinates + '}';
@@ -126,7 +122,7 @@ public class Location implements Serializable {
         int hash = 3;
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationHostility) ^ (Double.doubleToLongBits(this.locationHostility) >>> 32));
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationEncounterChance) ^ (Double.doubleToLongBits(this.locationEncounterChance) >>> 32));
-        
+
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.locationEncounterType) ^ (Double.doubleToLongBits(this.locationEncounterType) >>> 32));
         hash = 97 * hash + (this.blocked ? 1 : 0);
         hash = 97 * hash + Objects.hashCode(this.coordinates);
