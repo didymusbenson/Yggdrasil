@@ -21,15 +21,20 @@ public class ClearingView extends View {
     public boolean doAction(Object obj) {
         char input = (char) obj;
         switch (input) {
-            case 'N': System.out.println("GO NORTH CHOSEN!");
+            case 'N':
+                System.out.println("GO NORTH CHOSEN!");
                 return true;
-            case 'S': System.out.println("GO SOUTH CHOSEN!");
+            case 'S':
+                System.out.println("GO SOUTH CHOSEN!");
                 return true;
-            case 'E': System.out.println("GO EAST CHOSEN!");
+            case 'E':
+                System.out.println("GO EAST CHOSEN!");
                 return true;
-            case 'W': System.out.println("GO WEST CHOSEN!");
+            case 'W':
+                System.out.println("GO WEST CHOSEN!");
                 return true;
-            case 'H': this.displayHelpMenu();
+            case 'H':
+                this.displayHelpMenu();
                 return false;
             default:
                 System.out.println("Error - Please enter a direction");

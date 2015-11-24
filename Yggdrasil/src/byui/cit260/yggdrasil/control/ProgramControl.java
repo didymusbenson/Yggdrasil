@@ -4,19 +4,21 @@
  * and open the template in the editor.
  */
 package byui.cit260.yggdrasil.control;
+
 import byui.cit260.yggdrasil.model.Player;
 import java.io.Serializable;
+
 /**
  *
  * @author tsunami
  */
-public class ProgramControl implements Serializable{
+public class ProgramControl implements Serializable {
 
     public static Player createPlayer(String playerName) {
         Player player = new Player();
         player.setPlayerName(playerName);
-       
+
         return player;
     }
-    
+
 }

@@ -11,9 +11,10 @@ import java.io.Serializable;
  *
  * @author tsunami
  */
-public class GameMenuView implements Serializable{
-    public void displayMenu(){
+public class GameMenuView implements Serializable {
+
+    public void displayMenu() {
         System.out.println("GAMEMENUVIEW.DISPLAYMENU successfully called!");
     }
-    
+
 }

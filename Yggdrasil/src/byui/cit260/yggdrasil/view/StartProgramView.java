@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Scanner;
 import byui.cit260.yggdrasil.control.ProgramControl;
 import byui.cit260.yggdrasil.model.Player;
+
 /**
  *
  * @author tsunami
@@ -31,11 +32,11 @@ public class StartProgramView implements Serializable {
 
     private void displayBanner() {
         System.out.println("        __   ______  ____ ____  ____      _    ____ ___ _     "
-        + "\n	\\ \\ / / ___|/ ___|  _ \\|  _ \\    / \\  / ___|_ _| |    "
-        + "\n	 \\ V / |  _| |  _| | | | |_) |  / _ \\ \\___ \\| || |    "
-        + "\n	  | || |_| | |_| | |_| |  _ <  / ___ \\ ___) | || |___ "
-        + "\n	  |_| \\____|\\____|____/|_| \\_\\/_/   \\_\\____/___|_____|"
-        + "\n	               Your quest begins now.     ");
+                + "\n	\\ \\ / / ___|/ ___|  _ \\|  _ \\    / \\  / ___|_ _| |    "
+                + "\n	 \\ V / |  _| |  _| | | | |_) |  / _ \\ \\___ \\| || |    "
+                + "\n	  | || |_| | |_| | |_| |  _ <  / ___ \\ ___) | || |___ "
+                + "\n	  |_| \\____|\\____|____/|_| \\_\\/_/   \\_\\____/___|_____|"
+                + "\n	               Your quest begins now.     ");
     }
 
     private String getPlayerName() {
@@ -43,8 +44,8 @@ public class StartProgramView implements Serializable {
         boolean valid = false;
         String playerName = null;
         Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid){
+
+        while (!valid) {
             //get a name
             System.out.println("Enter player's name below: ");
             //trim the blank spaces from the player's name
@@ -61,20 +62,17 @@ public class StartProgramView implements Serializable {
         return playerName;
     }
 
-
     private void displayWelcome(Player player) {
         System.out.println("\n ============================================="
                 + "\n Welcome to Yggdrasil, " + player.getPlayerName()
                 + "\n It is a good day not to die."
                 + "\n =============================================");
-                
+
     }
 
     private void displayMainMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
     }
-
-
 
 }

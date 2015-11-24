@@ -9,6 +9,25 @@ package Exceptions;
  *
  * @author Brock
  */
-public class CombatcontrolException {
-    
+public class CombatcontrolException extends Exception {
+
+    public CombatcontrolException() {
+    }
+
+    public CombatcontrolException(String message) {
+        super(message);
+    }
+
+    public CombatcontrolException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public CombatcontrolException(Throwable cause) {
+        super(cause);
+    }
+
+    public CombatcontrolException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+
 }

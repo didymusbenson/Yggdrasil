@@ -5,7 +5,6 @@
  */
 package byui.cit260.yggdrasil.view;
 
-
 /**
  * @author tsunami
  */
@@ -26,7 +25,7 @@ public class MainMenuView extends View {
                 System.out.println("Load Game Called");
                 break;
             case 'H': //help screen
-                   this.displayHelp();
+                this.displayHelp();
                 break;
             case 'Q': //Quit game
                 return true;
@@ -42,5 +41,3 @@ public class MainMenuView extends View {
     }
 
 }
-
-

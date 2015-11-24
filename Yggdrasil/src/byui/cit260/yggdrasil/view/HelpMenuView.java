@@ -35,7 +35,7 @@ public class HelpMenuView implements Serializable {
             + "\n but if you just stick to the capital letters"
             + "\n I give you, you'll do just fine. "
             + "\n =============================================";
-    private final String FIGHT =    "\n ============================================="
+    private final String FIGHT = "\n ============================================="
             + "\n This game uses the R.A.I.D. fighting system."
             + "\n the command 'R' tells the game you want to "
             + "\n chicken out and run away. 'A' means attack"
@@ -44,16 +44,15 @@ public class HelpMenuView implements Serializable {
             + "\n generated fights throughout the game. Don't"
             + "\n feel bad if you have to run away."
             + "\n =============================================";
-    private final String MOVE =     "\n ============================================="
+    private final String MOVE = "\n ============================================="
             + "\n Get around by using 'N' 'S' 'E' and 'W'."
             + "\n Each move command will move you in that"
             + "\n direction on the game map. When you reach a "
             + "\n town you can get around using town commands."
             + "\n =============================================";
-    
-    
+
     void displayMenu() {
-        
+
         char selection = ' ';
         do {
             System.out.println(HELPMENU);
@@ -67,15 +66,20 @@ public class HelpMenuView implements Serializable {
     public void doAction(char selection) {
 
         switch (selection) {
-            case '1': System.out.println(THEPOINT);
+            case '1':
+                System.out.println(THEPOINT);
                 break;
-            case '2': System.out.println(COMMANDS);
+            case '2':
+                System.out.println(COMMANDS);
                 break;
-            case '3': System.out.println(FIGHT);
+            case '3':
+                System.out.println(FIGHT);
                 break;
-            case '4': System.out.println(MOVE);
+            case '4':
+                System.out.println(MOVE);
                 break;
-            case '5': return;
+            case '5':
+                return;
             default:
                 System.out.println("Error - Let me give you those options again:");
         }

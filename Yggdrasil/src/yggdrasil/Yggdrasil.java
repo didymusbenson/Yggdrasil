@@ -8,7 +8,6 @@
 package yggdrasil;
 
 // 2 - This tells the program what it will need to play the game.
-
 import byui.cit260.yggdrasil.model.Game;
 import byui.cit260.yggdrasil.model.Player;
 
@@ -47,7 +46,5 @@ public class Yggdrasil {
     public static void setCurrentGame(Game currentGame) {
         Yggdrasil.currentGame = currentGame;
     }
-
-
 
 }

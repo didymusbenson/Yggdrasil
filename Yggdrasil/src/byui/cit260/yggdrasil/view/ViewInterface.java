@@ -10,9 +10,11 @@ package byui.cit260.yggdrasil.view;
  * @author tsunami
  */
 public interface ViewInterface {
-    
+
     public void display();
+
     public String getInput();
+
     public boolean doAction(Object obj);
-    
+
 }

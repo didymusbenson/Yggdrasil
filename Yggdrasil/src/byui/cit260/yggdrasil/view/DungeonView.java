@@ -7,8 +7,9 @@ package byui.cit260.yggdrasil.view;
 
 /**
  * TODO: Create Dungeon View scenes.
+ *
  * @author Didymus
  */
 public class DungeonView {
-    
+
 }

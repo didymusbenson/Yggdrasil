@@ -62,9 +62,7 @@ public class DwarfMoneyQuest implements Serializable {
         } else {
             System.out.println("Yes that sounds right.");
             return true;
-            
 
         }
     }
 }
-

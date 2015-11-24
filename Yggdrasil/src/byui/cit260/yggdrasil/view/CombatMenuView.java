@@ -14,14 +14,15 @@ import java.util.Scanner;
 /**
  * This view is distinct from any others in the program. It cannot be run the
  * same way as the other view interfaces. This view requires different actions
- * to be taken and for different parameters to be passed into the doAction 
+ * to be taken and for different parameters to be passed into the doAction
  * function. Should I keep this as linked to the interface with some unused code
  * or should I revert this back to its original form as an independent class?
+ *
  * @author didymus
  */
 public class CombatMenuView extends View {
-    
-    public CombatMenuView(){
+
+    public CombatMenuView() {
         super("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 
@@ -97,7 +98,7 @@ public class CombatMenuView extends View {
             System.out.println(BANNER);
         }
     }
-    
+
     public boolean doAction(char selection, MainCharacter hero, Enemy enemy) {
         CombatControl combat = new CombatControl();
 
@@ -163,5 +164,4 @@ public class CombatMenuView extends View {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-  
 }

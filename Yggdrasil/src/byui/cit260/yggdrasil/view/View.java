@@ -37,7 +37,6 @@ public abstract class View implements ViewInterface {
     public String getInput() {
         String input = null;
         Boolean valid = false;
-        
 
         while (!valid) {
             System.out.println("What dost thou do?");

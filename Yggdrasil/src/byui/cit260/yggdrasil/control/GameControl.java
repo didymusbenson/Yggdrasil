@@ -34,15 +34,15 @@ public class GameControl implements Serializable {
         //CREATE ENEMIES
         Enemy[] enemies = CombatControl.createEnemies();
         game.setEnemies(enemies);
-        
+
         //CREATE THE MAIN P.C.
         MainCharacter hero = new MainCharacter();
         game.setHero(hero);
-        
+
         //CREATE GAME INVENTORY INITIALIZE ALL ITEMS AT ZERO
         Item[] inventoryItems = InventoryControl.createGameInventory();
         game.setGameInventory(inventoryItems);
-        
+
         //CREATE MAP, SCENES, TOWNS, DUNGEON SQUARES, FINAL BOSS AREA
         //MAP
         Map map = MapControl.createMap();
@@ -50,10 +50,10 @@ public class GameControl implements Serializable {
         Scene[] scenes = MapControl.createScenes();
         //AssignSceneLocations
         assignScenesLocations(map, scenes);
-        
+
         //SET GAME MAP
         game.setMap(map);
-        
+
         System.out.println("createNewGame successful.");
 
     }
@@ -97,7 +97,7 @@ public class GameControl implements Serializable {
         locations[3][5].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[3][6].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[3][7].setScene(scenes[sceneType.clearing.ordinal()]);
-        
+
         locations[4][0].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[4][1].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[4][2].setScene(scenes[sceneType.clearing.ordinal()]);
@@ -106,7 +106,7 @@ public class GameControl implements Serializable {
         locations[4][5].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[4][6].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[4][7].setScene(scenes[sceneType.clearing.ordinal()]);
-        
+
         locations[5][0].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[5][1].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[5][2].setScene(scenes[sceneType.clearing.ordinal()]);
@@ -115,7 +115,7 @@ public class GameControl implements Serializable {
         locations[5][5].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[5][6].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[5][7].setScene(scenes[sceneType.clearing.ordinal()]);
-        
+
         locations[6][0].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[6][1].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[6][2].setScene(scenes[sceneType.clearing.ordinal()]);
@@ -124,7 +124,7 @@ public class GameControl implements Serializable {
         locations[6][5].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[6][6].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[6][7].setScene(scenes[sceneType.clearing.ordinal()]);
-        
+
         locations[7][0].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[7][1].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[7][2].setScene(scenes[sceneType.clearing.ordinal()]);
