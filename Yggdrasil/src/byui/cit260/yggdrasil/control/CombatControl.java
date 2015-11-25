@@ -5,6 +5,7 @@
  */
 package byui.cit260.yggdrasil.control;
 
+import Exceptions.CombatControlException;
 import byui.cit260.yggdrasil.model.Actor;
 import byui.cit260.yggdrasil.model.Enemy;
 import byui.cit260.yggdrasil.model.Item;
@@ -220,7 +221,7 @@ public class CombatControl implements Serializable {
                 temp += amount;
                 hero.setMainCharacterCurrentLevel(temp);
                 break;
-            default:
+            default: 
                 System.out.println("INTERNAL ERROR! SOMETHING WENT VERY WRONG!");
                 break;
         }
@@ -277,14 +278,17 @@ public class CombatControl implements Serializable {
         }
     }
 
-    public boolean compareRolls(int roll1, int roll2) {
+    public boolean compareRolls(int roll1, int roll2) 
+        throws CombatControlException{
 
         if (roll1 > roll2) {
             return true;
         } else if (roll2 < roll1) {
             return false;
-        } else {
+        } else if (roll2 == roll1){
             return tieBreaker();
+        } else {
+            throw new CombatControlException("Error!");
         }
     }
 
@@ -303,7 +307,8 @@ public class CombatControl implements Serializable {
         return i == 1; // If i is 1, it returns true, if not returns false.
     }
 
-    public Boolean runAway(MainCharacter hero, Enemy enemy) {
+    public Boolean runAway(MainCharacter hero, Enemy enemy) 
+            throws CombatControlException {
         // The player's minimum chance of running away is the player's base speed
         int runRoll = rollRandRange(hero.getMainCharacterSpeed(), 100);
         return compareRolls(runRoll, enemy.getEnemyEscapeChance());
