@@ -221,8 +221,8 @@ public class CombatControl implements Serializable {
                 temp += amount;
                 hero.setMainCharacterCurrentLevel(temp);
                 break;
-            default: 
-                System.out.println("INTERNAL ERROR! SOMETHING WENT VERY WRONG!");
+            default:
+                System.out.println("INTERNAL ERROR 4! SOMETHING WENT VERY WRONG!");
                 break;
         }
     }
@@ -273,38 +273,37 @@ public class CombatControl implements Serializable {
                 hero.setMainCharacterCurrentLevel(temp);
                 break;
             default:
-                System.out.println("INTERNAL ERROR! SOMETHING WENT VERY WRONG!");
+                System.out.println("INTERNAL ERROR 1! SOMETHING WENT VERY WRONG!");
                 break;
         }
     }
 
-    public boolean compareRolls(int roll1, int roll2) 
-        throws CombatControlException {
+    public boolean compareRolls(int roll1, int roll2)
+            throws CombatControlException {
 
         if (roll1 > roll2) {
             return true;
         } else if (roll2 < roll1) {
             return false;
-        } else if (roll2 == roll1){
+        } else if (roll2 == roll1) {
             return tieBreaker();
         } else {
-            throw new CombatControlException("Error!");
+            throw new CombatControlException("Error 2!");
         }
     }
 
-    public int rollRandRange(int low, int high) 
-        throws CombatControlException {
+    public int rollRandRange(int low, int high)
+            throws CombatControlException {
         int roll;
         Random r = new Random();
         int n = high - low + 1;  // N = difference of high range and low range
         int i = r.nextInt() % n; // I = the random number
         roll = low + i;          // roll = low number + random number
-        
-        if (roll != -1){
+
+        if (roll != -1) {
             return roll;
-        }
-        else{
-            throw new CombatControlException("Error!");
+        } else {
+            throw new CombatControlException("Error 3!");
         }
     }
 
@@ -314,14 +313,14 @@ public class CombatControl implements Serializable {
         return i == 1; // If i is 1, it returns true, if not returns false.
     }
 
-    public Boolean runAway(MainCharacter hero, Enemy enemy) 
+    public Boolean runAway(MainCharacter hero, Enemy enemy)
             throws CombatControlException {
         // The player's minimum chance of running away is the player's base speed
         int runRoll = rollRandRange(hero.getMainCharacterSpeed(), 100);
         return compareRolls(runRoll, enemy.getEnemyEscapeChance());
     }
 
-    public Boolean tryAttack(Actor attacker, Actor defender) 
+    public Boolean tryAttack(Actor attacker, Actor defender)
             throws CombatControlException {
         int attackRoll = rollRandRange(1, 20) + attacker.getActorAttack();
         return attackRoll > defender.getActorDefense();
@@ -336,7 +335,7 @@ public class CombatControl implements Serializable {
      System.out.println("CombatControl.defend() called.");
      // TODO MAKE FUNCTION.
      }*/
-    public int calcDamage(Actor hero) 
+    public int calcDamage(Actor hero)
             throws CombatControlException {
         int damage = hero.getActorAttack()
                 + rollRandRange(1, hero.getActorWeapon().getItemModifier());
