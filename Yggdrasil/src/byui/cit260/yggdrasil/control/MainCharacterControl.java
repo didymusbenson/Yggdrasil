@@ -6,6 +6,7 @@
  */
 package byui.cit260.yggdrasil.control;
 
+import Exceptions.MainCharacterControlException;
 import java.io.Serializable;
 
 /**
@@ -14,11 +15,12 @@ import java.io.Serializable;
  */
 public class MainCharacterControl implements Serializable {
 
-    public int dwarfMoneyQuest(int amount) {
+    public int dwarfMoneyQuest(int amount)
+            throws MainCharacterControlException {
         if (amount == 12) {
             return 1;
         }
-        return -1;
+        throw new MainCharacterControlException("Error 8!");
     }
 
     /**
@@ -31,10 +33,11 @@ public class MainCharacterControl implements Serializable {
      * @param weeks the amount of weeks input by user.
      * @return goldSaved
      */
-    public float calcMoneySaved(int weeks) {
+    public float calcMoneySaved(int weeks)
+            throws MainCharacterControlException {
         // Check for invalid input. If weeks <= 0, it's not a valid response       	
         if (weeks <= 0) {
-            return -1;
+            throw new MainCharacterControlException("Error 9!");
         }
         // Child earns 5 gold per week.
         float goldEarned = weeks * 5;

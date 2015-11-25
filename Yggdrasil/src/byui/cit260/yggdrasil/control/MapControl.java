@@ -6,6 +6,7 @@
  */
 package byui.cit260.yggdrasil.control;
 
+import Exceptions.MapControlException;
 import byui.cit260.yggdrasil.model.Game;
 import java.io.Serializable;
 import byui.cit260.yggdrasil.model.Location;
@@ -38,7 +39,8 @@ public class MapControl implements Serializable {
         endgame, // End of the game scene.
     }
 
-    public static Map createMap() {
+    public static Map createMap()
+            throws MapControlException {
         Map map = new Map(8, 8);
         //CREATE THE SCENES
         Scene[] scenes = createScenes();
@@ -127,11 +129,11 @@ public class MapControl implements Serializable {
         return scenes;
     }
 
-    public boolean actorLocationCheck(Point coordinates, Map map) {
+    public boolean actorLocationCheck(Point coordinates, Map map)
+            throws MapControlException {
         //get location at desired coordiates from the map
         Location location = map.getLocations()[coordinates.x][coordinates.y];
 
         return location.isBlocked();
-
     }
 }

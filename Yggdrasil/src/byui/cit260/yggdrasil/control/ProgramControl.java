@@ -5,6 +5,7 @@
  */
 package byui.cit260.yggdrasil.control;
 
+import Exceptions.ProgramControlException;
 import byui.cit260.yggdrasil.model.Player;
 import java.io.Serializable;
 
@@ -14,7 +15,8 @@ import java.io.Serializable;
  */
 public class ProgramControl implements Serializable {
 
-    public static Player createPlayer(String playerName) {
+    public static Player createPlayer(String playerName) 
+        throws ProgramControlException {
         Player player = new Player();
         player.setPlayerName(playerName);
 
