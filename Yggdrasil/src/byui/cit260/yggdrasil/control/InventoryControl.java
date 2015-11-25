@@ -6,6 +6,7 @@
  */
 package byui.cit260.yggdrasil.control;
 
+import Exceptions.InventoryControlException;
 import byui.cit260.yggdrasil.model.Item;
 import java.io.Serializable;
 
@@ -47,7 +48,8 @@ public class InventoryControl implements Serializable {
         return items;
     }
 
-    public void addToInventory(Item item) {
+    public void addToInventory(Item item) 
+        throws InventoryControlException {
         int itemsHeld = item.getItemsUsed();
         if (itemsHeld == 99) {
             return; // Don't add item.
@@ -55,7 +57,8 @@ public class InventoryControl implements Serializable {
         item.setItemsUsed(itemsHeld++);
     }
 
-    public void removeFromInventory(Item item) {
+    public void removeFromInventory(Item item) 
+        throws InventoryControlException {
         int itemsHeld = item.getItemsUsed();
         if (itemsHeld == 0) {
             return; // Don't remove item.
@@ -63,7 +66,8 @@ public class InventoryControl implements Serializable {
         item.setItemsUsed(itemsHeld--);
     }
 
-    public int buyItem(Item item, int quantity) {
+    public int buyItem(Item item, int quantity) 
+            throws InventoryControlException {
         //initialize the totalSale variable
         int totalSale;
         //declare local vars to simplify the rest of the function
@@ -71,7 +75,7 @@ public class InventoryControl implements Serializable {
         int value = item.getItemBuyPrice();
         //invalid quantity error
         if (quantity <= 0) {
-            return -1;
+            throw new InventoryControlException("Error 6!");
         }
         //Maximum "items used" number is 99
         if (quantity > (99 - used)) {
@@ -82,7 +86,8 @@ public class InventoryControl implements Serializable {
         return totalSale;
     }
 
-    public int sellItem(Item item, int quantity) {
+    public int sellItem(Item item, int quantity) 
+            throws InventoryControlException {
 
         //initialize the totalSale variable
         int totalSale;
@@ -91,7 +96,7 @@ public class InventoryControl implements Serializable {
         int value = item.getItemBuyPrice();
         //invalid quantity error
         if (quantity <= 0) {
-            return -1;
+            throw new InventoryControlException("Error 7!");
         }
         //lower quantity based on items actually in use
         if (quantity > used) {
