@@ -5,6 +5,7 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import Exceptions.ProgramControlException;
 import java.io.Serializable;
 import java.util.Scanner;
 import byui.cit260.yggdrasil.control.ProgramControl;
@@ -16,7 +17,8 @@ import byui.cit260.yggdrasil.model.Player;
  */
 public class StartProgramView implements Serializable {
 
-    public void startProgram() {
+    public void startProgram() 
+            throws ProgramControlException {
         //display banner screen
         this.displayBanner();
         //get player's name

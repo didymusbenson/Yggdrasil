@@ -5,11 +5,14 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import Exceptions.CombatControlException;
 import byui.cit260.yggdrasil.control.CombatControl;
 import byui.cit260.yggdrasil.model.Enemy;
 import byui.cit260.yggdrasil.model.MainCharacter;
 import java.io.Serializable;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * This view is distinct from any others in the program. It cannot be run the
@@ -62,13 +65,21 @@ public class CombatMenuView extends View {
             String input = this.getInput();
             input = input.toUpperCase();
             selection = input.charAt(0);
-            runaway = this.doAction(selection, hero, enemy);
+            try {
+                runaway = this.doAction(selection, hero, enemy);
+            } catch (CombatControlException ex) {
+                Logger.getLogger(CombatMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             // If player chooses H loop until it isn't..
             while (selection == 'H') {
                 input = this.getInput();
                 input = input.toUpperCase();
                 selection = input.charAt(0);
-                runaway = this.doAction(selection, hero, enemy);
+                try {
+                    runaway = this.doAction(selection, hero, enemy);
+                } catch (CombatControlException ex) {
+                    Logger.getLogger(CombatMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
 
             if (runaway == false) { // If player tried to run, but failed.
@@ -76,7 +87,11 @@ public class CombatMenuView extends View {
                 if (selection == 'D') {
                     hero.setActorDefense(originalDefense + 5);
                 }
-                this.enemyAttack(enemy, hero);
+                try {
+                    this.enemyAttack(enemy, hero);
+                } catch (CombatControlException ex) {
+                    Logger.getLogger(CombatMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 hero.setActorDefense(originalDefense); // just in case.
             }
             round++;
@@ -99,7 +114,8 @@ public class CombatMenuView extends View {
         }
     }
 
-    public boolean doAction(char selection, MainCharacter hero, Enemy enemy) {
+    public boolean doAction(char selection, MainCharacter hero, Enemy enemy) 
+            throws CombatControlException {
         CombatControl combat = new CombatControl();
 
         switch (selection) {
@@ -144,9 +160,10 @@ public class CombatMenuView extends View {
     }
 
     // Let's an enemy perform *his* attack.
-    private void enemyAttack(Enemy enemy, MainCharacter hero) {
+    private void enemyAttack(Enemy enemy, MainCharacter hero) 
+            throws CombatControlException {
         CombatControl combat = new CombatControl();
-
+        
         if (!combat.tryAttack(enemy, hero)) {
             System.out.println("The " + enemy.getEnemyName() + " missed!");
         } else {

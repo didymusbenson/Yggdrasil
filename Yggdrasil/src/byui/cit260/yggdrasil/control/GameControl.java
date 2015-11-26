@@ -7,6 +7,7 @@
 package byui.cit260.yggdrasil.control;
 
 import Exceptions.GameControlException;
+import Exceptions.MapControlException;
 import byui.cit260.yggdrasil.control.MapControl.sceneType;
 import byui.cit260.yggdrasil.model.Enemy;
 import byui.cit260.yggdrasil.model.Game;
@@ -26,7 +27,7 @@ import yggdrasil.Yggdrasil;
 public class GameControl implements Serializable {
 
     public static void createNewGame(Player player)
-            throws GameControlException {
+            throws GameControlException, MapControlException {
 
         Game game = new Game();
         Yggdrasil.setCurrentGame(game);

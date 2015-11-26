@@ -5,6 +5,7 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import Exceptions.MainCharacterControlException;
 import java.io.Serializable;
 import java.util.Scanner;
 import byui.cit260.yggdrasil.control.MainCharacterControl;
@@ -20,7 +21,8 @@ public class DwarfMoneyQuest implements Serializable {
             + "but I am just too drunk to do the math. Could you tell me how many"
             + " pounds of gold dust I have.";
 
-    public void displayStory() {
+    public void displayStory() 
+            throws MainCharacterControlException {
         char selection = ' ';
         boolean success = false;
         do {
@@ -50,7 +52,8 @@ public class DwarfMoneyQuest implements Serializable {
         return input;
     }
 
-    private boolean doAction(String input) {
+    private boolean doAction(String input) 
+            throws MainCharacterControlException {
         int pounds = Integer.parseInt(input); //convert user input to int
         MainCharacterControl mainCharacterControl = new MainCharacterControl();
         int coins = mainCharacterControl.dwarfMoneyQuest(pounds); //check player answer
