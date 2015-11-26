@@ -8,6 +8,7 @@
 package yggdrasil;
 
 // 2 - This tells the program what it will need to play the game.
+import Exceptions.ProgramControlException;
 import byui.cit260.yggdrasil.model.Game;
 import byui.cit260.yggdrasil.model.Player;
 
@@ -22,11 +23,15 @@ import byui.cit260.yggdrasil.view.StartProgramView;
 public class Yggdrasil {
 
     private static Game currentGame;
+    private static Object starProgramView;
 
     /**
      * @param args the command line arguments
+     * @throws Exceptions.ProgramControlException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+            throws ProgramControlException {
+        try {
         //Create start programView and start the program
         StartProgramView starProgramView = new StartProgramView();
         starProgramView.startProgram();
@@ -36,6 +41,10 @@ public class Yggdrasil {
         //Simulate a "clearing view" on the map
         ClearingView clearing = new ClearingView();
         clearing.display();
+        } catch(Throwable te) {
+            System.out.println("System Error, system restart initiated.");
+            startProgram();
+        }
 
     }
 
@@ -45,6 +54,10 @@ public class Yggdrasil {
 
     public static void setCurrentGame(Game currentGame) {
         Yggdrasil.currentGame = currentGame;
+    }
+
+    private static void startProgram() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
