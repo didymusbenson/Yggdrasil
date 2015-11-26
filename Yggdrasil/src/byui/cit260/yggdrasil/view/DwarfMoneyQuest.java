@@ -21,7 +21,7 @@ public class DwarfMoneyQuest implements Serializable {
             + "but I am just too drunk to do the math. Could you tell me how many"
             + " pounds of gold dust I have.";
 
-    public void displayStory() 
+    public void displayStory()
             throws MainCharacterControlException {
         char selection = ' ';
         boolean success = false;
@@ -52,9 +52,13 @@ public class DwarfMoneyQuest implements Serializable {
         return input;
     }
 
-    private boolean doAction(String input) 
+    private boolean doAction(String input)
             throws MainCharacterControlException {
-        int pounds = Integer.parseInt(input); //convert user input to int
+        //try { //The try statement decoupled the pounds variable, so I had to leave it out.
+            int pounds = Integer.parseInt(input); //convert user input to int
+        //} catch (NumberFormatException nf) {
+            //System.out.println("Error: You must input a valid number!");
+        //}
         MainCharacterControl mainCharacterControl = new MainCharacterControl();
         int coins = mainCharacterControl.dwarfMoneyQuest(pounds); //check player answer
 
