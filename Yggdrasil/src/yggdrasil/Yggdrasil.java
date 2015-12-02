@@ -12,8 +12,6 @@ import Exceptions.ProgramControlException;
 import byui.cit260.yggdrasil.model.Game;
 import byui.cit260.yggdrasil.model.Player;
 
-import byui.cit260.yggdrasil.view.ClearingView;
-import byui.cit260.yggdrasil.view.CombatMenuView;
 import byui.cit260.yggdrasil.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -55,13 +53,7 @@ public class Yggdrasil {
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.startProgram();
 
-            /* //Simulate a fight between a player and an enemy
-             CombatMenuView combat = new CombatMenuView();
-             combat.display();*/
 
-            /* //Simulate a "clearing view" on the map
-             ClearingView clearing = new ClearingView();
-             clearing.display();*/
         } catch (Throwable e) {
             System.out.println("Exception: " + e.toString() +
                                 "\nCause: " + e.getCause() +
@@ -117,9 +109,9 @@ public class Yggdrasil {
     public static void setLogFile(PrintWriter logFile) {
         Yggdrasil.logFile = logFile;
     }
-    
+ /*   // method to restart the program if something goes wrong.
     private static void startProgram() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
-
+*/
 }
