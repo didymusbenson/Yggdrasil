@@ -20,6 +20,7 @@ public class DwarfMoneyQuest implements Serializable {
             + "36 coins worth of gold dust. I know that a pound usually makes 3 coins,"
             + "but I am just too drunk to do the math. Could you tell me how many"
             + " pounds of gold dust I have.";
+    private Object keyboard;
 
     public void displayStory()
             throws MainCharacterControlException {
@@ -36,11 +37,12 @@ public class DwarfMoneyQuest implements Serializable {
     public String getInput() {
         String input = null;
         Boolean valid = false;
-        Scanner keyboard = new Scanner(System.in);
+        // Deleted for assignment. Scanner keyboard = new Scanner(System.in);
 
         while (!valid) {
             System.out.println("/nWhat do you do?");
-            input = keyboard.nextLine();
+            // input = keyboard.nextLine(); Changed to: input = this.keyboard.readLine();
+            input = this.keyboard.readLine();
             input = input.trim();
             if (input.length() < 1) {
                 System.out.println("Sorry I can't help me if you don't speak english.");
@@ -55,9 +57,9 @@ public class DwarfMoneyQuest implements Serializable {
     private boolean doAction(String input)
             throws MainCharacterControlException {
         //try { //The try statement decoupled the pounds variable, so I had to leave it out.
-            int pounds = Integer.parseInt(input); //convert user input to int
+        int pounds = Integer.parseInt(input); //convert user input to int
         //} catch (NumberFormatException nf) {
-            //System.out.println("Error: You must input a valid number!");
+        //System.out.println("Error: You must input a valid number!");
         //}
         MainCharacterControl mainCharacterControl = new MainCharacterControl();
         int coins = mainCharacterControl.dwarfMoneyQuest(pounds); //check player answer

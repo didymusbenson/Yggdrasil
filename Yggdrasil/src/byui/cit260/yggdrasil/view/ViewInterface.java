@@ -7,7 +7,7 @@ package byui.cit260.yggdrasil.view;
 
 /**
  *
- * @author tsunami
+ * @author Brock Hodgson
  */
 public interface ViewInterface {
 

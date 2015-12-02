@@ -5,7 +5,10 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import yggdrasil.Yggdrasil;
 
 /**
  *
@@ -13,9 +16,12 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
 
-    Scanner keyboard = new Scanner(System.in);
+    // Scanner keyboard = new Scanner(System.in);
     protected String promptMessage;
 
+    protected final BufferedReader keyboard = Yggdrasil.getInFile();
+    protected final PrintWriter console = Yggdrasil.getOutFile();
+    
     public View(String promptMessage) {
         this.promptMessage = promptMessage;
     }
@@ -40,7 +46,8 @@ public abstract class View implements ViewInterface {
 
         while (!valid) {
             System.out.println("What dost thou do?");
-            input = keyboard.nextLine();
+            // input = keyboard.nextLine();
+            input = this.keyboard.readLine();
             input = input.trim();
             if (input.length() < 1) {
                 System.out.println("Error - Type something next time!");

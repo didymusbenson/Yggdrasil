@@ -45,13 +45,14 @@ public class StartProgramView implements Serializable {
         //intialize junk
         boolean valid = false;
         String playerName = null;
-        Scanner keyboard = new Scanner(System.in);
+        // Deleted for assignment: Scanner keyboard = new Scanner(System.in);
 
         while (!valid) {
             //get a name
             System.out.println("Enter player's name below: ");
             //trim the blank spaces from the player's name
-            playerName = keyboard.nextLine();
+            //playerName = keyboard.nextLine();
+            input = this.keyboard.readLine();
             playerName = playerName.trim();
             //make sure the user isn't yanking our chain.
             if (playerName.length() < 2) {

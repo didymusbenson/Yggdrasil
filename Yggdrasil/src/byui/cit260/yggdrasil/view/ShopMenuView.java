@@ -31,12 +31,13 @@ public class ShopMenuView implements Serializable {
     public String getInput() {
         String input = null; //Sets input to a null, until user input is given.
         Boolean valid = false; //sets loop to repet until valid answer is given.
-        Scanner keyboard = new Scanner(System.in); //tells program where to get
-        //user input from
+        // deleted for assignemtn: Scanner keyboard = new Scanner(System.in); 
+        //tells program where to get user input from
 
         while (!valid) {
             System.out.println("/nWhat do you do?"); //Asks user for input
-            input = keyboard.nextLine(); //reads in next line from user
+            //input = keyboard.nextLine(); //reads in next line from user
+            input = this.keyboard.readLine();
             input = input.trim(); //takes off everything but first letter
             if (input.length() < 1) { //tells user if their input is invalid
                 System.out.println("Sorry I can't help me if you don't speak english.");

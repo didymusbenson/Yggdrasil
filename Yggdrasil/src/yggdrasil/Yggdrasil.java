@@ -14,6 +14,7 @@ import byui.cit260.yggdrasil.model.Player;
 
 import byui.cit260.yggdrasil.view.ClearingView;
 import byui.cit260.yggdrasil.view.CombatMenuView;
+import byui.cit260.yggdrasil.view.ErrorView;
 import byui.cit260.yggdrasil.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -63,9 +64,7 @@ public class Yggdrasil {
              ClearingView clearing = new ClearingView();
              clearing.display();*/
         } catch (Throwable e) {
-            Errorview.display(this.getClass().getName(),"Exception: " + e.toString() +
-                                "\nCause: " + e.getCause() +
-                                "\nMessage: " + e.getMessage());
+            ErrorView.display("Yggdrasil","Error closing files!");
             e.printStackTrace();
             // startProgram(); //Brock, what is this for again?
         }
@@ -79,7 +78,7 @@ public class Yggdrasil {
                 if (Yggdrasil.logFile != null) 
                     Yggdrasil.logFile.close();
             } catch (IOException ex) {
-                ErrorView.display(this.getClass().getName(),"Error closing files!");
+                ErrorView.display ("Yggdrasil","Error closing files!");
                 return;
             }
             

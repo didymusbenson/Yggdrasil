@@ -50,6 +50,7 @@ public class HelpMenuView implements Serializable {
             + "\n direction on the game map. When you reach a "
             + "\n town you can get around using town commands."
             + "\n =============================================";
+    private Object keyboard;
 
     void displayMenu() {
 
@@ -89,11 +90,11 @@ public class HelpMenuView implements Serializable {
     public String getInput() {
         String input = null;
         Boolean valid = false;
-        Scanner keyboard = new Scanner(System.in);
+        // Deleted for assignment: Scanner keyboard = new Scanner(System.in);
 
         while (!valid) {
             System.out.println("What dost thou wish to know?");
-            input = keyboard.nextLine();
+            input = this.keyboard.readLine();
             input = input.trim();
             if (input.length() < 1) {
                 System.out.println("Error - You didn't type anything!");
