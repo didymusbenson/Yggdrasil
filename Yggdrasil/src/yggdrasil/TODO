@@ -1,0 +1,22 @@
+Create towns and dungeons
+    Add inventories etc. to towns
+    Set monsters in all LOCATIONS (scenes) and dungeons.
+
+Write the process that happens when player moves to new scene
+    Commands to move player
+    Check location hostility for fight chance
+    Generate fights when necessary
+    *Display scene information
+    Display menu available for scene (sorta done, adjust)
+    Player takes actions until he leaves
+
+Complete battle mechanics
+    *Award XP for winning fights
+    *Award gold for winning fights
+    Level up character when XP meets reqs
+
+Write script for final fight with Plythu
+    Warn player that this fight "may be his last"
+    Make it so the fight cannot happen until the player chooses
+    Make the fight impossible to run from
+    Have the fight trigger the ending dialog and end the game.

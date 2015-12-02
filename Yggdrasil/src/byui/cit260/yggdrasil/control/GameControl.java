@@ -50,17 +50,28 @@ public class GameControl implements Serializable {
         Item[] inventoryItems = InventoryControl.createGameInventory();
         game.setGameInventory(inventoryItems);
 
-        //CREATE MAP, SCENES, TOWNS, DUNGEON SQUARES, FINAL BOSS AREA
+//********* CREATE MAP, SCENES, TOWNS, DUNGEON SQUARES, FINAL BOSS AREA ********
+        
         //MAP
         Map map = MapControl.createMap();
+        
         //SCENES
         Scene[] scenes = MapControl.createScenes();
-        //AssignSceneLocations
+        
+        // assign scenes  to locations
         assignScenesLocations(map, scenes);
-
+        
+        // set up Inventories for "town" scenes
+        
+        // set up dungeon scenes
+        
+        // set up final boss area
+        
+        
         //SET GAME MAP
         game.setMap(map);
-
+//******************************************************************************
+        
         System.out.println("createNewGame successful.");
 
     }
