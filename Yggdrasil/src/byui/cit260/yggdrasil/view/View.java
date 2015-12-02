@@ -6,8 +6,11 @@
 package byui.cit260.yggdrasil.view;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import yggdrasil.Yggdrasil;
 
 /**
@@ -45,12 +48,16 @@ public abstract class View implements ViewInterface {
         Boolean valid = false;
 
         while (!valid) {
-            System.out.println("What dost thou do?");
-            // input = keyboard.nextLine();
-            input = this.keyboard.readLine();
+            this.console.println("What dost thou do?");
+            try {
+                input = this.keyboard.readLine();
+            } catch (IOException ex) {
+                ErrorView.display("View", "Error parsing text!");
+            }
+            
             input = input.trim();
             if (input.length() < 1) {
-                System.out.println("Error - Type something next time!");
+                this.console.println("Error - Type something next time!");
                 continue;
             }
             break;

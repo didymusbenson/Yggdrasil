@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Didymus Benson & Brock Hodgson
  */
-public class HelpMenuView implements Serializable {
+public class HelpMenuView extends View implements Serializable {
 
     private final String HELPMENU = "\n ============================================="
             + "\n 1 - What's the point of this game?"
@@ -52,39 +52,20 @@ public class HelpMenuView implements Serializable {
             + "\n =============================================";
     private Object keyboard;
 
+    public HelpMenuView(String promptMessage) {
+        super(promptMessage);
+    }
+
     void displayMenu() {
 
         char selection = ' ';
         do {
-            System.out.println(HELPMENU);
+            this.console.println(HELPMENU);
             String input = this.getInput(); // get selection
             input = input.toUpperCase();
             selection = input.charAt(0); // grab first letter, no matter what's typed
             this.doAction(selection);
         } while (selection != '5');
-    }
-
-    public void doAction(char selection) {
-
-        switch (selection) {
-            case '1':
-                System.out.println(THEPOINT);
-                break;
-            case '2':
-                System.out.println(COMMANDS);
-                break;
-            case '3':
-                System.out.println(FIGHT);
-                break;
-            case '4':
-                System.out.println(MOVE);
-                break;
-            case '5':
-                return;
-            default:
-                System.out.println("Error - Let me give you those options again:");
-        }
-
     }
 
     public String getInput() {
@@ -93,16 +74,41 @@ public class HelpMenuView implements Serializable {
         // Deleted for assignment: Scanner keyboard = new Scanner(System.in);
 
         while (!valid) {
-            System.out.println("What dost thou wish to know?");
+            this.console.println("What dost thou wish to know?");
             input = this.keyboard.readLine();
             input = input.trim();
             if (input.length() < 1) {
-                System.out.println("Error - You didn't type anything!");
+                this.console.println("Error - You didn't type anything!");
                 continue;
             }
             break;
         }
 
         return input;
+    }
+    
+// DOUBLE CHECK THIS.
+    @Override
+    public boolean doAction(Object obj) {
+        char selection = (char) obj;
+        switch (selection) {
+            case '1':
+                this.console.println(THEPOINT);
+                break;
+            case '2':
+                this.console.println(COMMANDS);
+                break;
+            case '3':
+                this.console.println(FIGHT);
+                break;
+            case '4':
+                this.console.println(MOVE);
+                break;
+            case '5':
+                return false;
+            default:
+                this.console.println("Error - Let me give you those options again:");
+        }
+        return false;
     }
 }

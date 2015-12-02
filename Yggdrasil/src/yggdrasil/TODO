@@ -20,3 +20,8 @@ Write script for final fight with Plythu
     Make it so the fight cannot happen until the player chooses
     Make the fight impossible to run from
     Have the fight trigger the ending dialog and end the game.
+
+FIX VIEW LAYER CLASSES TO EXTEND VIEW!
+
+double check "doaction" in help menu view.
+

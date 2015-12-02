@@ -20,7 +20,7 @@ public class ShopMenuView implements Serializable {
     public void displayMenu() {
         char selection = ' ';
         do {
-            System.out.println(MENU);
+            this.console.println(MENU);
             String input = this.getInput(); // gets user seleciton, see string getInput
             input = input.toUpperCase(); // makes user answer uppercased
             selection = input.charAt(0);// takes only first letter given
@@ -35,12 +35,12 @@ public class ShopMenuView implements Serializable {
         //tells program where to get user input from
 
         while (!valid) {
-            System.out.println("/nWhat do you do?"); //Asks user for input
+            this.console.println("/nWhat do you do?"); //Asks user for input
             //input = keyboard.nextLine(); //reads in next line from user
             input = this.keyboard.readLine();
             input = input.trim(); //takes off everything but first letter
             if (input.length() < 1) { //tells user if their input is invalid
-                System.out.println("Sorry I can't help me if you don't speak english.");
+                this.console.println("Sorry I can't help me if you don't speak english.");
                 continue;
             }
             break;
@@ -61,7 +61,7 @@ public class ShopMenuView implements Serializable {
             case 'L': //Quit menue
                 return;
             default:
-                System.out.println("Error - Let me give you those options again:");
+                this.console.println("Error - Let me give you those options again:");
         }
 
     }

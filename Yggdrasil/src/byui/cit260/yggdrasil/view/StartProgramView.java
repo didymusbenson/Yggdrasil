@@ -10,7 +10,8 @@ import java.io.Serializable;
 import java.util.Scanner;
 import byui.cit260.yggdrasil.control.ProgramControl;
 import byui.cit260.yggdrasil.model.Player;
-
+import yggdrasil.Yggdrasil;
+        
 /**
  *
  * @author tsunami
@@ -33,7 +34,7 @@ public class StartProgramView implements Serializable {
     }
 
     private void displayBanner() {
-        System.out.println("        __   ______  ____ ____  ____      _    ____ ___ _     "
+        this.console.println("        __   ______  ____ ____  ____      _    ____ ___ _     "
                 + "\n	\\ \\ / / ___|/ ___|  _ \\|  _ \\    / \\  / ___|_ _| |    "
                 + "\n	 \\ V / |  _| |  _| | | | |_) |  / _ \\ \\___ \\| || |    "
                 + "\n	  | || |_| | |_| | |_| |  _ <  / ___ \\ ___) | || |___ "
@@ -49,14 +50,14 @@ public class StartProgramView implements Serializable {
 
         while (!valid) {
             //get a name
-            System.out.println("Enter player's name below: ");
+            this.console.println("Enter player's name below: ");
             //trim the blank spaces from the player's name
             //playerName = keyboard.nextLine();
-            input = this.keyboard.readLine();
+            String input = this.keyboard.readLine();
             playerName = playerName.trim();
             //make sure the user isn't yanking our chain.
             if (playerName.length() < 2) {
-                System.out.println("Error - Player's name cannot be blank!");
+                this.console.println("Error - Player's name cannot be blank!");
                 continue;
             }
             break;
@@ -66,7 +67,7 @@ public class StartProgramView implements Serializable {
     }
 
     private void displayWelcome(Player player) {
-        System.out.println("\n ============================================="
+        this.console.println("\n ============================================="
                 + "\n Welcome to Yggdrasil, " + player.getPlayerName()
                 + "\n It is a good day not to die."
                 + "\n =============================================");
