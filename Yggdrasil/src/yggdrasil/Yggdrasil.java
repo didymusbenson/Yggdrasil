@@ -63,7 +63,7 @@ public class Yggdrasil {
              ClearingView clearing = new ClearingView();
              clearing.display();*/
         } catch (Throwable e) {
-            System.out.println("Exception: " + e.toString() +
+            Errorview.display(this.getClass().getName(),"Exception: " + e.toString() +
                                 "\nCause: " + e.getCause() +
                                 "\nMessage: " + e.getMessage());
             e.printStackTrace();
@@ -79,7 +79,7 @@ public class Yggdrasil {
                 if (Yggdrasil.logFile != null) 
                     Yggdrasil.logFile.close();
             } catch (IOException ex) {
-                System.out.println("Error closing files!");
+                ErrorView.display(this.getClass().getName(),"Error closing files!");
                 return;
             }
             
