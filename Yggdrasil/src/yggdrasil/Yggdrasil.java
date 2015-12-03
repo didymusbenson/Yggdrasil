@@ -28,11 +28,19 @@ public class Yggdrasil {
 
     private static Game currentGame;
     private static Object starProgramView;
-
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
 
     private static PrintWriter logFile = null;
+
+    private final HelpMenuView helpMenu = new HelpMenuView("\n ==HELP MENU=================================="
+            + "\n 1 - What's the point of this game?"
+            + "\n 2 - How do you do the things you do?"
+            + "\n 3 - How do you fight?"
+            + "\n 4 - How do you get around?"
+            + "\n 5 - Exit"
+            + "\n =============================================");
+
     /**
      * @param args the command line arguments
      * @throws Exceptions.ProgramControlException
@@ -44,43 +52,35 @@ public class Yggdrasil {
             // open stream files for I/O
             Yggdrasil.inFile = new BufferedReader(new InputStreamReader(System.in));
             Yggdrasil.outFile = new PrintWriter(System.out, true);
-            
+
             // open log file
             String filePath = "log.txt";
             Yggdrasil.logFile = new PrintWriter(filePath);
-            
-            //TEST AREA
-            Game game = new Game();
-            HelpMenuView help = game.getHelpMenu();
-            
-            help.display();
-            //END TEST AREA
-            
+
             //Create start programView and start the program
-            
-            /*StartProgramView startProgramView = new StartProgramView();
+            StartProgramView startProgramView = new StartProgramView();
             startProgramView.startProgram();
-            */
 
         } catch (Throwable e) {
-            ErrorView.display("Yggdrasil","Error closing files!");
+            ErrorView.display("Yggdrasil", "Error closing files!");
             e.printStackTrace();
             // startProgram(); //Brock, what is this for again?
-        }
-        
-        finally {
+        } finally {
             try {
-                if (Yggdrasil.inFile != null)
+                if (Yggdrasil.inFile != null) {
                     Yggdrasil.inFile.close();
-                if (Yggdrasil.outFile != null) 
+                }
+                if (Yggdrasil.outFile != null) {
                     Yggdrasil.outFile.close();
-                if (Yggdrasil.logFile != null) 
+                }
+                if (Yggdrasil.logFile != null) {
                     Yggdrasil.logFile.close();
+                }
             } catch (IOException ex) {
-                ErrorView.display ("Yggdrasil","Error closing files!");
+                ErrorView.display("Yggdrasil", "Error closing files!");
                 return;
             }
-            
+
         }
     }
 
@@ -115,9 +115,14 @@ public class Yggdrasil {
     public static void setLogFile(PrintWriter logFile) {
         Yggdrasil.logFile = logFile;
     }
- /*   // method to restart the program if something goes wrong?
-    private static void startProgram() {
+    
+    /*   // method to restart the program if something goes wrong?
+     private static void startProgram() {
         
+     }
+     */
+
+    public HelpMenuView getHelpMenu() {
+        return helpMenu;
     }
-*/
 }
