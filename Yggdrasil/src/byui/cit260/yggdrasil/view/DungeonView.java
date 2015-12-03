@@ -10,6 +10,15 @@ package byui.cit260.yggdrasil.view;
  *
  * @author Didymus
  */
-public class DungeonView {
+public class DungeonView extends View{
+
+    public DungeonView(String promptMessage) {
+        super(promptMessage);
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

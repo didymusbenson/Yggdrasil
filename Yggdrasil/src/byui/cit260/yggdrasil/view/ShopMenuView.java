@@ -5,17 +5,24 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Brock
  */
-public class ShopMenuView implements Serializable {
+public class ShopMenuView extends View implements Serializable {
 
     private final String MENU = "/n /nWelcome traveler to our local shop."
-            + "/nWhat be you'r business here? /nB - Buy /nS - Sell /nL - Leave";
+            + "/nWhat be you'r business here? /n(B)uy /n(S)ell /n(L)eave";
+
+    public ShopMenuView(String promptMessage) {
+        super(promptMessage);
+    }
 
     public void displayMenu() {
         char selection = ' ';
@@ -36,8 +43,12 @@ public class ShopMenuView implements Serializable {
 
         while (!valid) {
             this.console.println("/nWhat do you do?"); //Asks user for input
-            //input = keyboard.nextLine(); //reads in next line from user
-            input = this.keyboard.readLine();
+            try {
+                //input = keyboard.nextLine(); //reads in next line from user
+                input = this.keyboard.readLine();
+            } catch (IOException ex) {
+                ErrorView.display("ShopMenuView", "Error getting shop input!");
+            }
             input = input.trim(); //takes off everything but first letter
             if (input.length() < 1) { //tells user if their input is invalid
                 this.console.println("Sorry I can't help me if you don't speak english.");
@@ -49,29 +60,29 @@ public class ShopMenuView implements Serializable {
         return input;// first letter of user input is returned
     }
 
-    public void doAction(char selection) {
-
-        switch (selection) {
-            case 'B': //Buying items
-                this.sellItem();
-                break;
-            case 'S': //Selling items
-                this.buyItem();
-                break;
-            case 'L': //Quit menue
-                return;
-            default:
-                this.console.println("Error - Let me give you those options again:");
-        }
-
-    }
-
     private void sellItem() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+         
     }
 
     private void buyItem() {
 
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        char selection = (char) obj;
+                switch (selection) {
+            case 'B': //Buy item
+                this.buyItem();
+                break;
+            case 'S': //Sell item
+                this.sellItem();
+                break;
+            case 'L': //Quit menu
+                return true;
+            default:
+                this.console.println("Error - Let me give you those options again:");
+        }
+        return true;
     }
 }

@@ -14,13 +14,17 @@ import byui.cit260.yggdrasil.control.MainCharacterControl;
  *
  * @author Brock
  */
-public class DwarfMoneyQuest implements Serializable {
+public class DwarfMoneyQuest extends View implements Serializable {
 
     private final String QUESTION = "I have just come back from mining and have"
             + "36 coins worth of gold dust. I know that a pound usually makes 3 coins,"
             + "but I am just too drunk to do the math. Could you tell me how many"
             + " pounds of gold dust I have.";
     private Object keyboard;
+
+    public DwarfMoneyQuest(String promptMessage) {
+        super(promptMessage);
+    }
 
     public void displayStory()
             throws MainCharacterControlException {
@@ -73,5 +77,10 @@ public class DwarfMoneyQuest implements Serializable {
             return true;
 
         }
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

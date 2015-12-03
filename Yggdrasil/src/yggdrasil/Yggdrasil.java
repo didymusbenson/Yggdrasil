@@ -110,7 +110,7 @@ public class Yggdrasil {
     public static void setLogFile(PrintWriter logFile) {
         Yggdrasil.logFile = logFile;
     }
- /*   // method to restart the program if something goes wrong.
+ /*   // method to restart the program if something goes wrong?
     private static void startProgram() {
         
     }
