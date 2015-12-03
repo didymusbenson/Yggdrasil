@@ -155,7 +155,7 @@ public class CombatMenuView extends View {
 
     // Show help menu when H is typed.
     private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
+        HelpMenuView helpMenu = new HelpMenuView("");
         helpMenu.displayMenu();
     }
 

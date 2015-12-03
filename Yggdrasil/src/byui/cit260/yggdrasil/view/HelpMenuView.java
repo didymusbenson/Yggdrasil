@@ -12,15 +12,8 @@ import java.util.Scanner;
  *
  * @author Didymus Benson & Brock Hodgson
  */
-public class HelpMenuView extends View implements Serializable {
+public class HelpMenuView extends View {
 
-    private final String HELPMENU = "\n ============================================="
-            + "\n 1 - What's the point of this game?"
-            + "\n 2 - How do you do the things you do?"
-            + "\n 3 - How do you fight?"
-            + "\n 4 - How do you get around?"
-            + "\n 5 - Exit"
-            + "\n =============================================";
     private final String THEPOINT = "\n ============================================="
             + "\n The point of the game is to defeat the"
             + "\n evil dragon Plythu. You will travil to"
@@ -53,40 +46,15 @@ public class HelpMenuView extends View implements Serializable {
     private Object keyboard;
 
     public HelpMenuView(String promptMessage) {
-        super(promptMessage);
+        super("\n ============================================="
+                + "\n 1 - What's the point of this game?"
+                + "\n 2 - How do you do the things you do?"
+                + "\n 3 - How do you fight?"
+                + "\n 4 - How do you get around?"
+                + "\n 5 - Exit"
+                + "\n =============================================");
     }
 
-    void displayMenu() {
-
-        char selection = ' ';
-        do {
-            this.console.println(HELPMENU);
-            String input = this.getInput(); // get selection
-            input = input.toUpperCase();
-            selection = input.charAt(0); // grab first letter, no matter what's typed
-            this.doAction(selection);
-        } while (selection != '5');
-    }
-
-    public String getInput() {
-        String input = null;
-        Boolean valid = false;
-        // Deleted for assignment: Scanner keyboard = new Scanner(System.in);
-
-        while (!valid) {
-            this.console.println("What dost thou wish to know?");
-            input = this.keyboard.readLine();
-            input = input.trim();
-            if (input.length() < 1) {
-                this.console.println("Error - You didn't type anything!");
-                continue;
-            }
-            break;
-        }
-
-        return input;
-    }
-    
 // DOUBLE CHECK THIS.
     @Override
     public boolean doAction(Object obj) {
