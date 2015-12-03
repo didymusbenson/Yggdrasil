@@ -6,7 +6,6 @@
 package byui.cit260.yggdrasil.view;
 
 import java.io.Serializable;
-import java.util.Scanner;
 
 /**
  *
@@ -55,6 +54,7 @@ public class HelpMenuView extends View {
                 + "\n =============================================");
     }
 
+    
 // DOUBLE CHECK THIS.
     @Override
     public boolean doAction(Object obj) {
@@ -73,7 +73,7 @@ public class HelpMenuView extends View {
                 this.console.println(MOVE);
                 break;
             case '5':
-                return false;
+                return true;
             default:
                 this.console.println("Error - Let me give you those options again:");
         }

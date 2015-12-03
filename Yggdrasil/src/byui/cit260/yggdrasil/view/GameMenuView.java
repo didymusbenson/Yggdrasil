@@ -5,16 +5,23 @@
  */
 package byui.cit260.yggdrasil.view;
 
-import java.io.Serializable;
-
 /**
  *
  * @author tsunami
  */
-public class GameMenuView implements Serializable {
+public class GameMenuView extends View{
+
+    public GameMenuView(String promptMessage) {
+        super(promptMessage);
+    }
 
     public void displayMenu() {
         System.out.println("GAMEMENUVIEW.DISPLAYMENU successfully called!");
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

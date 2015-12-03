@@ -7,16 +7,22 @@ package byui.cit260.yggdrasil.view;
 
 import Exceptions.ProgramControlException;
 import java.io.Serializable;
-import java.util.Scanner;
 import byui.cit260.yggdrasil.control.ProgramControl;
 import byui.cit260.yggdrasil.model.Player;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import yggdrasil.Yggdrasil;
         
 /**
  *
  * @author tsunami
  */
-public class StartProgramView implements Serializable {
+public class StartProgramView extends View implements Serializable {
+
+    public StartProgramView(String promptMessage) {
+        super(promptMessage);
+    }
 
     public void startProgram() 
             throws ProgramControlException {
@@ -51,9 +57,13 @@ public class StartProgramView implements Serializable {
         while (!valid) {
             //get a name
             this.console.println("Enter player's name below: ");
-            //trim the blank spaces from the player's name
-            //playerName = keyboard.nextLine();
-            String input = this.keyboard.readLine();
+            try {
+                //trim the blank spaces from the player's name
+                //playerName = keyboard.nextLine();
+                String input = this.keyboard.readLine();
+            } catch (IOException ex) {
+                ErrorView.display("StartProgramView", "Error getting player name!");
+            }
             playerName = playerName.trim();
             //make sure the user isn't yanking our chain.
             if (playerName.length() < 2) {
@@ -77,6 +87,12 @@ public class StartProgramView implements Serializable {
     private void displayMainMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        //TODO write code
+        return true;
     }
 
 }

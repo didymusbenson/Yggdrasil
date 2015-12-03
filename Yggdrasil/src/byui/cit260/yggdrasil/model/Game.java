@@ -5,6 +5,7 @@
  */
 package byui.cit260.yggdrasil.model;
 
+import byui.cit260.yggdrasil.view.HelpMenuView;
 import java.io.Serializable;
 
 /**
@@ -22,6 +23,14 @@ public class Game implements Serializable {
 
     private int gameNumberOfDeaths;
 
+    private final HelpMenuView helpMenu = new HelpMenuView("\n ==HELP MENU=================================="
+            + "\n 1 - What's the point of this game?"
+            + "\n 2 - How do you do the things you do?"
+            + "\n 3 - How do you fight?"
+            + "\n 4 - How do you get around?"
+            + "\n 5 - Exit"
+            + "\n =============================================");
+    
     public Game() {
     }
 
@@ -108,6 +117,10 @@ public class Game implements Serializable {
 
     public void setGameInventory(Item[] gameInventory) {
         this.gameInventory = gameInventory;
+    }
+
+    public HelpMenuView getHelpMenu() {
+        return helpMenu;
     }
 
 }

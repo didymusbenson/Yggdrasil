@@ -21,7 +21,8 @@ Write script for final fight with Plythu
     Make the fight impossible to run from
     Have the fight trigger the ending dialog and end the game.
 
-FIX VIEW LAYER CLASSES TO EXTEND VIEW!
+*FIX VIEW LAYER CLASSES TO EXTEND VIEW!
 
-double check "doaction" in help menu view.
+Fix "doAction" methods in the view layer classes
 
+Swap out ALL System.out and System.in statements for "this.console" and "this.keyboard"

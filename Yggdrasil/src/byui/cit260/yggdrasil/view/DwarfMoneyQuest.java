@@ -7,7 +7,6 @@ package byui.cit260.yggdrasil.view;
 
 import Exceptions.MainCharacterControlException;
 import java.io.Serializable;
-import java.util.Scanner;
 import byui.cit260.yggdrasil.control.MainCharacterControl;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +19,10 @@ public class DwarfMoneyQuest extends View {
 
 
     private Object keyboard;
+
+    public DwarfMoneyQuest(String promptMessage) {
+        super(promptMessage);
+    }
 
     public DwarfMoneyQuest(String promptMessage) {
         super("I have just come back from mining and have"
@@ -53,5 +56,10 @@ public class DwarfMoneyQuest extends View {
             return true;
 
         }
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
