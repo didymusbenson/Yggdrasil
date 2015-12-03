@@ -44,6 +44,6 @@ public class ClearingView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView("");
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 }
