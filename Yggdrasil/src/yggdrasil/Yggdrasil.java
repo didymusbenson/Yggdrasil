@@ -10,11 +10,8 @@ package yggdrasil;
 // 2 - This tells the program what it will need to play the game.
 import Exceptions.ProgramControlException;
 import byui.cit260.yggdrasil.model.Game;
-import byui.cit260.yggdrasil.model.Player;
-
-import byui.cit260.yggdrasil.view.ClearingView;
-import byui.cit260.yggdrasil.view.CombatMenuView;
 import byui.cit260.yggdrasil.view.ErrorView;
+import byui.cit260.yggdrasil.view.HelpMenuView;
 import byui.cit260.yggdrasil.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -52,10 +49,18 @@ public class Yggdrasil {
             String filePath = "log.txt";
             Yggdrasil.logFile = new PrintWriter(filePath);
             
+            //TEST AREA
+            Game game = new Game();
+            HelpMenuView help = game.getHelpMenu();
+            
+            help.display();
+            //END TEST AREA
+            
             //Create start programView and start the program
-            StartProgramView startProgramView = new StartProgramView();
+            
+            /*StartProgramView startProgramView = new StartProgramView();
             startProgramView.startProgram();
-
+            */
 
         } catch (Throwable e) {
             ErrorView.display("Yggdrasil","Error closing files!");

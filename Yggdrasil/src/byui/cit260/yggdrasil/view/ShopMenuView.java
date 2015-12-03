@@ -7,7 +7,6 @@ package byui.cit260.yggdrasil.view;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

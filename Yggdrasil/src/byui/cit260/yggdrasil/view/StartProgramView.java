@@ -7,7 +7,6 @@ package byui.cit260.yggdrasil.view;
 
 import Exceptions.ProgramControlException;
 import java.io.Serializable;
-import java.util.Scanner;
 import byui.cit260.yggdrasil.control.ProgramControl;
 import byui.cit260.yggdrasil.model.Player;
 import java.io.IOException;

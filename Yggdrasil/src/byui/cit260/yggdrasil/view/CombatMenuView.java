@@ -9,8 +9,7 @@ import Exceptions.CombatControlException;
 import byui.cit260.yggdrasil.control.CombatControl;
 import byui.cit260.yggdrasil.model.Enemy;
 import byui.cit260.yggdrasil.model.MainCharacter;
-import java.io.Serializable;
-import java.util.Scanner;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,8 +47,8 @@ public class CombatMenuView extends View {
         MainCharacter hero = CombatControl.getHero();
 
         // Display the combat banner and introduction.
-        System.out.println(BANNER);
-        System.out.println(NORMAL + enemy.getEnemyName() + "!");
+        this.console.println(BANNER);
+        this.console.println(NORMAL + enemy.getEnemyName() + "!");
         char selection = ' ';
         boolean runaway = false;
 
@@ -58,10 +57,10 @@ public class CombatMenuView extends View {
             int round = 0; // rounds of combat, increases as the battle goes on.
             if (round > 0);
             {
-                System.out.println("Your HP: " + hero.getActorTempHp()
+                this.console.println("Your HP: " + hero.getActorTempHp()
                         + "\n" + enemy.getEnemyName() + "'s HP: " + enemy.getActorTempHp());
             }
-            System.out.println(OPTIONS);
+            this.console.println(OPTIONS);
             String input = this.getInput();
             input = input.toUpperCase();
             selection = input.charAt(0);
@@ -99,18 +98,19 @@ public class CombatMenuView extends View {
 
         // If the hero won the fight.
         if (enemy.getActorTempHp() <= 0) {
-            System.out.println(VICTORY + enemy.getEnemyName() + "!");
-            System.out.println("You were awarded " + enemy.getEnemyXpReward() + " XP!");
+            //MOVE THESE STATEMENTS TO CONTROL LAYER!
+            this.console.println(VICTORY + enemy.getEnemyName() + "!");
+            this.console.println("You were awarded " + enemy.getEnemyXpReward() + " XP!");
             CombatControl.increaseStat(hero, "XP", enemy.getEnemyXpReward());
-            System.out.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
+            this.console.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
             CombatControl.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
-            System.out.println(BANNER);
+            this.console.println(BANNER);
         } // If the hero died.
         else if (hero.getActorTempHp() <= 0) {
-            System.out.println("You died a horrible death. Congrats.");
+            this.console.println("You died a horrible death. Congrats.");
         } // If the hero runs away.
         else {
-            System.out.println(BANNER);
+            this.console.println(BANNER);
         }
     }
 
@@ -121,23 +121,23 @@ public class CombatMenuView extends View {
         switch (selection) {
             case 'R':
                 if (combat.runAway(hero, enemy)) {
-                    System.out.println("Got away safely!");
+                    this.console.println("Got away safely!");
                     return true;
                 } else {
-                    System.out.println("Failed to escape!");
+                    this.console.println("Failed to escape!");
                 }
                 break;
             case 'A':
                 if (!combat.tryAttack(hero, enemy)) {
-                    System.out.println("Your attack missed!");
+                    this.console.println("Your attack missed!");
                 } else {
                     int damage = combat.calcDamage(hero);
-                    System.out.println("You hit the " + enemy.getEnemyName() + " for " + damage + " damage!");
+                    this.console.println("You hit the " + enemy.getEnemyName() + " for " + damage + " damage!");
                     combat.applyDamage(damage, enemy);
                 }
                 break;
             case 'I':
-                System.out.println("ITEM CHOSEN");
+                this.console.println("ITEM CHOSEN");
                 // To be developed with the InventoryView class.
                 break;
             case 'D':
@@ -148,7 +148,7 @@ public class CombatMenuView extends View {
                 this.displayHelpMenu();
                 break;
             default:
-                System.out.println("Error - Let me give you those options again:");
+                this.console.println("Error - Let me give you those options again:");
         }
         return false;
     }
@@ -165,10 +165,10 @@ public class CombatMenuView extends View {
         CombatControl combat = new CombatControl();
         
         if (!combat.tryAttack(enemy, hero)) {
-            System.out.println("The " + enemy.getEnemyName() + " missed!");
+            this.console.println("The " + enemy.getEnemyName() + " missed!");
         } else {
             int damage = combat.calcDamage(enemy);
-            System.out.println(enemy.getEnemyName() + " hit you for " + damage + " damage!");
+            this.console.println(enemy.getEnemyName() + " hit you for " + damage + " damage!");
             combat.applyDamage(damage, hero);
         }
     }

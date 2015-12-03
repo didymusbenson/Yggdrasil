@@ -7,7 +7,6 @@ package byui.cit260.yggdrasil.view;
 
 import Exceptions.MainCharacterControlException;
 import java.io.Serializable;
-import java.util.Scanner;
 import byui.cit260.yggdrasil.control.MainCharacterControl;
 
 /**

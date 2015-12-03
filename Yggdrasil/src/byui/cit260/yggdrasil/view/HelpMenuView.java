@@ -6,7 +6,6 @@
 package byui.cit260.yggdrasil.view;
 
 import java.io.Serializable;
-import java.util.Scanner;
 
 /**
  *
@@ -14,6 +13,7 @@ import java.util.Scanner;
  */
 public class HelpMenuView extends View implements Serializable {
 
+    // HELPMENU may be useless, it's used as the promptMessage constructor now.
     private final String HELPMENU = "\n ============================================="
             + "\n 1 - What's the point of this game?"
             + "\n 2 - How do you do the things you do?"
@@ -55,37 +55,6 @@ public class HelpMenuView extends View implements Serializable {
     public HelpMenuView(String promptMessage) {
         super(promptMessage);
     }
-
-    void displayMenu() {
-
-        char selection = ' ';
-        do {
-            this.console.println(HELPMENU);
-            String input = this.getInput(); // get selection
-            input = input.toUpperCase();
-            selection = input.charAt(0); // grab first letter, no matter what's typed
-            this.doAction(selection);
-        } while (selection != '5');
-    }
-
-    public String getInput() {
-        String input = null;
-        Boolean valid = false;
-        // Deleted for assignment: Scanner keyboard = new Scanner(System.in);
-
-        while (!valid) {
-            this.console.println("What dost thou wish to know?");
-            input = this.keyboard.readLine();
-            input = input.trim();
-            if (input.length() < 1) {
-                this.console.println("Error - You didn't type anything!");
-                continue;
-            }
-            break;
-        }
-
-        return input;
-    }
     
 // DOUBLE CHECK THIS.
     @Override
@@ -105,7 +74,7 @@ public class HelpMenuView extends View implements Serializable {
                 this.console.println(MOVE);
                 break;
             case '5':
-                return false;
+                return true;
             default:
                 this.console.println("Error - Let me give you those options again:");
         }
