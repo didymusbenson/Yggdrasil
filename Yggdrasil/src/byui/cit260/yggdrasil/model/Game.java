@@ -22,13 +22,10 @@ public class Game implements Serializable {
     private Map map;
 
     private int gameNumberOfDeaths;
-
-
+   
     
     public Game() {
     }
-
-    ;
 
     public int getGameNumberOfDeaths() {
         return gameNumberOfDeaths;
@@ -113,6 +110,5 @@ public class Game implements Serializable {
         this.gameInventory = gameInventory;
     }
 
-
-
+  
 }

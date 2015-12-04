@@ -153,11 +153,6 @@ public class CombatMenuView extends View {
         return false;
     }
 
-    // Show help menu when H is typed.
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView("");
-        helpMenu.displayMenu();
-    }
 
     // Let's an enemy perform *his* attack.
     private void enemyAttack(Enemy enemy, MainCharacter hero) 
@@ -173,12 +168,12 @@ public class CombatMenuView extends View {
         }
     }
 
+    //UNUSED METHOD
     @Override
     public boolean doAction(Object obj) {
-        //This is the wrong doAction. Combat is more complicated than 
-        //other view layer calsses. Because of this, I don't know what
-        //to do with this class.
-        throw new UnsupportedOperationException("Not supported yet.");
+        return true; //Do not use this method!
     }
+
+
 
 }

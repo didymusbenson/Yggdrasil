@@ -21,10 +21,6 @@ public class DwarfMoneyQuest extends View {
     private Object keyboard;
 
     public DwarfMoneyQuest(String promptMessage) {
-        super(promptMessage);
-    }
-
-    public DwarfMoneyQuest(String promptMessage) {
         super("I have just come back from mining and have"
             + "36 coins worth of gold dust. I know that a pound usually makes 3 coins,"
             + "but I am just too drunk to do the math. Could you tell me how many"

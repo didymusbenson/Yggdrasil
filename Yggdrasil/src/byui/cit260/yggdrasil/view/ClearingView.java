@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package byui.cit260.yggdrasil.view;
-
+import byui.cit260.yggdrasil.model.Game;
+import yggdrasil.Yggdrasil;
 /**
  *
  * @author tsunami
  */
 public class ClearingView extends View {
 
+    
     public ClearingView() {
         super("\nYou are in a clearing that is indistinguishable from"
                 + "\nall other clearings you have been to. There is nothing"
@@ -40,10 +42,5 @@ public class ClearingView extends View {
                 System.out.println("Error - Please enter a direction");
         }
         return false;
-    }
-
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView("");
-        helpMenu.displayMenu();
     }
 }

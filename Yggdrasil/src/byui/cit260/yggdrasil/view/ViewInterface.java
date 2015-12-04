@@ -17,4 +17,5 @@ public interface ViewInterface {
 
     public boolean doAction(Object obj);
 
+    public void displayHelpMenu();
 }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import byui.cit260.yggdrasil.model.Game;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -64,6 +65,17 @@ public abstract class View implements ViewInterface {
         }
 
         return input;
+    }
+    
+    public void displayHelpMenu() {
+        HelpMenuView help = new HelpMenuView("\n ==HELP MENU=================================="
+            + "\n 1 - What's the point of this game?"
+            + "\n 2 - How do you do the things you do?"
+            + "\n 3 - How do you fight?"
+            + "\n 4 - How do you get around?"
+            + "\n 5 - Exit"
+            + "\n =============================================");
+        help.display();
     }
 
     public String getPromptMessage() {

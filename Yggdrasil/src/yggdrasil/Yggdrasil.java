@@ -10,6 +10,7 @@ package yggdrasil;
 // 2 - This tells the program what it will need to play the game.
 import Exceptions.ProgramControlException;
 import byui.cit260.yggdrasil.model.Game;
+import byui.cit260.yggdrasil.view.CombatMenuView;
 import byui.cit260.yggdrasil.view.ErrorView;
 import byui.cit260.yggdrasil.view.HelpMenuView;
 import byui.cit260.yggdrasil.view.StartProgramView;
@@ -27,19 +28,13 @@ import java.util.logging.Logger;
 public class Yggdrasil {
 
     private static Game currentGame;
-    private static Object starProgramView;
+    private static StartProgramView starProgramView;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
 
     private static PrintWriter logFile = null;
 
-    private final HelpMenuView helpMenu = new HelpMenuView("\n ==HELP MENU=================================="
-            + "\n 1 - What's the point of this game?"
-            + "\n 2 - How do you do the things you do?"
-            + "\n 3 - How do you fight?"
-            + "\n 4 - How do you get around?"
-            + "\n 5 - Exit"
-            + "\n =============================================");
+
 
     /**
      * @param args the command line arguments
@@ -58,9 +53,13 @@ public class Yggdrasil {
             Yggdrasil.logFile = new PrintWriter(filePath);
 
             //Create start programView and start the program
-            StartProgramView startProgramView = new StartProgramView();
-            startProgramView.startProgram();
+            /*StartProgramView startProgramView = new StartProgramView();
+            startProgramView.startProgram();*/
 
+            CombatMenuView test = new CombatMenuView();
+            test.display();
+            
+            
         } catch (Throwable e) {
             ErrorView.display("Yggdrasil", "Error closing files!");
             e.printStackTrace();
@@ -122,7 +121,5 @@ public class Yggdrasil {
      }
      */
 
-    public HelpMenuView getHelpMenu() {
-        return helpMenu;
-    }
+
 }
