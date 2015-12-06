@@ -32,7 +32,7 @@ public class CombatControl implements Serializable {
         bob.setActorTempHp(bob.getActorMaxHp());
         bob.setActorAttack(5);
         bob.setActorDefense(5);
-        bob.setEnemyEscapeChance(10);
+        bob.setEnemyEscapeChance(80);
         bob.setEnemyGoldReward(50);
         bob.setEnemyXpReward(50);
         bob.setActorWeapon(tempweap);
@@ -280,6 +280,12 @@ public class CombatControl implements Serializable {
 
     public boolean compareRolls(int roll1, int roll2)
             throws CombatControlException {
+        if (roll1 < 0) {
+            throw new CombatControlException("Error with roll1 \nROLL 1 = " + roll1);
+        }
+        if (roll2 < 0) {
+            throw new CombatControlException("Error roll must be positive int");
+        }
 
         if (roll1 > roll2) {
             return true;
@@ -287,35 +293,42 @@ public class CombatControl implements Serializable {
             return false;
         } else if (roll2 == roll1) {
             return tieBreaker();
-        } else {
-            throw new CombatControlException("Error 2!");
         }
+
+        //Should be unreachable.
+        return false;
     }
 
     public int rollRandRange(int low, int high)
             throws CombatControlException {
         int roll;
+        if (low < 0) {
+            throw new CombatControlException("Error roll must be positive int");
+        }
+        if (high < 0) {
+            throw new CombatControlException("Error roll must be positive int");
+        }
+        
+        
         Random r = new Random();
         int n = high - low + 1;  // N = difference of high range and low range
         int i = r.nextInt() % n; // I = the random number
+        if (i < 0)
+            i *= -1;             // In case i was rolled as a negative number.
         roll = low + i;          // roll = low number + random number
-
-        if (roll != -1) {
-            return roll;
-        } else {
-            throw new CombatControlException("Error 3!");
-        }
+ 
+        return roll;
     }
 
-    public Boolean tieBreaker() {
+    public boolean tieBreaker() {
         Random r = new Random();
         int i = r.nextInt(2);
         return i == 1; // If i is 1, it returns true, if not returns false.
     }
 
-    public Boolean runAway(MainCharacter hero, Enemy enemy)
-            throws CombatControlException {
+    public boolean runAway(MainCharacter hero, Enemy enemy) throws CombatControlException {
         // The player's minimum chance of running away is the player's base speed
+
         int runRoll = rollRandRange(hero.getMainCharacterSpeed(), 100);
         return compareRolls(runRoll, enemy.getEnemyEscapeChance());
     }

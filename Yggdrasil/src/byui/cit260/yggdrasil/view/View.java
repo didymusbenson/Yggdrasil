@@ -67,6 +67,7 @@ public abstract class View implements ViewInterface {
         return input;
     }
     
+    @Override
     public void displayHelpMenu() {
         HelpMenuView help = new HelpMenuView("\n ==HELP MENU=================================="
             + "\n 1 - What's the point of this game?"

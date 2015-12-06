@@ -24,8 +24,7 @@ public class StartProgramView extends View implements Serializable {
         super(promptMessage);
     }
 
-    public void startProgram() 
-            throws ProgramControlException {
+    public void startProgram() throws ProgramControlException{
         //display banner screen
         this.displayBanner();
         //get player's name
@@ -60,7 +59,7 @@ public class StartProgramView extends View implements Serializable {
             try {
                 //trim the blank spaces from the player's name
                 //playerName = keyboard.nextLine();
-                String input = this.keyboard.readLine();
+                playerName = this.keyboard.readLine();
             } catch (IOException ex) {
                 ErrorView.display("StartProgramView", "Error getting player name!");
             }

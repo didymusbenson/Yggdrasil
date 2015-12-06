@@ -12,7 +12,6 @@ import Exceptions.ProgramControlException;
 import byui.cit260.yggdrasil.model.Game;
 import byui.cit260.yggdrasil.view.CombatMenuView;
 import byui.cit260.yggdrasil.view.ErrorView;
-import byui.cit260.yggdrasil.view.HelpMenuView;
 import byui.cit260.yggdrasil.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -53,9 +52,10 @@ public class Yggdrasil {
             Yggdrasil.logFile = new PrintWriter(filePath);
 
             //Create start programView and start the program
-            /*StartProgramView startProgramView = new StartProgramView();
-            startProgramView.startProgram();*/
+            StartProgramView startProgramView = new StartProgramView("");
+            startProgramView.startProgram();
 
+            //TESTING
             CombatMenuView test = new CombatMenuView();
             test.display();
             

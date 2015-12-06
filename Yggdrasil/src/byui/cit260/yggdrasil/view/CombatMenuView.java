@@ -64,21 +64,25 @@ public class CombatMenuView extends View {
             String input = this.getInput();
             input = input.toUpperCase();
             selection = input.charAt(0);
+ 
             try {
                 runaway = this.doAction(selection, hero, enemy);
             } catch (CombatControlException ex) {
                 Logger.getLogger(CombatMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
+
             // If player chooses H loop until it isn't..
             while (selection == 'H') {
                 input = this.getInput();
                 input = input.toUpperCase();
                 selection = input.charAt(0);
+   
                 try {
                     runaway = this.doAction(selection, hero, enemy);
                 } catch (CombatControlException ex) {
                     Logger.getLogger(CombatMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
+        
             }
 
             if (runaway == false) { // If player tried to run, but failed.
@@ -86,11 +90,13 @@ public class CombatMenuView extends View {
                 if (selection == 'D') {
                     hero.setActorDefense(originalDefense + 5);
                 }
+
                 try {
                     this.enemyAttack(enemy, hero);
                 } catch (CombatControlException ex) {
                     Logger.getLogger(CombatMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
+
                 hero.setActorDefense(originalDefense); // just in case.
             }
             round++;
@@ -120,7 +126,7 @@ public class CombatMenuView extends View {
 
         switch (selection) {
             case 'R':
-                if (combat.runAway(hero, enemy)) {
+                if (combat.runAway(hero, enemy) == true) {
                     this.console.println("Got away safely!");
                     return true;
                 } else {
