@@ -5,6 +5,9 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import byui.cit260.yggdrasil.control.GameControl;
+import yggdrasil.Yggdrasil;
+
 /**
  * @author tsunami
  */
@@ -40,4 +43,13 @@ public class MainMenuView extends View {
         help.display();
     }
 
+    private void saveGame() {
+        this.console.println("\n\nSave Game destination:  ");
+        String filePath = this.getInput();
+        try {
+            GameControl.saveGame(Yggdrasil.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+    }
 }

@@ -17,6 +17,9 @@ import byui.cit260.yggdrasil.model.MainCharacter;
 import byui.cit260.yggdrasil.model.Map;
 import byui.cit260.yggdrasil.model.Player;
 import byui.cit260.yggdrasil.model.Scene;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import yggdrasil.Yggdrasil;
 
@@ -152,5 +155,14 @@ public class GameControl implements Serializable {
         locations[7][6].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[7][7].setScene(scenes[sceneType.clearing.ordinal()]);
 
+    }
+    
+    public static void saveGame(Game game, String filePath) throws GameControlException{
+        try( FileOutputStream fops = new FileOutputStream(filePath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        } catch (IOException e) {throw new GameControlException(e.getMessage());}
+        
     }
 }
