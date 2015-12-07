@@ -22,13 +22,14 @@ public class MainMenuView extends View {
         char input = (char) obj;
         switch (input) {
             case 'N': //new game
-                System.out.println("New Game Called"); //Should just start the game at the beginning. Game is already created. 
+                GameMenuView gameMenu = new GameMenuView("");
+                gameMenu.display();//Should just start the game at the beginning. Game is already created. 
                 break;
             case 'L': //load game
                 this.startSavedGame();
                 break;
             case 'H': //help screen
-                this.displayHelp();
+                this.displayHelpMenu();
                 break;
             case 'Q': //Quit game
                 return true;
@@ -36,11 +37,6 @@ public class MainMenuView extends View {
                 System.out.println("Error - Let me give you those options again:");
         }
         return false;
-    }
-
-    private void displayHelp() {
-        HelpMenuView help = new HelpMenuView("");
-        help.display();
     }
 
     
@@ -63,6 +59,7 @@ public class MainMenuView extends View {
         } catch (Exception ex){
             ErrorView.display("MainMenuView", ex.getMessage());
         }
+        // NEEDS TO HANDLE IF AN INCORRECT FILE IS CHOSEN
         GameMenuView gameMenu = new GameMenuView("");
         gameMenu.display();
     }
