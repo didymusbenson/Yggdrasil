@@ -25,6 +25,7 @@ Write the process that happens when player moves to new scene
     Display menu available for scene (sorta done, adjust)
     Player takes actions until he leaves
 
+Implement "Yes or No?" in the view layer to make decisions easier to program.
 
 *(done, I think) Swap out ALL System.out and System.in statements for "this.console" and "this.keyboard"
 *FIX VIEW LAYER CLASSES TO EXTEND VIEW!

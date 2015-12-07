@@ -29,25 +29,16 @@ public class GameMenuView extends View {
     public boolean doAction(Object obj) {
         char input = (char) obj;
         switch (input) {
-            case 'N': //new game
-                GameMenuView gameMenu = new GameMenuView("");
-                gameMenu.display();//Should just start the game at the beginning. Game is already created. 
+            case 'S': //Save Game
+                this.saveGame();
                 break;
             case 'L': // Load Game works differently in-game. You get to choose whether to do it or not.
                 this.console.println("Your progress will be lost if you load another game now."
-                + "\nAbandon current game and load another? (Y/N)");
-                String choiceInput = null;
-        try {
-            choiceInput = this.keyboard.readLine();
-        } catch (IOException ex) {
-            ErrorView.display("GameMenuView", "Error getting Y/N input.");
-        }
-                choiceInput = choiceInput.toUpperCase();
-                char choice = choiceInput.charAt(0);
-                if (choice == 'Y')
+                        + "\nAbandon current game and load another? (Y/N)");
+                if (yesOrNo()) 
                     this.startSavedGame();
-                else 
-                    this.console.println("Nevermind. Back to the story.");
+                else
+                    this.console.println("Nevermind then.");
                 break;
             case 'H': //help screen
                 this.displayHelpMenu();
@@ -69,14 +60,14 @@ public class GameMenuView extends View {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
     }
-    
-        private void startSavedGame(){
+
+    private void startSavedGame() {
         this.console.println("\n\nLoad Game filepath: ");
         String filePath = this.getInput();
-        
+
         try {
             GameControl.getSavedGame(filePath);
-        } catch (Exception ex){
+        } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
         // NEEDS TO HANDLE IF AN INCORRECT FILE IS CHOSEN
