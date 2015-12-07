@@ -23,7 +23,6 @@ public class MapControl implements Serializable {
 
     public enum sceneType {
 
-        example, //TODO: DELETE EXAMPLE
         start, //Where player starts the game.
         blocked, //Blocked off areas that can't be accessed - empty locations
         clearing, //Scene for a clearing
@@ -56,73 +55,100 @@ public class MapControl implements Serializable {
         Scene[] scenes = new Scene[sceneType.values().length];
 
         //CREATE THE INDIVIDUAL SCENES
-        Scene example = new Scene();
-        example.setSceneDescription("THIS IS AN EXAMPLE SCENE");
-        example.setSceneMapSymbol("!");
-        scenes[sceneType.example.ordinal()] = example;
-
         Scene start = new Scene();
-        start.setSceneDescription("START GAME SCENE");
+        start.setSceneDescription("In the land of Molmonsore there has been a \n"
+                + "millennia of peace But now that peace is threatened by Plythu the \n"
+                + "dragon a foul beast that crawled out of the bowels of Molomonsore to \n"
+                + "claim it as his own. At this moment he sits in his lair planning how \n"
+                + "he will devour the people! But there is hope. While we still have \n"
+                + "time a hero may be trained to help the people of Molmonsore, they \n"
+                + "will then travel to Plythu’s lair and defeat him. That hero is You…. \n"
+                + "\nOnce you reach level 10 you may face him, but be warned that it \n"
+                + "may be your last fight for you cannot run from facing him. \n");
         start.setSceneMapSymbol("!");
         scenes[sceneType.start.ordinal()] = start;
 
         Scene blocked = new Scene();
-        blocked.setSceneDescription("BLOCKED OFF AREA");
+        blocked.setSceneDescription("A magical barrier blocks your path.\n"
+                + "It seems there is still something you need to do.\n");
         blocked.setSceneMapSymbol("!");
         scenes[sceneType.blocked.ordinal()] = blocked;
 
         Scene clearing = new Scene();
-        clearing.setSceneDescription("CLEARING SCENE");
+        clearing.setSceneDescription("You come to an empty medow clear of "
+                + "derbie. \nThe peace is enjoyable, but you should move on.\n");
         clearing.setSceneMapSymbol("!");
         scenes[sceneType.clearing.ordinal()] = clearing;
 
         Scene forest = new Scene();
-        forest.setSceneDescription("FOREST SCENE");
+        forest.setSceneDescription("You come to the edge of a forest. \n"
+                + "Anything could be hiding behind the trees, so you best \n"
+                + "proceed with caution. \n");
         forest.setSceneMapSymbol("!");
         scenes[sceneType.forest.ordinal()] = forest;
 
         Scene beach = new Scene();
-        beach.setSceneDescription("BEACH SCENE");
+        beach.setSceneDescription("You have come to a beach. \n"
+                + "The wind is fair and the sea calm if only you had a ship... \n"
+                + "But you do not so you best move on. \n");
         beach.setSceneMapSymbol("!");
         scenes[sceneType.beach.ordinal()] = beach;
 
         Scene town1 = new Scene();
-        town1.setSceneDescription("TOWN 1 SCENE");
+        town1.setSceneDescription("You enter the town of Ehis. \n"
+                + "This town is so small you wonder if it really even exsits. \n");
         town1.setSceneMapSymbol("!");
         scenes[sceneType.town1.ordinal()] = town1;
 
         Scene town2 = new Scene();
-        town2.setSceneDescription("TOWN 2 SCENE");
+        town2.setSceneDescription("You enter the town of Jennu. \n"
+                + "With its friendly people, and wonderful architecture you wish \n"
+                + "you could stay longer. \n");
         town2.setSceneMapSymbol("!");
         scenes[sceneType.town2.ordinal()] = town2;
 
         Scene town3 = new Scene();
-        town3.setSceneDescription("TOWN 3 SCENE");
+        town3.setSceneDescription("You enter the town of Siliti. \n"
+                + "The people here seem to have already accepted defeat, it seems \n"
+                + "they don't have much confidence in you. \n");
         town3.setSceneMapSymbol("!");
         scenes[sceneType.town3.ordinal()] = town3;
 
         Scene dungeon1 = new Scene();
-        dungeon1.setSceneDescription("DUNGEON 1 SCENE");
+        dungeon1.setSceneDescription("You stumble upon a hidden and abandon temple! \n"
+                + "There is undoubtedly danger within, but also perhaps some treasure. \n");
         dungeon1.setSceneMapSymbol("!");
         scenes[sceneType.dungeon1.ordinal()] = dungeon1;
 
         Scene dungeon2 = new Scene();
-        dungeon2.setSceneDescription("DUNGEON 2 SCENE");
+        dungeon2.setSceneDescription("Torn flags and mossy overgrowth adorn the \n"
+                + "clearly abandon castle before you. \n"
+                + "There may be treasure here, but anyone inside clearly does not \n"
+                + "enjoy company. \n");
         dungeon2.setSceneMapSymbol("!");
         scenes[sceneType.dungeon2.ordinal()] = dungeon2;
 
         Scene dungeon3 = new Scene();
-        dungeon3.setSceneDescription("DUNGEON 3 SCENE");
+        dungeon3.setSceneDescription("Before you is a structure you can't identify \n"
+                + "whoever, or whatever is inside must be worth a look. Although it \n"
+                + "could cost you your life.");
         dungeon3.setSceneMapSymbol("!");
         scenes[sceneType.dungeon3.ordinal()] = dungeon3;
 
         Scene plythu = new Scene();
-        plythu.setSceneDescription("PLYTHU SCENE");
+        plythu.setSceneDescription("Before you stands the volcano lair of the dragon PLYTHU!!! \n"
+                + "This place looks far too dangerous for any ordinary person.\n"
+                + "are you sure you want to go in? \n");
         plythu.setSceneMapSymbol("!");
         scenes[sceneType.plythu.ordinal()] = plythu;
 
         Scene endgame = new Scene();
-        endgame.setSceneDescription("ENDGAME SCENE");
+        endgame.setSceneDescription("The party that begins after you retrun from \n"
+                + "your quest lasts an entire month, and after that begins another \n"
+                + "thousand years of peace. Although you have saved the day you \n"
+                + "long for adventure and spend the rest of your life wondering if \n"
+                + "it would have been more fun to let the world burn. \n"
+                + "THE END");
         endgame.setSceneMapSymbol("!");
         scenes[sceneType.endgame.ordinal()] = endgame;
 
