@@ -18,7 +18,7 @@ public class InventoryControl implements Serializable {
 
     public static Item[] createGameInventory() {
         //INITIALIZE THE ARRAY OF ITEMS THAT MAKE UP THE ENTIRE GAME
-        Item[] items = new Item[7];
+        Item[] items = new Item[8];
 
         //constructor format:  public Item(int type, int price, int modifier)
         Item potion = new Item("Potion", 1, 10, 30);

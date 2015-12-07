@@ -17,8 +17,11 @@ import byui.cit260.yggdrasil.model.MainCharacter;
 import byui.cit260.yggdrasil.model.Map;
 import byui.cit260.yggdrasil.model.Player;
 import byui.cit260.yggdrasil.model.Scene;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import yggdrasil.Yggdrasil;
@@ -38,7 +41,7 @@ public class GameControl implements Serializable {
         if (player != null) {
             game.setPlayer(player);
         } else {
-            throw new GameControlException("Error 5!");
+            throw new GameControlException("Player could not be set to game!");
         }
 
         //CREATE ENEMIES
@@ -165,4 +168,21 @@ public class GameControl implements Serializable {
         } catch (IOException e) {throw new GameControlException(e.getMessage());}
         
     }
+    
+    public static void getSavedGame(String filePath) throws GameControlException{
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filePath)){
+            ObjectInputStream output = new ObjectInputStream(fips);
+            game = (Game) output.readObject();
+        } catch (FileNotFoundException fnfe){
+            throw new GameControlException(fnfe.getMessage());
+        } catch (Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+        
+        Yggdrasil.setCurrentGame(game);
+    }
+    
+    
 }
