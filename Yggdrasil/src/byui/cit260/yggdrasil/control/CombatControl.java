@@ -62,7 +62,7 @@ public class CombatControl implements Serializable {
     }
 
     public static Enemy[] createEnemies() {
-        Enemy[] enemies = new Enemy[33];
+        Enemy[] enemies = new Enemy[34];
         //Generates enemy with every stat EXCEPT: Weapon, coordinates, and location
         //public Enemy(int escapeChance, int xpReward, int goldReward, String name, int maxHp, int attack, int defense)
 
@@ -167,8 +167,8 @@ public class CombatControl implements Serializable {
         Enemy blinkDog = new Enemy(80, 100, 50, "Blink Dog", 105, 34, 36);
         enemies[32] = blinkDog;
 
-        Enemy Plythu = new Enemy(101, 1000, 1000, "Plythu", 300, 55, 50);
-        enemies[33] = Plythu;
+        Enemy plythu = new Enemy(101, 1000, 1000, "Plythu", 300, 55, 50);
+        enemies[33] = plythu;
         return enemies;
     }
 

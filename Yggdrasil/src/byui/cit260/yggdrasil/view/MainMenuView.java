@@ -22,10 +22,10 @@ public class MainMenuView extends View {
         char input = (char) obj;
         switch (input) {
             case 'N': //new game
-                System.out.println("New Game Called");
+                System.out.println("New Game Called"); //Should just start the game at the beginning. Game is already created. 
                 break;
             case 'L': //load game
-                System.out.println("Load Game Called");
+                this.startSavedGame();
                 break;
             case 'H': //help screen
                 this.displayHelp();
@@ -43,13 +43,27 @@ public class MainMenuView extends View {
         help.display();
     }
 
+    
     private void saveGame() {
-        this.console.println("\n\nSave Game destination:  ");
+        this.console.println("\n\nSave Game destination: ");
         String filePath = this.getInput();
         try {
             GameControl.saveGame(Yggdrasil.getCurrentGame(), filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
+    }
+    
+    private void startSavedGame(){
+        this.console.println("\n\nLoad Game filepath: ");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        GameMenuView gameMenu = new GameMenuView("");
+        gameMenu.display();
     }
 }

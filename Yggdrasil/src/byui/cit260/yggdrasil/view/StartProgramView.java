@@ -5,9 +5,13 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import Exceptions.GameControlException;
+import Exceptions.MapControlException;
 import Exceptions.ProgramControlException;
+import byui.cit260.yggdrasil.control.GameControl;
 import java.io.Serializable;
 import byui.cit260.yggdrasil.control.ProgramControl;
+import byui.cit260.yggdrasil.model.Game;
 import byui.cit260.yggdrasil.model.Player;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -24,13 +28,18 @@ public class StartProgramView extends View implements Serializable {
         super(promptMessage);
     }
 
-    public void startProgram() throws ProgramControlException{
+    public void startProgram() throws ProgramControlException, GameControlException{
         //display banner screen
         this.displayBanner();
         //get player's name
         String playersName = this.getPlayerName();
-        //create new player
+        //create new player and game
         Player player = ProgramControl.createPlayer(playersName);
+        try {
+            GameControl.createNewGame(player);
+        } catch (MapControlException ex) {
+            this.console.println("MapControlException");
+        }
         //welcome message
         this.displayWelcome(player);
         //Display Main Menu
