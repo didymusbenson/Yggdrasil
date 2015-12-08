@@ -76,6 +76,9 @@ public class GameControl implements Serializable {
         
         //SET GAME MAP
         game.setMap(map);
+        
+        //Put player at starting area.
+        
 //******************************************************************************
         
         System.out.println("createNewGame successful.");

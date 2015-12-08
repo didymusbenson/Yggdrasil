@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 public class Yggdrasil {
 
     private static Game currentGame;
-    private static StartProgramView starProgramView;
+    private static StartProgramView startProgramView;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
 
@@ -52,7 +52,7 @@ public class Yggdrasil {
             Yggdrasil.logFile = new PrintWriter(filePath);
 
             //Create start programView and start the program
-            StartProgramView startProgramView = new StartProgramView("");
+            startProgramView = new StartProgramView("");
             startProgramView.startProgram();
 
             //TESTING

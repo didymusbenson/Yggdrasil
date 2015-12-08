@@ -6,6 +6,7 @@
 package byui.cit260.yggdrasil.view;
 
 import byui.cit260.yggdrasil.control.GameControl;
+import byui.cit260.yggdrasil.control.MapControl;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +23,7 @@ public class GameMenuView extends View {
     }
 
     public void displayMenu() {
-        System.out.println("GAMEMENUVIEW.DISPLAYMENU successfully called!");
+        this.console.println("DERPDERPDERP"); //This method may still be needed later. Do not delete yet.
     }
 
     @Override
@@ -32,13 +33,17 @@ public class GameMenuView extends View {
             case 'S': //Save Game
                 this.saveGame();
                 break;
+            case 'M':
+                // Needs to display the game map to the user.
+                break;
             case 'L': // Load Game works differently in-game. You get to choose whether to do it or not.
                 this.console.println("Your progress will be lost if you load another game now."
                         + "\nAbandon current game and load another? (Y/N)");
-                if (yesOrNo()) 
+                if (yesOrNo()) {
                     this.startSavedGame();
-                else
+                } else {
                     this.console.println("Nevermind then.");
+                }
                 break;
             case 'H': //help screen
                 this.displayHelpMenu();

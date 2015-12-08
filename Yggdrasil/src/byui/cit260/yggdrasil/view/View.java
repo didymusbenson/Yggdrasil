@@ -49,7 +49,7 @@ public abstract class View implements ViewInterface {
         Boolean valid = false;
 
         while (!valid) {
-            this.console.println("What dost thou do?");
+            this.console.println("-");
             try {
                 input = this.keyboard.readLine();
             } catch (IOException ex) {

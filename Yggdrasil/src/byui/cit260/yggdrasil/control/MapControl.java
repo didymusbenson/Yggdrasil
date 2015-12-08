@@ -75,8 +75,8 @@ public class MapControl implements Serializable {
         scenes[sceneType.blocked.ordinal()] = blocked;
 
         Scene clearing = new Scene();
-        clearing.setSceneDescription("You come to an empty medow clear of "
-                + "derbie. \nThe peace is enjoyable, but you should move on.\n");
+        clearing.setSceneDescription("You come to an empty meadow clear of "
+                + "derbis. \nThe peace is enjoyable, but you should move on.\n");
         clearing.setSceneMapSymbol("!");
         scenes[sceneType.clearing.ordinal()] = clearing;
 
@@ -162,4 +162,5 @@ public class MapControl implements Serializable {
 
         return location.isBlocked();
     }
+    
 }
