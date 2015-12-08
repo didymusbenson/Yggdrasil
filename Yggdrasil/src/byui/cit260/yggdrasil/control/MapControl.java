@@ -98,6 +98,7 @@ public class MapControl implements Serializable {
         town1.setSceneDescription("You enter the town of Ehis. \n"
                 + "This town is so small you wonder if it really even exsits. \n");
         town1.setSceneMapSymbol("!");
+        // add items (0:potion, 3:dagger, 4:sword) to town
         scenes[sceneType.town1.ordinal()] = town1;
 
         Scene town2 = new Scene();
@@ -105,6 +106,7 @@ public class MapControl implements Serializable {
                 + "With its friendly people, and wonderful architecture you wish \n"
                 + "you could stay longer. \n");
         town2.setSceneMapSymbol("!");
+        // add items (1:Hi Potion, 4:Sword, 5:Greatsword) to town
         scenes[sceneType.town2.ordinal()] = town2;
 
         Scene town3 = new Scene();
@@ -112,6 +114,7 @@ public class MapControl implements Serializable {
                 + "The people here seem to have already accepted defeat, it seems \n"
                 + "they don't have much confidence in you. \n");
         town3.setSceneMapSymbol("!");
+        // add items (2:Full Potion, 5; Greatsword, 6:Ultima Sword) to town
         scenes[sceneType.town3.ordinal()] = town3;
 
         Scene dungeon1 = new Scene();

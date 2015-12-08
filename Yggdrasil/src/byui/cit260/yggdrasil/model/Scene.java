@@ -18,8 +18,44 @@ public class Scene implements Serializable {
 
     private String sceneDescription;
     private String sceneMapSymbol;
+    private Scene scene;
+    private double locationHostility;
+    private double locationEncounterChance;
+    private double locationEncounterType;
 
     public Scene() {
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public double getLocationHostility() {
+        return locationHostility;
+    }
+
+    public void setLocationHostility(double locationHostility) {
+        this.locationHostility = locationHostility;
+    }
+
+    public double getLocationEncounterChance() {
+        return locationEncounterChance;
+    }
+
+    public void setLocationEncounterChance(double locationEncounterChance) {
+        this.locationEncounterChance = locationEncounterChance;
+    }
+
+    public double getLocationEncounterType() {
+        return locationEncounterType;
+    }
+
+    public void setLocationEncounterType(double locationEncounterType) {
+        this.locationEncounterType = locationEncounterType;
     }
 
     public String getSceneDescription() {
