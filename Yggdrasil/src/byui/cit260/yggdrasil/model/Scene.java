@@ -18,8 +18,80 @@ public class Scene implements Serializable {
 
     private String sceneDescription;
     private String sceneMapSymbol;
+    private Scene scene;
+    private double locationHostility;
+    private double locationEncounterChance;
+    private double locationEncounterType;
+    private int itemType; 
+    private int itemBuyPrice;
+    private int itemModifier;
+    private int itemsUsed;
 
     public Scene() {
+    }
+
+    public int getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(int itemType) {
+        this.itemType = itemType;
+    }
+
+    public int getItemBuyPrice() {
+        return itemBuyPrice;
+    }
+
+    public void setItemBuyPrice(int itemBuyPrice) {
+        this.itemBuyPrice = itemBuyPrice;
+    }
+
+    public int getItemModifier() {
+        return itemModifier;
+    }
+
+    public void setItemModifier(int itemModifier) {
+        this.itemModifier = itemModifier;
+    }
+
+    public int getItemsUsed() {
+        return itemsUsed;
+    }
+
+    public void setItemsUsed(int itemsUsed) {
+        this.itemsUsed = itemsUsed;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public double getLocationHostility() {
+        return locationHostility;
+    }
+
+    public void setLocationHostility(double locationHostility) {
+        this.locationHostility = locationHostility;
+    }
+
+    public double getLocationEncounterChance() {
+        return locationEncounterChance;
+    }
+
+    public void setLocationEncounterChance(double locationEncounterChance) {
+        this.locationEncounterChance = locationEncounterChance;
+    }
+
+    public double getLocationEncounterType() {
+        return locationEncounterType;
+    }
+
+    public void setLocationEncounterType(double locationEncounterType) {
+        this.locationEncounterType = locationEncounterType;
     }
 
     public String getSceneDescription() {

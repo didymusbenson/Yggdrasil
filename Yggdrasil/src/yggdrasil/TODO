@@ -1,12 +1,7 @@
 BROCK
-Create towns and dungeons(done)
-    Add inventories etc. to towns
     Set monsters in all LOCATIONS (scenes) and dungeons.
 
-Write script for final fight with Plythu
-    Warn player that this fight "may be his last"
     Make it so the fight cannot happen until the player chooses
-    Make the fight impossible to run from
     Have the fight trigger the ending dialog and end the game.
 
 Fix "doAction" methods in the view layer classes
