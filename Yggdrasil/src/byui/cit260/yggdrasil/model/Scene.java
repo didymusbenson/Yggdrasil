@@ -22,8 +22,44 @@ public class Scene implements Serializable {
     private double locationHostility;
     private double locationEncounterChance;
     private double locationEncounterType;
+    private int itemType; 
+    private int itemBuyPrice;
+    private int itemModifier;
+    private int itemsUsed;
 
     public Scene() {
+    }
+
+    public int getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(int itemType) {
+        this.itemType = itemType;
+    }
+
+    public int getItemBuyPrice() {
+        return itemBuyPrice;
+    }
+
+    public void setItemBuyPrice(int itemBuyPrice) {
+        this.itemBuyPrice = itemBuyPrice;
+    }
+
+    public int getItemModifier() {
+        return itemModifier;
+    }
+
+    public void setItemModifier(int itemModifier) {
+        this.itemModifier = itemModifier;
+    }
+
+    public int getItemsUsed() {
+        return itemsUsed;
+    }
+
+    public void setItemsUsed(int itemsUsed) {
+        this.itemsUsed = itemsUsed;
     }
 
     public Scene getScene() {
