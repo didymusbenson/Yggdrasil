@@ -5,6 +5,8 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import Exceptions.GameControlException;
+import Exceptions.ProgramControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,9 +23,9 @@ public class StartProgramViewTest {
      * Test of StartProgram method, of class StartProgramView.
      */
     @Test
-    public void testStartProgram() {
+    public void testStartProgram() throws ProgramControlException, GameControlException {
         System.out.println("StartProgram");
-        StartProgramView instance = new StartProgramView();
+        StartProgramView instance = new StartProgramView("");
         instance.startProgram();
     }
     

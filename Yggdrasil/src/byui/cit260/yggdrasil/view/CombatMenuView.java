@@ -37,6 +37,8 @@ public class CombatMenuView extends View {
     // to be implemented later
     private final String AMBUSH = "A monster gets the jump on you!";
 
+    private CombatControl combat = new CombatControl();
+    
     @Override
     public void display() {
 
@@ -107,9 +109,14 @@ public class CombatMenuView extends View {
             //MOVE THESE STATEMENTS TO CONTROL LAYER!
             this.console.println(VICTORY + enemy.getEnemyName() + "!");
             this.console.println("You were awarded " + enemy.getEnemyXpReward() + " XP!");
-            CombatControl.increaseStat(hero, "XP", enemy.getEnemyXpReward());
+            combat.increaseStat(hero, "XP", enemy.getEnemyXpReward());
             this.console.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
-            CombatControl.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
+            combat.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
+            if (combat.levelUpCheck(hero)){
+                this.console.println("You leveled up!");
+                combat.levelUp(hero);
+                this.displayStats(hero);
+            }
             this.console.println(BANNER);
         } // If the hero died.
         else if (hero.getActorTempHp() <= 0) {
@@ -122,7 +129,7 @@ public class CombatMenuView extends View {
 
     public boolean doAction(char selection, MainCharacter hero, Enemy enemy) 
             throws CombatControlException {
-        CombatControl combat = new CombatControl();
+        
 
         switch (selection) {
             case 'R':
@@ -179,7 +186,5 @@ public class CombatMenuView extends View {
     public boolean doAction(Object obj) {
         return true; //Do not use this method!
     }
-
-
 
 }
