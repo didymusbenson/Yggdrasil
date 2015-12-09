@@ -359,4 +359,18 @@ public class CombatControl implements Serializable {
         int newHp = defender.getActorTempHp() - damage;
         defender.setActorTempHp(newHp);
     }
+    public boolean levelUpCheck(MainCharacter hero){
+        int currentXP = hero.getMainCharacterTotalXp();
+        int currentLVL = hero.getMainCharacterCurrentLevel();
+        int xpToLvlUp = 25 * currentLVL * currentLVL - 25 * currentLVL;
+        
+        return currentXP > xpToLvlUp;
+    }
+    
+    public void levelUp(MainCharacter hero){
+        int currentLVL = hero.getMainCharacterCurrentLevel();
+        
+        //TODO FINISH THIS CODE
+        
+    }
 }

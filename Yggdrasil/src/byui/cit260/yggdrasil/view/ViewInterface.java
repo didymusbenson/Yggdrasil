@@ -5,6 +5,8 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import byui.cit260.yggdrasil.model.MainCharacter;
+
 /**
  *
  * @author Brock Hodgson
@@ -20,4 +22,6 @@ public interface ViewInterface {
     public void displayHelpMenu();
     
     public boolean yesOrNo();
+    
+    public void displayStats(MainCharacter hero);
 }

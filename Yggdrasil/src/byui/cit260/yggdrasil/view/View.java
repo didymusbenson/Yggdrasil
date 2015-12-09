@@ -6,6 +6,7 @@
 package byui.cit260.yggdrasil.view;
 
 import byui.cit260.yggdrasil.model.Game;
+import byui.cit260.yggdrasil.model.MainCharacter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -106,6 +107,11 @@ public abstract class View implements ViewInterface {
         return choice == 'Y'; // if it's Y, it's yes, if it's N, it's no.
     }
 
+    @Override
+    public void displayStats(MainCharacter hero){
+        this.console.println("STATISTICS!"); //TODO: add actual player stats to this.
+    }
+    
     public String getPromptMessage() {
         return promptMessage;
     }
