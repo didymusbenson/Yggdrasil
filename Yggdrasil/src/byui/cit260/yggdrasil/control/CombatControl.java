@@ -367,10 +367,21 @@ public class CombatControl implements Serializable {
         return currentXP > xpToLvlUp;
     }
     
-    public void levelUp(MainCharacter hero){
+    public void levelUp(MainCharacter hero) throws CombatControlException{
         int currentLVL = hero.getMainCharacterCurrentLevel();
         
-        //TODO FINISH THIS CODE
-        
+        increaseStat(hero, "HP", rollRandRange(1,12));
+        increaseStat(hero, "ATK", 1);
+        increaseStat(hero, "DEF", 1);
+        if (currentLVL % 4 == 0)
+            increaseStat(hero, "LUCK", 1);
+        if (currentLVL % 3 == 0){
+            increaseStat(hero, "SPD", 2);
+            increaseStat(hero, "DEF", 1);
+        }
+        if (currentLVL % 2 == 0){
+            increaseStat(hero,"ATK",1) ;
+        }
+        //This is not a perfect system. Adjust as needed.
     }
 }

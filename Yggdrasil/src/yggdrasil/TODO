@@ -8,16 +8,16 @@ Fix "doAction" methods in the view layer classes
 
 ADB 
     Write the formula for increasing stats upon level-up
-    Make it so the fight cannot happen until the player chooses
-    Have the fight trigger the ending dialog and end the game.
+    Make it so the final fight cannot happen until the player chooses
+    Have the final fight trigger the ending dialog and end the game.
 
-Write the process that happens when player moves to new scene
+HANDLING CODE FOR WHEN THE PLAYER CHANGES SCENES
     Check location hostility for fight chance
     Generate fights when necessary
     Display menu available for scene
     Player takes actions until he leaves
 
-DISPLAY MAP FUNCTION!
+    DISPLAY MAP FUNCTION!
 
 DONE:
 *Implement "Yes or No?" in the view layer to make decisions easier to program.
