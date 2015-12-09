@@ -7,6 +7,7 @@
 package byui.cit260.yggdrasil.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -26,8 +27,26 @@ public class Scene implements Serializable {
     private int itemBuyPrice;
     private int itemModifier;
     private int itemsUsed;
+    private ArrayList<Item> shopItems = new ArrayList<Item>();
+    private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
     public Scene() {
+    }
+
+    public ArrayList<Item> getShopItems() {
+        return shopItems;
+    }
+
+    public void setShopItems(ArrayList<Item> shopItems) {
+        this.shopItems = shopItems;
+    }
+
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
+    }
+
+    public void setEnemies(ArrayList<Enemy> enemies) {
+        this.enemies = enemies;
     }
 
     public int getItemType() {

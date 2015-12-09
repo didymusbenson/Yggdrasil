@@ -7,12 +7,15 @@
 package byui.cit260.yggdrasil.control;
 
 import Exceptions.MapControlException;
+import byui.cit260.yggdrasil.model.Enemy;
 import byui.cit260.yggdrasil.model.Game;
+import byui.cit260.yggdrasil.model.Item;
 import java.io.Serializable;
 import byui.cit260.yggdrasil.model.Location;
 import byui.cit260.yggdrasil.model.Map;
 import byui.cit260.yggdrasil.model.Scene;
 import java.awt.Point;
+import java.util.ArrayList;
 import yggdrasil.Yggdrasil;
 
 /**
@@ -53,9 +56,12 @@ public class MapControl implements Serializable {
         Game game = Yggdrasil.getCurrentGame(); // Do we need this line?
 
         Scene[] scenes = new Scene[sceneType.values().length];
-
+        
         //CREATE THE INDIVIDUAL SCENES
         Scene start = new Scene();
+        ArrayList<Item> shopItems = start.getShopItems();
+        ArrayList<Enemy> enemies  = start.getEnemies();
+        
         start.setSceneDescription("In the land of Molmonsore there has been a \n"
                 + "millennia of peace But now that peace is threatened by Plythu the \n"
                 + "dragon a foul beast that crawled out of the bowels of Molomonsore to \n"
@@ -99,6 +105,10 @@ public class MapControl implements Serializable {
                 + "This town is so small you wonder if it really even exsits. \n");
         town1.setSceneMapSymbol("!");
         // add items (0:potion, 3:dagger, 4:sword) to town
+        shopItems.add(game.getGameInventory()[0]);
+        shopItems.add(game.getGameInventory()[3]);
+        shopItems.add(game.getGameInventory()[4]);
+        town1.setShopItems(shopItems);
         scenes[sceneType.town1.ordinal()] = town1;
 
         Scene town2 = new Scene();
@@ -107,6 +117,10 @@ public class MapControl implements Serializable {
                 + "you could stay longer. \n");
         town2.setSceneMapSymbol("!");
         // add items (1:Hi Potion, 4:Sword, 5:Greatsword) to town
+        shopItems.add(game.getGameInventory()[1]);
+        shopItems.add(game.getGameInventory()[4]);
+        shopItems.add(game.getGameInventory()[5]);
+        town1.setShopItems(shopItems);
         scenes[sceneType.town2.ordinal()] = town2;
 
         Scene town3 = new Scene();
@@ -115,12 +129,27 @@ public class MapControl implements Serializable {
                 + "they don't have much confidence in you. \n");
         town3.setSceneMapSymbol("!");
         // add items (2:Full Potion, 5; Greatsword, 6:Ultima Sword) to town
+        shopItems.add(game.getGameInventory()[2]);
+        shopItems.add(game.getGameInventory()[5]);
+        shopItems.add(game.getGameInventory()[6]);
+        town1.setShopItems(shopItems);
         scenes[sceneType.town3.ordinal()] = town3;
 
         Scene dungeon1 = new Scene();
         dungeon1.setSceneDescription("You stumble upon a hidden and abandon temple! \n"
                 + "There is undoubtedly danger within, but also perhaps some treasure. \n");
         dungeon1.setSceneMapSymbol("!");
+        enemies.add(game.getEnemies()[0]);
+        enemies.add(game.getEnemies()[1]);
+        enemies.add(game.getEnemies()[2]);
+        enemies.add(game.getEnemies()[3]);
+        enemies.add(game.getEnemies()[4]);
+        enemies.add(game.getEnemies()[5]);
+        enemies.add(game.getEnemies()[6]);
+        enemies.add(game.getEnemies()[7]);
+        enemies.add(game.getEnemies()[8]);
+        enemies.add(game.getEnemies()[9]);
+        dungeon1.setEnemies(enemies);
         scenes[sceneType.dungeon1.ordinal()] = dungeon1;
 
         Scene dungeon2 = new Scene();
@@ -129,6 +158,17 @@ public class MapControl implements Serializable {
                 + "There may be treasure here, but anyone inside clearly does not \n"
                 + "enjoy company. \n");
         dungeon2.setSceneMapSymbol("!");
+        enemies.add(game.getEnemies()[10]);
+        enemies.add(game.getEnemies()[11]);
+        enemies.add(game.getEnemies()[12]);
+        enemies.add(game.getEnemies()[13]);
+        enemies.add(game.getEnemies()[14]);
+        enemies.add(game.getEnemies()[15]);
+        enemies.add(game.getEnemies()[16]);
+        enemies.add(game.getEnemies()[17]);
+        enemies.add(game.getEnemies()[18]);
+        enemies.add(game.getEnemies()[19]);
+        dungeon1.setEnemies(enemies);
         scenes[sceneType.dungeon2.ordinal()] = dungeon2;
 
         Scene dungeon3 = new Scene();
@@ -136,6 +176,17 @@ public class MapControl implements Serializable {
                 + "whoever, or whatever is inside must be worth a look. Although it \n"
                 + "could cost you your life.");
         dungeon3.setSceneMapSymbol("!");
+        enemies.add(game.getEnemies()[20]);
+        enemies.add(game.getEnemies()[21]);
+        enemies.add(game.getEnemies()[22]);
+        enemies.add(game.getEnemies()[23]);
+        enemies.add(game.getEnemies()[24]);
+        enemies.add(game.getEnemies()[25]);
+        enemies.add(game.getEnemies()[26]);
+        enemies.add(game.getEnemies()[27]);
+        enemies.add(game.getEnemies()[28]);
+        enemies.add(game.getEnemies()[29]);
+        dungeon1.setEnemies(enemies);
         scenes[sceneType.dungeon3.ordinal()] = dungeon3;
 
         Scene plythu = new Scene();
@@ -164,6 +215,5 @@ public class MapControl implements Serializable {
         Location location = map.getLocations()[coordinates.x][coordinates.y];
 
         return location.isBlocked();
-    }
-    
+    }   
 }
