@@ -22,8 +22,25 @@ public class GameMenuView extends View {
         super(promptMessage);
     }
 
+    //Uses this method instead of the standard "display" because I didn't want
+    //to have to re-create the promptmessage every time I wanted to call it.
     public void displayMenu() {
-        this.console.println("DERPDERPDERP"); //This method may still be needed later. Do not delete yet.
+        String menu = "--GAME MENU------------------------"
+                + "\n(N)ew Game"
+                + "\n(S)ave Game"
+                + "\n(L)oad Game"
+                + "\n(H)elp"
+                + "\n(Q)uit"
+                + "\n----------------------------------"; 
+        char selection = ' ';
+        boolean done = false;
+        do {
+            System.out.println(menu);
+            String input = this.getInput();
+            input = input.toUpperCase();
+            selection = input.charAt(0);
+            done = this.doAction(selection);
+        } while (!done);
     }
 
     @Override
@@ -78,6 +95,6 @@ public class GameMenuView extends View {
         }
         // NEEDS TO HANDLE IF AN INCORRECT FILE IS CHOSEN
         GameMenuView gameMenu = new GameMenuView("");
-        gameMenu.display();
+        gameMenu.displayMenu();
     }
 }

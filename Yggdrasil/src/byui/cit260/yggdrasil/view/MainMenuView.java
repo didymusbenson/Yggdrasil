@@ -22,8 +22,8 @@ public class MainMenuView extends View {
         char input = (char) obj;
         switch (input) {
             case 'N': //new game
-                GameMenuView gameMenu = new GameMenuView("This is the game menu, hi.");
-                gameMenu.display(); //The gameMenu needs to be completed.
+                GameMenuView gameMenu = new GameMenuView("");
+                gameMenu.displayMenu(); //The gameMenu needs to be completed.
                 break;
             case 'L': //load game
                 this.startSavedGame();
@@ -49,7 +49,7 @@ public class MainMenuView extends View {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
         // NEEDS TO HANDLE IF AN INCORRECT FILE IS CHOSEN
-        GameMenuView gameMenu = new GameMenuView("This is the game menu. Thought you ought to know.");
-        gameMenu.display();
+        GameMenuView gameMenu = new GameMenuView("");
+        gameMenu.displayMenu();
     }
 }
