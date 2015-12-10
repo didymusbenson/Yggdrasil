@@ -34,7 +34,8 @@ public class GameMenuView extends View {
                 this.saveGame();
                 break;
             case 'M':
-                // Needs to display the game map to the user.
+                // Needs to display the game map to the user. 
+                // calls the MoveCharacterView class, if the user chooses to move
                 break;
             case 'L': // Load Game works differently in-game. You get to choose whether to do it or not.
                 this.console.println("Your progress will be lost if you load another game now."
