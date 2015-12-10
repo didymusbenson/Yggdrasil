@@ -112,10 +112,21 @@ public class CombatMenuView extends View {
             combat.increaseStat(hero, "XP", enemy.getEnemyXpReward());
             this.console.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
             combat.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
+            
+            //This for loop checks to see if the hero leveled up multiple times
+            //Theoretically yes the player could level up more than ten times
+            //in one fight, but if that happens he'll just have to get into
+            //another fight to get the rest of those levels.
+            for (int i = 0; i < 10; i++){
             if (combat.levelUpCheck(hero)){
                 this.console.println("You leveled up!");
-                combat.levelUp(hero);
+                try {
+                    combat.levelUp(hero);
+                } catch (CombatControlException ex) {
+                    ErrorView.display("CombatMenuView", "Your hero couldn't level up.");
+                }
                 this.displayStats(hero);
+            }
             }
             this.console.println(BANNER);
         } // If the hero died.

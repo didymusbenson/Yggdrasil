@@ -101,17 +101,24 @@ public abstract class View implements ViewInterface {
             input = input.toUpperCase();
             choice = input.charAt(0);
             if (choice == 'Y' || choice == 'N') //If it's not yes or no, re-do the loop
+            {
                 break;
+            }
         }
-        
+
         return choice == 'Y'; // if it's Y, it's yes, if it's N, it's no.
     }
 
     @Override
-    public void displayStats(MainCharacter hero){
-        this.console.println("STATISTICS!"); //TODO: add actual player stats to this.
+    public void displayStats(MainCharacter hero) {
+        this.console.println("LEVEL: " + hero.getMainCharacterCurrentLevel());
+        this.console.println("HP: " + hero.getActorMaxHp());
+        this.console.println("ATK: "+ hero.getActorAttack());
+        this.console.println("DEF: "+ hero.getActorDefense());
+        this.console.println("SPD: "+ hero.getMainCharacterSpeed());
+        this.console.println("LUCK: "+ hero.getMainCharacterLuck());//TODO: add actual player stats to this.
     }
-    
+
     public String getPromptMessage() {
         return promptMessage;
     }

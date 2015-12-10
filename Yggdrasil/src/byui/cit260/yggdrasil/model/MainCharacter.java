@@ -42,10 +42,14 @@ public class MainCharacter extends Actor implements Serializable {
         this.mainCharacterSpeed = 5;
         this.mainCharacterTotalXp = 0;
 
-        this.setActorAttack(1);
+        this.setActorAttack(3);
         this.setActorDefense(5);
         this.setActorMaxHp(20);
         this.setActorTempHp(this.getActorMaxHp());
+        
+        Item fists = new Item("Fists", 2, 0, 3);
+        //It shouldn't be possible to sell the fists. Double check this later.
+        this.setActorWeapon(fists);
         //DOES NOT SET WEAPON OR COORDINATES     
     }
 
