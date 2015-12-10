@@ -12,6 +12,7 @@ import byui.cit260.yggdrasil.model.Item;
 import byui.cit260.yggdrasil.model.MainCharacter;
 import java.io.Serializable;
 import java.util.Random;
+import yggdrasil.Yggdrasil;
 
 /**
  *
@@ -28,37 +29,20 @@ public class CombatControl implements Serializable {
 
         Enemy bob = new Enemy();
         bob.setEnemyName("BOB");
-        bob.setActorMaxHp(100);
+        bob.setActorMaxHp(10);
         bob.setActorTempHp(bob.getActorMaxHp());
         bob.setActorAttack(5);
         bob.setActorDefense(5);
         bob.setEnemyEscapeChance(80);
         bob.setEnemyGoldReward(50);
-        bob.setEnemyXpReward(50);
+        bob.setEnemyXpReward(100);
         bob.setActorWeapon(tempweap);
         return bob;
     }
 
-    //PLACEHOLDER METHOD delete once battle system is completed
+    
     public static MainCharacter getHero() {
-
-        Item tempweap = new Item();
-        tempweap.setItemModifier(5);
-
-        MainCharacter hero = new MainCharacter();
-
-        hero.setActorAttack(5);
-        hero.setActorDefense(5);
-        hero.setActorMaxHp(100);
-        hero.setActorTempHp(hero.getActorMaxHp());
-        hero.setMainCharacterCurrentLevel(1);
-        hero.setMainCharacterLuck(5);
-        hero.setMainCharacterMoney(0);
-        hero.setMainCharacterSpeed(5);
-        hero.setMainCharacterTotalXp(0);
-        hero.setActorWeapon(tempweap);
-
-        return hero;
+        return Yggdrasil.getCurrentGame().getHero();
     }
 
     public static Enemy[] createEnemies() {
@@ -169,6 +153,14 @@ public class CombatControl implements Serializable {
 
         Enemy plythu = new Enemy(101, 1000, 1000, "Plythu", 300, 55, 50);
         enemies[33] = plythu;
+        
+        //For now, all enemies have the same damage modifier. This will be 
+        //adjusted in later versions of the game.
+        Item enemyWeapon = new Item("Monster Claws", 2, 0, 3);
+        for (Enemy i : enemies){
+            i.setActorWeapon(enemyWeapon);
+        }
+        
         return enemies;
     }
 
@@ -370,6 +362,7 @@ public class CombatControl implements Serializable {
     public void levelUp(MainCharacter hero) throws CombatControlException{
         int currentLVL = hero.getMainCharacterCurrentLevel();
         
+        increaseStat(hero, "LVL", 1);
         increaseStat(hero, "HP", rollRandRange(1,12));
         increaseStat(hero, "ATK", 1);
         increaseStat(hero, "DEF", 1);
