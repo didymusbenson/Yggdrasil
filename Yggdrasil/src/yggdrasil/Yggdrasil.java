@@ -56,8 +56,8 @@ public class Yggdrasil {
             startProgramView.startProgram();
 
             //TESTING
-            CombatMenuView test = new CombatMenuView();
-            test.display();
+            /*CombatMenuView test = new CombatMenuView();
+            test.display();*/
             
             
         } catch (Throwable e) {
