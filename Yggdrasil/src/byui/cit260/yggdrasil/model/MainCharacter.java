@@ -44,7 +44,7 @@ public class MainCharacter extends Actor implements Serializable {
 
         this.setActorAttack(3);
         this.setActorDefense(5);
-        this.setActorMaxHp(20);
+        this.setActorMaxHp(50);
         this.setActorTempHp(this.getActorMaxHp());
         
         Item fists = new Item("Fists", 2, 0, 3);

@@ -215,5 +215,7 @@ public class MapControl implements Serializable {
         Location location = map.getLocations()[coordinates.x][coordinates.y];
 
         return location.isBlocked();
-    }   
+    }  
+    
+
 }

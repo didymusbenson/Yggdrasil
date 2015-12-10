@@ -7,7 +7,6 @@ Fix "doAction" methods in the view layer classes
 
 
 ADB 
-    Write the formula for increasing stats upon level-up
     Make it so the final fight cannot happen until the player chooses
     Have the final fight trigger the ending dialog and end the game.
 
@@ -27,3 +26,4 @@ DONE:
 *Award gold for winning fights
 *Display scene information
 *Write the formula for next level-up trigger (which amount of xp is enough to lvlup).
+*Write the formula for increasing stats upon level-up

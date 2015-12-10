@@ -37,8 +37,8 @@ public class CombatMenuView extends View {
     // to be implemented later
     private final String AMBUSH = "A monster gets the jump on you!";
 
-    private CombatControl combat = new CombatControl();
-    
+    private final CombatControl combat = new CombatControl();
+
     @Override
     public void display() {
 
@@ -66,7 +66,7 @@ public class CombatMenuView extends View {
             String input = this.getInput();
             input = input.toUpperCase();
             selection = input.charAt(0);
- 
+
             try {
                 runaway = this.doAction(selection, hero, enemy);
             } catch (CombatControlException ex) {
@@ -78,13 +78,13 @@ public class CombatMenuView extends View {
                 input = this.getInput();
                 input = input.toUpperCase();
                 selection = input.charAt(0);
-   
+
                 try {
                     runaway = this.doAction(selection, hero, enemy);
                 } catch (CombatControlException ex) {
                     Logger.getLogger(CombatMenuView.class.getName()).log(Level.SEVERE, null, ex);
                 }
-        
+
             }
 
             if (runaway == false) { // If player tried to run, but failed.
@@ -105,42 +105,40 @@ public class CombatMenuView extends View {
         } while (enemy.getActorTempHp() > 0 && runaway == false && hero.getActorTempHp() > 0); // or until player dies.
 
         // If the hero won the fight.
-        if (enemy.getActorTempHp() <= 0) {
+        if (hero.getActorTempHp() <= 0) {
+            this.console.println("You died a horrible death. Congrats.");
+        } else if (enemy.getActorTempHp() <= 0) {
             //MOVE THESE STATEMENTS TO CONTROL LAYER!
             this.console.println(VICTORY + enemy.getEnemyName() + "!");
             this.console.println("You were awarded " + enemy.getEnemyXpReward() + " XP!");
             combat.increaseStat(hero, "XP", enemy.getEnemyXpReward());
             this.console.println("You have found " + enemy.getEnemyGoldReward() + " gold!");
             combat.increaseStat(hero, "GOLD", enemy.getEnemyGoldReward());
-            
+
             //This for loop checks to see if the hero leveled up multiple times
             //Theoretically yes the player could level up more than ten times
             //in one fight, but if that happens he'll just have to get into
             //another fight to get the rest of those levels.
-            for (int i = 0; i < 10; i++){
-            if (combat.levelUpCheck(hero)){
-                this.console.println("You leveled up!");
-                try {
-                    combat.levelUp(hero);
-                } catch (CombatControlException ex) {
-                    ErrorView.display("CombatMenuView", "Your hero couldn't level up.");
+            for (int i = 0; i < 10; i++) {
+                if (combat.levelUpCheck(hero)) {
+                    this.console.println("You leveled up!");
+                    try {
+                        combat.levelUp(hero);
+                    } catch (CombatControlException ex) {
+                        ErrorView.display("CombatMenuView", "Your hero couldn't level up.");
+                    }
+                    this.displayStats(hero);
                 }
-                this.displayStats(hero);
-            }
             }
             this.console.println(BANNER);
-        } // If the hero died.
-        else if (hero.getActorTempHp() <= 0) {
-            this.console.println("You died a horrible death. Congrats.");
         } // If the hero runs away.
         else {
             this.console.println(BANNER);
         }
     }
 
-    public boolean doAction(char selection, MainCharacter hero, Enemy enemy) 
+    public boolean doAction(char selection, MainCharacter hero, Enemy enemy)
             throws CombatControlException {
-        
 
         switch (selection) {
             case 'R':
@@ -177,12 +175,11 @@ public class CombatMenuView extends View {
         return false;
     }
 
-
     // Let's an enemy perform *his* attack.
-    private void enemyAttack(Enemy enemy, MainCharacter hero) 
+    private void enemyAttack(Enemy enemy, MainCharacter hero)
             throws CombatControlException {
         CombatControl combat = new CombatControl();
-        
+
         if (!combat.tryAttack(enemy, hero)) {
             this.console.println("The " + enemy.getEnemyName() + " missed!");
         } else {
