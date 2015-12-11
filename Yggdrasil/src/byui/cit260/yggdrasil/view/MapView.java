@@ -5,6 +5,7 @@
  */
 package byui.cit260.yggdrasil.view;
 
+import byui.cit260.yggdrasil.model.Location;
 import byui.cit260.yggdrasil.model.Map;
 
 /**
@@ -18,12 +19,32 @@ public class MapView extends View {
     }
     
     public void displayMap(Map map){
-        for (int i = 0; i < map.getMapRowCount(); i++)
-            for (int j = 0; j < map.getMapColumnCount(); j++){
-                this.console.println("under construction");
-            }
+        Location[][] locations = map.getLocations();
         
+        System.out.println("^^^^^^^^^^^^^^MAP^^^^^^^^^^^^^^^^^^");
+        System.out.println("    1  2  3  4  5  6  7  8 ");
+        for (int r = 0; r < map.getMapRowCount(); r++){
+            if (r == 0)
+                System.out.println("   ------------------------");
+            else
+                System.out.print("\n   ------------------------");
+            if (r == 0)
+                System.out.print((r+1) + " ");
+            else
+                System.out.print("\n" + (r + 1) + " ");
+            for (int c = 0; c < map.getMapColumnCount(); c++){
+                System.out.print("|");
+                if (locations[r][c].isVisited())
+                    System.out.print(" "+locations[r][c].getScene().getSceneMapSymbol()+" ");
+                else
+                    System.out.print("??");
+                if (c == map.getMapColumnCount() - 1)
+                    System.out.print("|");
+            }
             
+        }
+        System.out.println("\n  ------------------------");
+        System.out.println("\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }
 
     @Override //DOACTION SHOULD NOT BE USED IN MAP VIEW!
@@ -32,3 +53,25 @@ public class MapView extends View {
     }
     
 }
+/*
+displayMap(locations): void
+BEGIN
+ get the map locations from the current game
+ DISPLAY title
+ DISPLAY row of column numbers
+ FOR every row in map
+ DISPLAY row divider
+ DISPLAY row number
+ FOR every column in row
+ DISPLAY column divider
+ location = locations[row][column]
+ IF location has been visited
+ DISPLAY the map symbol for location
+ ELSE
+ DISPLAY " ?? "
+ ENDIF
+ DISPLAY ending column divider
+ ENDFOR
+ DISPLAY ending row divider
+END
+*/
