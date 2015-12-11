@@ -29,6 +29,7 @@ public class GameMenuView extends View {
                 + "\n(N)ew Game"
                 + "\n(S)ave Game"
                 + "\n(L)oad Game"
+                + "\n(M)ap"
                 + "\n(H)elp"
                 + "\n(Q)uit"
                 + "\n----------------------------------"; 
@@ -51,8 +52,8 @@ public class GameMenuView extends View {
                 this.saveGame();
                 break;
             case 'M':
-                // Needs to display the game map to the user. 
-                // calls the MoveCharacterView class, if the user chooses to move
+                MapView map = new MapView("");
+                map.displayMap(Yggdrasil.getCurrentGame().getMap());
                 break;
             case 'L': // Load Game works differently in-game. You get to choose whether to do it or not.
                 this.console.println("Your progress will be lost if you load another game now."
