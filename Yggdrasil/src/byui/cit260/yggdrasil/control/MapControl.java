@@ -7,6 +7,7 @@
 package byui.cit260.yggdrasil.control;
 
 import Exceptions.MapControlException;
+import byui.cit260.yggdrasil.model.Actor;
 import byui.cit260.yggdrasil.model.Enemy;
 import byui.cit260.yggdrasil.model.Game;
 import byui.cit260.yggdrasil.model.Item;
@@ -56,12 +57,12 @@ public class MapControl implements Serializable {
         Game game = Yggdrasil.getCurrentGame(); // Do we need this line?
 
         Scene[] scenes = new Scene[sceneType.values().length];
-        
+
         //CREATE THE INDIVIDUAL SCENES
         Scene start = new Scene();
         ArrayList<Item> shopItems = start.getShopItems();
-        ArrayList<Enemy> enemies  = start.getEnemies();
-        
+        ArrayList<Enemy> enemies = start.getEnemies();
+
         start.setSceneDescription("In the land of Molmonsore there has been a \n"
                 + "millennia of peace But now that peace is threatened by Plythu the \n"
                 + "dragon a foul beast that crawled out of the bowels of Molomonsore to \n"
@@ -215,7 +216,14 @@ public class MapControl implements Serializable {
         Location location = map.getLocations()[coordinates.x][coordinates.y];
 
         return location.isBlocked();
-    }  
-    
+    }
+
+    public Point moveActor(Point newLocation,Actor actor){
+        //check for invalid (point cannot null, or beyond min max)
+        //check to make sure you have an actor.
+        //move the actor. (add or subtract from row or column actor started in.)
+        //return the new location.
+        return newLocation;
+    }
 
 }
