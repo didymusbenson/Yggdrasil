@@ -1,7 +1,8 @@
 BROCK
     Set monsters in all LOCATIONS (scenes) and dungeons.
-    put player in starting position
-    Commands to move player
+    put player in starting position(Map Control)
+    Commands to move player(MoveCharacterView)
+    Implementation of character move (MapControl)
 
 Fix "doAction" methods in the view layer classes
 
