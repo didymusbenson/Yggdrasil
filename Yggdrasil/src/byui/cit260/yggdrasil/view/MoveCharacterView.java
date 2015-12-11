@@ -47,11 +47,13 @@ public class MoveCharacterView extends View {
         }
         return false;
     }
-}
+    
     //Check to make sure that you have a valid actor
         
     //call the actor class from the model layer
     //get the Point coordinates from the actor class
     //add or subtract from row or column depending on what direction is given
     //assign new coordinates to the Point coordinates 
-//give message confirming that the coordiantes have been changed.
+    //give message confirming that the coordiantes have been changed.
+}
+    
