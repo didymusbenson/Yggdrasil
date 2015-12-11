@@ -13,29 +13,47 @@ import yggdrasil.Yggdrasil;
  */
 public class MoveCharacterView extends View {
 
+    //Ask user for N,S,E,W movement
     public MoveCharacterView() {
         super("Which direction do you wish to travel? N - Notrh, S - South, "
                 + "E - East, W - West");
     }
 
-    @Override
-    public boolean doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    //Ask user for N,S,E,W movement
     private static class MoveChoice {
 
         public MoveChoice() {
         }
     }
 
-}
-        
     //Check to make sure the input is a valid direction
-    //Check to make sure that you have a valid actor
+    @Override
+    public boolean doAction(Object obj) {
+        char input = (char) obj;
+        switch (input) {
+            case 'N':
+                //will Subtract 1 Row from current location
+                break;
+            case 'S':
+                // will Add 1 Row to current location
+                break;
+            case 'E':
+                // will Subtract 1 Column from current location
+                break;
+            case 'W':
+                // will Add 1 Column to current location
+                return true;
+            default:
+                System.out.println("Error - Let me give you those options again:");
+        }
+        return false;
+    }
     
-    //If everything is valid call the actor class from the model layer
+    //Check to make sure that you have a valid actor
+        
+    //call the actor class from the model layer
     //get the Point coordinates from the actor class
     //add or subtract from row or column depending on what direction is given
     //assign new coordinates to the Point coordinates 
     //give message confirming that the coordiantes have been changed.
+}
+    
