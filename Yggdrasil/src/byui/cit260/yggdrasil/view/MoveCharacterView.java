@@ -31,24 +31,25 @@ public class MoveCharacterView extends View {
         char input = (char) obj;
         switch (input) {
             case 'N':
-                //Subtract 1 Row
+                //will Subtract 1 Row from current location
                 break;
             case 'S':
-                // Add 1 Row
+                // will Add 1 Row to current location
                 break;
             case 'E':
-                // Subtract 1 Column
+                // will Subtract 1 Column from current location
                 break;
             case 'W':
-                // Add 1 Column
+                // will Add 1 Column to current location
                 return true;
             default:
                 System.out.println("Error - Let me give you those options again:");
         }
         return false;
     }
+}
     //Check to make sure that you have a valid actor
-
+        
     //call the actor class from the model layer
     //get the Point coordinates from the actor class
     //add or subtract from row or column depending on what direction is given
