@@ -340,6 +340,7 @@ public class CombatControl implements Serializable {
      System.out.println("CombatControl.defend() called.");
      // TODO MAKE FUNCTION.
      }*/
+    
     public int calcDamage(Actor hero)
             throws CombatControlException {
         int damage = hero.getActorAttack()

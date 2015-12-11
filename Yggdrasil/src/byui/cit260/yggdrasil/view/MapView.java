@@ -53,25 +53,3 @@ public class MapView extends View {
     }
     
 }
-/*
-displayMap(locations): void
-BEGIN
- get the map locations from the current game
- DISPLAY title
- DISPLAY row of column numbers
- FOR every row in map
- DISPLAY row divider
- DISPLAY row number
- FOR every column in row
- DISPLAY column divider
- location = locations[row][column]
- IF location has been visited
- DISPLAY the map symbol for location
- ELSE
- DISPLAY " ?? "
- ENDIF
- DISPLAY ending column divider
- ENDFOR
- DISPLAY ending row divider
-END
-*/
