@@ -95,6 +95,8 @@ public class StartProgramView extends View implements Serializable {
     private void displayMainMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
+        // display current position on map
+        // after moving show that you moved.
     }
 
     @Override

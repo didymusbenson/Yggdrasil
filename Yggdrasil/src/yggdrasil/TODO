@@ -1,7 +1,7 @@
 BROCK
     Set monsters in all LOCATIONS (scenes) and dungeons.(done)
-    Test player in starting position(Map Control)
-    Test Commands to move player(MoveCharacterView)
+    Test player in starting position(StartProgramView)
+    Test Commands to move player(StartProgramView)
 
 ADB 
     Make it so the final fight cannot happen until the player chooses
