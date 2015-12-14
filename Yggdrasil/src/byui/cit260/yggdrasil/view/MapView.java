@@ -21,7 +21,7 @@ public class MapView extends View {
     public void displayMap(Map map){
         Location[][] locations = map.getLocations();
         
-        System.out.println("^^^^^^^^^^^^^^MAP^^^^^^^^^^^^^^^^^^");
+        System.out.println("^^^^^^^^^^MAP^^^^^^^^^^^^^^");
         System.out.println("    1  2  3  4  5  6  7  8 ");
         for (int r = 0; r < map.getMapRowCount(); r++){
             if (r == 0)
@@ -44,7 +44,7 @@ public class MapView extends View {
             
         }
         System.out.println("\n  ------------------------");
-        System.out.println("\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+        System.out.println("\n^^^^^^^^^^^^^^^^^^^^^^^^^^^");
     }
 
     @Override //DOACTION SHOULD NOT BE USED IN MAP VIEW!
