@@ -31,6 +31,7 @@ public class GameMenuView extends View {
                 + "\n(L)oad Game"
                 + "\n(M)ap"
                 + "\n(H)elp"
+                //+ "\n(R)esume Game" //Not yet implemented
                 + "\n(Q)uit"
                 + "\n----------------------------------"; 
         char selection = ' ';
@@ -94,6 +95,7 @@ public class GameMenuView extends View {
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
+        
         // NEEDS TO HANDLE IF AN INCORRECT FILE IS CHOSEN
         GameMenuView gameMenu = new GameMenuView("");
         gameMenu.displayMenu();
