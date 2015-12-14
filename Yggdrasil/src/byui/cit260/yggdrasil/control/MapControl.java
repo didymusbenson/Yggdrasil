@@ -218,7 +218,8 @@ public class MapControl implements Serializable {
         return location.isBlocked();
     }
 
-    public Point moveActor(Point newLocation,Actor actor){
+    public Point moveActor(Point newLocation,Actor actor)
+        throws MapControlException{
         //check for invalid (point cannot null, or beyond min max)
         //check to make sure you have an actor.
         //move the actor. (add or subtract from row or column actor started in.)
