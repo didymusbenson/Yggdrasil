@@ -1,8 +1,7 @@
 BROCK
-    Set monsters in all LOCATIONS (scenes) and dungeons.
-    put player in starting position(Map Control)
-    Commands to move player(MoveCharacterView)
-    Implementation of character move (MapControl)
+    Set monsters in all LOCATIONS (scenes) and dungeons.(done)
+    Test player in starting position(Map Control)
+    Test Commands to move player(MoveCharacterView)
 
 ADB 
     Make it so the final fight cannot happen until the player chooses

@@ -17,6 +17,7 @@ import byui.cit260.yggdrasil.model.MainCharacter;
 import byui.cit260.yggdrasil.model.Map;
 import byui.cit260.yggdrasil.model.Player;
 import byui.cit260.yggdrasil.model.Scene;
+import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -79,6 +80,8 @@ public class GameControl implements Serializable {
         game.setMap(map);
         
         //Put player at starting area.
+        hero.setCoordinates(new Point(0,0));
+        
         
 //******************************************************************************
         

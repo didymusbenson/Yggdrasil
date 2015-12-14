@@ -221,9 +221,15 @@ public class MapControl implements Serializable {
     public Point moveActor(Point newLocation,Actor actor)
         throws MapControlException{
         //check for invalid (point cannot null, or beyond min max)
+        if (newLocation == null)
+            throw new MapControlException();
         //check to make sure you have an actor.
+        if (actor == null)
+            throw new MapControlException();
         //move the actor. (add or subtract from row or column actor started in.)
+        Yggdrasil.getCurrentGame().getHero().setCoordinates(newLocation);
         //return the new location.
+        
         return newLocation;
     }
 
