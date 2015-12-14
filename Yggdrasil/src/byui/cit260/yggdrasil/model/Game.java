@@ -5,7 +5,6 @@
  */
 package byui.cit260.yggdrasil.model;
 
-import byui.cit260.yggdrasil.view.HelpMenuView;
 import java.io.Serializable;
 
 /**

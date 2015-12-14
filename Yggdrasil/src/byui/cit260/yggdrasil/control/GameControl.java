@@ -63,17 +63,13 @@ public class GameControl implements Serializable {
         Map map = MapControl.createMap();
         
         //SCENES
+        // set up Inventories for "town" scenes
+        // set up dungeon scenes
+        // set up final boss area
         Scene[] scenes = MapControl.createScenes();
         
         // assign scenes  to locations
         assignScenesLocations(map, scenes);
-        
-        // set up Inventories for "town" scenes
-        
-        // set up dungeon scenes
-        
-        // set up final boss area
-        
         
         //SET GAME MAP
         game.setMap(map);
@@ -90,7 +86,7 @@ public class GameControl implements Serializable {
         Location[][] locations = map.getLocations();
 
         //TODO: Draw out map, decide what belongs where
-        locations[0][0].setScene(scenes[sceneType.clearing.ordinal()]);
+        locations[0][0].setScene(scenes[sceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[0][2].setScene(scenes[sceneType.clearing.ordinal()]);
         locations[0][3].setScene(scenes[sceneType.clearing.ordinal()]);
