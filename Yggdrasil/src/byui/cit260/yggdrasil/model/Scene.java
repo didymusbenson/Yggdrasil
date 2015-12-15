@@ -29,7 +29,7 @@ public class Scene implements Serializable {
     private int itemsUsed;
     private ArrayList<Item> shopItems = new ArrayList<Item>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-
+    
     public Scene() {
     }
 

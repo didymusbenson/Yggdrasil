@@ -31,7 +31,7 @@ public class GameMenuView extends View {
                 + "\n(L)oad Game"
                 + "\n(M)ap"
                 + "\n(H)elp"
-                //+ "\n(R)esume Game" //Not yet implemented
+                + "\n(R)esume Game" 
                 + "\n(Q)uit"
                 + "\n----------------------------------"; 
         char selection = ' ';

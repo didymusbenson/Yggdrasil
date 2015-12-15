@@ -37,10 +37,10 @@ public class HelpMenuView extends View {
             + "\n feel bad if you have to run away."
             + "\n =============================================";
     private final String MOVE = "\n ============================================="
-            + "\n Get around by using 'N' 'S' 'E' and 'W'."
-            + "\n Each move command will move you in that"
-            + "\n direction on the game map. When you reach a "
-            + "\n town you can get around using town commands."
+            + "\n At any point in the game you can type \"T\"." 
+            + "\n T stands for \"Travel\" and will open up the"
+            + "\n Travel menu. You will then choose N, S, E, or"
+            + "\n W to decide in which direction to travel."
             + "\n =============================================";
     private Object keyboard;
 

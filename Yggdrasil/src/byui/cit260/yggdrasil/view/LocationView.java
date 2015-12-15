@@ -16,6 +16,8 @@ import yggdrasil.Yggdrasil;
  */
 public class LocationView extends View {
 
+    private final String COMMANDS = "(T)ravel - (M)enu - (F)ight";
+
     public LocationView(String promptMessage) {
         super(promptMessage);
     }
@@ -23,33 +25,37 @@ public class LocationView extends View {
     public void locationDisplay() {
         char selection = ' ';
         boolean done = false;
+
+        //Get all of the information needed.
         Map map = Yggdrasil.getCurrentGame().getMap();
         Point coords = Yggdrasil.getCurrentGame().getHero().getCoordinates();
         Location location = map.getLocations()[coords.x][coords.y];
         String story = location.getScene().getSceneDescription();
+
+        //Make location visible on the map.
+        location.setVisited(true);
+
+        //Check location hostility
+        //Start fight if the hostility calls for it.
         do {
-            this.console.println("("+coords.x+"," +coords.y+")" 
-            + "\n" + story);
+            this.console.println("(" + coords.x + "," + coords.y + ")"
+                    + "\n" + story);
+            this.console.println(COMMANDS);
             String input = this.getInput();
             input = input.toUpperCase();
             selection = input.charAt(0);
             done = this.doAction(selection);
         } while (!done);
+
     }
 
     @Override
     public boolean doAction(Object obj) {
         char input = (char) obj;
-                switch (input) {
+        switch (input) {
 
-            case 'Q': //quit game
-                this.console.println("QUIT AND GO TO GAME MENU"
-                        + "\nAre you sure you want to quit?");
-                if (yesOrNo()) {
-                    return true;
-                }
-                else
-                    break;
+            case 'M': //return to game menu
+                return true;
             default:
                 System.out.println("Error - Let me give you those options again:");
         }
