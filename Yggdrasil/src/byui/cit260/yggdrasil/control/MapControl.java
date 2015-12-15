@@ -72,39 +72,39 @@ public class MapControl implements Serializable {
                 + "will then travel to Plythu’s lair and defeat him. That hero is You…. \n"
                 + "\nOnce you reach level 10 you may face him, but be warned that it \n"
                 + "may be your last fight for you cannot run from facing him. \n");
-        start.setSceneMapSymbol("!");
+        start.setSceneMapSymbol("!!");
         scenes[sceneType.start.ordinal()] = start;
 
         Scene blocked = new Scene();
         blocked.setSceneDescription("A magical barrier blocks your path.\n"
                 + "It seems there is still something you need to do.\n");
-        blocked.setSceneMapSymbol("!");
+        blocked.setSceneMapSymbol("XX");
         scenes[sceneType.blocked.ordinal()] = blocked;
 
         Scene clearing = new Scene();
         clearing.setSceneDescription("You come to an empty meadow clear of "
                 + "derbis. \nThe peace is enjoyable, but you should move on.\n");
-        clearing.setSceneMapSymbol("!");
+        clearing.setSceneMapSymbol("MM");
         scenes[sceneType.clearing.ordinal()] = clearing;
 
         Scene forest = new Scene();
         forest.setSceneDescription("You come to the edge of a forest. \n"
                 + "Anything could be hiding behind the trees, so you best \n"
                 + "proceed with caution. \n");
-        forest.setSceneMapSymbol("!");
+        forest.setSceneMapSymbol("FF");
         scenes[sceneType.forest.ordinal()] = forest;
 
         Scene beach = new Scene();
         beach.setSceneDescription("You have come to a beach. \n"
                 + "The wind is fair and the sea calm if only you had a ship... \n"
                 + "But you do not so you best move on. \n");
-        beach.setSceneMapSymbol("!");
+        beach.setSceneMapSymbol("BB");
         scenes[sceneType.beach.ordinal()] = beach;
 
         Scene town1 = new Scene();
         town1.setSceneDescription("You enter the town of Ehis. \n"
                 + "This town is so small you wonder if it really even exsits. \n");
-        town1.setSceneMapSymbol("!");
+        town1.setSceneMapSymbol("**");
         // add items (0:potion, 3:dagger, 4:sword) to town
         shopItems.add(game.getGameInventory()[0]);
         shopItems.add(game.getGameInventory()[3]);
@@ -116,7 +116,7 @@ public class MapControl implements Serializable {
         town2.setSceneDescription("You enter the town of Jennu. \n"
                 + "With its friendly people, and wonderful architecture you wish \n"
                 + "you could stay longer. \n");
-        town2.setSceneMapSymbol("!");
+        town2.setSceneMapSymbol("**");
         // add items (1:Hi Potion, 4:Sword, 5:Greatsword) to town
         shopItems.add(game.getGameInventory()[1]);
         shopItems.add(game.getGameInventory()[4]);
@@ -128,7 +128,7 @@ public class MapControl implements Serializable {
         town3.setSceneDescription("You enter the town of Siliti. \n"
                 + "The people here seem to have already accepted defeat, it seems \n"
                 + "they don't have much confidence in you. \n");
-        town3.setSceneMapSymbol("!");
+        town3.setSceneMapSymbol("**");
         // add items (2:Full Potion, 5; Greatsword, 6:Ultima Sword) to town
         shopItems.add(game.getGameInventory()[2]);
         shopItems.add(game.getGameInventory()[5]);
@@ -139,7 +139,7 @@ public class MapControl implements Serializable {
         Scene dungeon1 = new Scene();
         dungeon1.setSceneDescription("You stumble upon a hidden and abandon temple! \n"
                 + "There is undoubtedly danger within, but also perhaps some treasure. \n");
-        dungeon1.setSceneMapSymbol("!");
+        dungeon1.setSceneMapSymbol("##");
         enemies.add(game.getEnemies()[0]);
         enemies.add(game.getEnemies()[1]);
         enemies.add(game.getEnemies()[2]);
@@ -158,7 +158,7 @@ public class MapControl implements Serializable {
                 + "clearly abandon castle before you. \n"
                 + "There may be treasure here, but anyone inside clearly does not \n"
                 + "enjoy company. \n");
-        dungeon2.setSceneMapSymbol("!");
+        dungeon2.setSceneMapSymbol("##");
         enemies.add(game.getEnemies()[10]);
         enemies.add(game.getEnemies()[11]);
         enemies.add(game.getEnemies()[12]);
@@ -176,7 +176,7 @@ public class MapControl implements Serializable {
         dungeon3.setSceneDescription("Before you is a structure you can't identify \n"
                 + "whoever, or whatever is inside must be worth a look. Although it \n"
                 + "could cost you your life.");
-        dungeon3.setSceneMapSymbol("!");
+        dungeon3.setSceneMapSymbol("##");
         enemies.add(game.getEnemies()[20]);
         enemies.add(game.getEnemies()[21]);
         enemies.add(game.getEnemies()[22]);
@@ -194,7 +194,7 @@ public class MapControl implements Serializable {
         plythu.setSceneDescription("Before you stands the volcano lair of the dragon PLYTHU!!! \n"
                 + "This place looks far too dangerous for any ordinary person.\n"
                 + "are you sure you want to go in? \n");
-        plythu.setSceneMapSymbol("!");
+        plythu.setSceneMapSymbol("PP");
         scenes[sceneType.plythu.ordinal()] = plythu;
 
         Scene endgame = new Scene();
@@ -204,7 +204,7 @@ public class MapControl implements Serializable {
                 + "long for adventure and spend the rest of your life wondering if \n"
                 + "it would have been more fun to let the world burn. \n"
                 + "THE END");
-        endgame.setSceneMapSymbol("!");
+        endgame.setSceneMapSymbol("EE");
         scenes[sceneType.endgame.ordinal()] = endgame;
 
         return scenes;

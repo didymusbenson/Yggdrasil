@@ -35,7 +35,7 @@ public class MapView extends View {
             for (int c = 0; c < map.getMapColumnCount(); c++){
                 System.out.print("|");
                 if (locations[r][c].isVisited())
-                    System.out.print(" "+locations[r][c].getScene().getSceneMapSymbol()+" ");
+                    System.out.print(locations[r][c].getScene().getSceneMapSymbol());
                 else
                     System.out.print("??");
                 if (c == map.getMapColumnCount() - 1)
