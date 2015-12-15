@@ -228,7 +228,6 @@ public class MapControl implements Serializable {
             throw new MapControlException();
         //move the actor. (add or subtract from row or column actor started in.)
         Yggdrasil.getCurrentGame().getHero().setCoordinates(newLocation);
-        //return the new location.
         
         return newLocation;
     }
