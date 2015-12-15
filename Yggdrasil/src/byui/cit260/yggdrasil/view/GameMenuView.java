@@ -58,7 +58,7 @@ public class GameMenuView extends View {
                 break;
             case 'L': // Load Game works differently in-game. You get to choose whether to do it or not.
                 this.console.println("Your progress will be lost if you load another game now."
-                        + "\nAbandon current game and load another? (Y/N)");
+                        + "\nAbandon current game and load another?");
                 if (yesOrNo()) {
                     this.startSavedGame();
                 } else {
@@ -68,8 +68,18 @@ public class GameMenuView extends View {
             case 'H': //help screen
                 this.displayHelpMenu();
                 break;
-            case 'Q': //Quit game
-                return true;
+            case 'R': // resume game
+                LocationView gameScreen = new LocationView("");
+                gameScreen.locationDisplay();
+                break;
+            case 'Q': //quit game
+                this.console.println("Any unsaved progress will be lost."
+                        + "\nAre you sure you want to quit?");
+                if (yesOrNo()) {
+                    return true;
+                }
+                else
+                    break;
             default:
                 System.out.println("Error - Let me give you those options again:");
         }
