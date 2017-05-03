@@ -22,6 +22,7 @@ public class GameMenuView extends View {
         super(promptMessage);
     }
 
+
     //Uses this method instead of the standard "display" because I didn't want
     //to have to re-create the promptmessage every time I wanted to call it.
     public void displayMenu() {
