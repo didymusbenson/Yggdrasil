@@ -12,9 +12,17 @@ import yggdrasil.Yggdrasil;
  * @author tsunami
  */
 public class MainMenuView extends View {
+    public void displayBanner() { 
+        this.console.println("        __   ______  ____ ____  ____      _    ____ ___ _     "
+                + "\n	\\ \\ / / ___|/ ___|  _ \\|  _ \\    / \\  / ___|_ _| |    "
+                + "\n	 \\ V / |  _| |  _| | | | |_) |  / _ \\ \\___ \\| || |    "
+                + "\n	  | || |_| | |_| | |_| |  _ <  / ___ \\ ___) | || |___ "
+                + "\n	  |_| \\____|\\____|____/|_| \\_\\/_/   \\_\\____/___|_____|"
+                + "\n	               Your quest begins now.     ");
+    }
 
     public MainMenuView() {
-        super("\n N - New Game, L - Load, H - Help, Q - Quit \n");
+        super("\n ===MAIN MENU=== \n N - New Game, L - Load, H - Help, Q - Quit \n");
     }
 
     @Override
