@@ -1,4 +1,5 @@
-#Yggdrasil
+# Yggdrasil
 
-10/8/15 Yesterday's issue resolved. - Didymus
-10/7/15 There was problem with "pushing" our project. I deleted the repository and re-initialized it then added all of the proper collaborators. I'm able to pull and commit, and the project is supposedly pushing to the right address but for some reason I consistently get the error "index-pack abnormal exit" when I try to push to the repository. -Didymus
+Originally created as part of an introduction to OOP, this text adventure is a throwback to the days before graphics were ever a question. It has since become somewhat of an orphaned child. I've recently decided to come back and work on it some more to see what kind of progress I've made.
+
+Still in pre-alpha. This program isn't ready to do ANYTHINNG.
