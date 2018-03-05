@@ -1,5 +1,5 @@
 # Yggdrasil
 
-Originally created as part of an introduction to OOP, this text adventure is a throwback to the days before graphics were ever a question. It has since become somewhat of an orphaned child. I've recently decided to come back and work on it some more to see what kind of progress I've made.
+The monument to an abandoned Java project. 
 
-Still in pre-alpha. This program isn't ready to do ANYTHING.
+I keep it because I'm fond of it.
